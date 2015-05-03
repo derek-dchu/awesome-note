@@ -2,5 +2,5 @@
 
 * [Introduction](README.md)
    * Java
-       * Language Specification
+       * [Language Specification](java_language_specification.md)
 
