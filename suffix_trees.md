@@ -1,2 +1,0 @@
-# Suffix Trees
-
