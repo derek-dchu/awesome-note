@@ -4,7 +4,5 @@
    * Java
        * [Language Specification](java_language_specification.md)
    * Data Structures
-       * Tree
-           * [Suffix Trees](suffix_trees.md)
 * [Summary](SUMMARY.md)
 
