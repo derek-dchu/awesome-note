@@ -2,5 +2,5 @@
 
 * [Introduction](README.md)
    * Java Note
-       * Language Specification
+       * [Language Specification](java_language_specification.md)
 
