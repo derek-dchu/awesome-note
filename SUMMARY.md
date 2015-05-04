@@ -6,6 +6,6 @@
        * [Suffix Array](suffix_array.md)
 * Java
    * [Language Specification](java_language_specification.md)
-   * J2EE
+   * [J2EE](j2ee.md)
 * [Summary](SUMMARY.md)
 
