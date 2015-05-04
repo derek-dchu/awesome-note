@@ -11,7 +11,6 @@ $$
 \end{cases}
 $$
 
-
 The Longest Common Substring can be found using following formular.
 $$
 \mathit{LCSubstr}(S, T) = \max_{1 \leq i \leq m, 1 \leq j \leq n} \mathit{LCSuff}(S_{1..i}, T_{1..j}) \;
