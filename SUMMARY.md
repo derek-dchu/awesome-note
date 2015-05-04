@@ -6,6 +6,6 @@
    * Data Structures
        * [Suffix Tree and Suffix Array](suffix_tree_and_suffix_array.md)
            * [Suffix Array](suffix_array.md)
-* [Summary](SUMMARY.md)
 * Java
+* [Summary](SUMMARY.md)
 
