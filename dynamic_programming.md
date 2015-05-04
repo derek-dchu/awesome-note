@@ -16,7 +16,9 @@ Pseudocode
 ```
 function LCSubstr(S[1..m], T[1..n])
     LCSuffix := matrix(m, n)
+    # Length of a LCSubstr
     max := 0
+    # Store all LCSubstrs
     result := {}
     for i := 1..m
         for j := 1..n
