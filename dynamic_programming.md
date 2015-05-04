@@ -1,6 +1,6 @@
 # Dynamic Programming
 
-# Longest Common Substring (LCS)
+## Longest Common Substring (LCS)
 Suppose we have a source string with length $$p$$ and a target string with length $$q$$, then we can construct a $$\mathit{LCSuffix}$$ table using following formular.
 
 $$
@@ -30,9 +30,8 @@ function LCSubstr(S[1..m], T[1..n])
                 if LCSuffix[i,j] > max
                     max := LCSuffix[i,j]
                     result := {S[i-max+1..i]}
-                else
-                if LCSuffix[i,j] == max
-                    result := result ∪ {S[i-z+1..i]}
+                else if LCSuffix[i,j] == max
+                        result := result ∪ {S[i-z+1..i]}
             else 
                 LCSuffix[i,j] := 0
     return result
