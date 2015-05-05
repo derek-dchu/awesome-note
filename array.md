@@ -52,27 +52,26 @@ Solution:
         j := j - 1
         while arr[i] > 0
             i := i + 1
-            if i == len
+            if i >= len
                 break
         while arr[j] <= 0
             j := j - 1
-            if j < 0
-                break
+            if j <= 0
+                return 1
         if i < j
             swap arr[i] with arr[j]
-    
-    len := j
+    len := j + 1
     
     // mark integer using array element as index
-    for i in 1..len
-        index = abs(arr[i])
+    for i in 0..len-1
+        index = abs(arr[i]) - 1
         if index < len and arr[index] > 0
             arr[index] = -arr[index]
             
     // look for missing positive integer
-    for i in 1..len
+    for i in 0..len-1
         if arr[i] > 0
-            return i
+            return i + 1
     return len + 1
     ```
   
