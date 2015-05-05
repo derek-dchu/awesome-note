@@ -13,5 +13,6 @@
    * [Language Specification](java_language_specification.md)
    * [J2EE](j2ee.md)
    * [Object Relational Mapping (ORM)](object_relational_mapping.md)
+       * hibernate
 * [Summary](SUMMARY.md)
 
