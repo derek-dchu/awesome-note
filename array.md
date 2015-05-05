@@ -74,5 +74,4 @@ Solution:
             return i + 1
     return len + 1
     ```
-  
 
