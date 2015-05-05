@@ -38,7 +38,7 @@ Solution:
 1. Double Loop: O(n*n), Space: O(1)
 2. Sorting: O(nlogn), Space: O(1)
 3. Hashing: O(n), Space: O(1)
-4. **Use array element as index**: O(n), Space: O(1)
+4. **Use array element as index**: O(n), Space: O(1)  
     Negative integers cause a problem here. We can first segregate them to the right side.
 
     Pesudocode  
