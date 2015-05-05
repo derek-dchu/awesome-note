@@ -6,7 +6,7 @@
   4. Simplifies complex join
   5. Provides query statistics and database status
 
-### Structure
+## Structure
 ```
 				Session Factory 	Connection Provider (optional)
   				     |open				     |
@@ -17,27 +17,27 @@ App --------------> Session ---> Transaction -> JDBC -> Database
 						Transaction Provider (optional)
 ```
 
-#### SessionFactory
+### SessionFactory
 * A factory of session
 * A client of `ConnectionProvider`
 * Holds second level cache
 
-#### Session
+### Session
 * A short-lived object that wraps the JDBC connection.
 * Provides interface between app and database
 * A factory of `Transaction`, `Query`, `Criteria`.
 * Holds first-level cache (mandatory)
 
-#### Transaction
+### Transaction
 * Atomic unit of work
 
-#### ConnectionProvider (optional)
+### ConnectionProvider (optional)
 * A factory of JDBC connections.
 
-#### TranscationFactory (optional)
+### TranscationFactory (optional)
 * A factory of Transaction.
 
-### Hibernate Configuration
+## Hibernate Configuration
 hiberate.cfg.xml
 
 ```xml
@@ -55,19 +55,19 @@ hiberate.cfg.xml
 
 ```
 
-### Persistent Class
-#### Plain Old Java Object(POJO) programming model
+## Persistent Class
+### Plain Old Java Object (POJO) programming model
 * Default model.  
 * Also named: entity.  
 
   1. A no-arg constructor with at least package visibility. (reflection.newInstance)
   2. An identifier property
-  3. Prefer non-final class. (proxy pattern: lazy loading)(semi-optional)
+  3. Prefer non-final class. (proxy pattern: lazy loading) (semi-optional)
   4. Declare getter and setter methods (optional)
   5. Implementing `equals()` and `hashCode()`: make sure both of them guarantee that same row of database is mapping to the same object. (note: don't use identifier value)
 
 
-### Mapping Configuration
+## Mapping Configuration
 class_name.hbm.xml
 
 ```xml
@@ -84,16 +84,16 @@ class_name.hbm.xml
 </hibernate-mapping>
 ```
 
-**note:** table, column can be omitted if class name is same as table name, field name is same as column name.
+**Note:** table, column can be omitted if class name is same as table name, field name is same as column name.
 
-### Caching
-Try to reuse the existing object in the session, in order to reduce the number of connection with database which improves the performance.
+## Hibernate Caching
+Try to reuse existing object in the session, in order to reduce the number of connection with database and improve performance.
 
 * Each bean must has an ID for caching.
 
-**note:** Each level of Caching can only store objects with unique ID.
+**Note:** each level of Caching can only store objects with unique ID.
 
-#### First Level Caching (transaction-level)
+### First Level Caching (transaction-level)
 Caching on Session: cache within current session.
 
 * Enable by default.
@@ -106,7 +106,7 @@ Caching on Session: cache within current session.
     1. has persistent representation in the database and an identifier value.
     2. final state will be synchronized with database when the unit of work completes.
   3. Detached:
-    1. has been persistent, but the session is closed.
+    1. Was persistent, but the session is closed.
     2. can reattached to a new session, and all its modification will be persistent again.
 
 ```java
@@ -125,10 +125,10 @@ load(a):
 		return map.put(id, a)
 ```
 
-* `session.contains(objects)` determine if an instance belongs to the session cache.
-* `session.evict(object)` changes the object from persistent to detached.
-* `session.clear()` evict all objects.
-* `session.merge(object)` changes the object from detached to persistent of current session.
+* `session.contains(objects)`: determines if an instance belongs to the session cache.
+* `session.evict(object)`: changes the object from persistent to detached.
+* `session.clear()`: evicts all objects.
+* `session.merge(object)`: changes the object from detached to persistent of current session.
 * Change non-id fields of persistent object, database will be updated after the transaction.
 * Change id of persistent object, database will insert an new record with that id after the transaction.
 
@@ -146,56 +146,59 @@ Caching on SessionFactory: shallow copies will be shared across different sessio
 * `sessionFactory.evictCollection(.class[, id])` collection version of evict.
 
 ##### Configuration
-1. CacheProvider
-hibernate.cfg.xml
-
-```xml
-<!-- set to true by default -->
-<property name="cache.use_second_level_cache">true</property>
-
-<property name="cache.provider_class">EH Cache, Swarm, OS, JBoss</property>
-```
-
-| Provider | read-only | nonstrict-read-write | read-write| transactional |  
-|----------|-----------|----------------------|------------|---------------|  
-| Hashtable | Y | Y | Y | N |  
-| EH Cache | Y | Y | Y | Y |  
-| Swarm Cache | Y | Y | N | N |  
-| OS Cache | Y | Y | Y | N |  
-| JBoss Cache | Y | N | N | Y |  
+1. Define CacheProvider in hibernate.cfg.xml
+    
+    ```xml
+    <!-- set to true by default -->
+    <property name="cache.use_second_level_cache">
+        true
+    </property>
+    
+    <property name="cache.provider_class">
+        EH Cache, Swarm, OS, JBoss
+    </property>
+    ```
+    
+    | Provider | read-only | nonstrict-read-write | read-write| transactional |  
+    |----------|-----------|----------------------|------------|---------------|  
+    | Hashtable | Y | Y | Y | N |  
+    | EH Cache | Y | Y | Y | Y |  
+    | Swarm Cache | Y | Y | N | N |  
+    | OS Cache | Y | Y | Y | N |  
+    | JBoss Cache | Y | N | N | Y |  
 
 2. Add cache usage to hbm file
-```xml
-<class>
-	<cache usage="read-only"/>
-	...
-</class>
-```
+    ```xml
+    <class>
+    	<cache usage="read-only"/>
+    	...
+    </class>
+    ```
 
 3. Configure Cache Provider
-* EhCache
-```xml
-<!-- ehcache.xml -->
-<?xml version="1.0"?>  
-<ehcache>  
-  
-<defaultCache   
-	maxElementsInMemory="100" 
-	eternal="false" 
-	timeToIdleSeconds="120"  
-	timeToLiveSeconds="200" />  
-  
-<cache
-	name="bean_name" 
-	maxElementsInMemory="100" 
-	eternal="false" 
-	timeToIdleSeconds="5" 
-	timeToLiveSeconds="200" /> 
-</ehcache>
-```
+    * EhCache
+    ```xml
+    <!-- ehcache.xml -->
+    <?xml version="1.0"?>  
+    <ehcache>  
+      
+    <defaultCache   
+    	maxElementsInMemory="100" 
+    	eternal="false" 
+    	timeToIdleSeconds="120"  
+    	timeToLiveSeconds="200" />  
+      
+    <cache
+    	name="bean_name" 
+    	maxElementsInMemory="100" 
+    	eternal="false" 
+    	timeToIdleSeconds="5" 
+    	timeToLiveSeconds="200" /> 
+    </ehcache>
+    ```
 
 #### The Query Cache
-Cache query result sets for the queries with same parameters.
+Cache query result sets for queries with same parameters.
 
 * query cache should always be used in conjunction with the second-level cache because it caches only identifier values and results of value type.
 
@@ -237,7 +240,7 @@ SELECT u.name FROM User as u where u.age > 30;
 
 **note:** The translation of HQL is independent with mapping configuration.
 
-### `load` vs `get()`
+### `load()` vs `get()`
 * if we use object as the key (which is a must for composite key), then for `load()`, it will return an new object as the result, in contrast, `get()` will fill in the object and return it.
 
 ### generator tag
@@ -263,13 +266,13 @@ By default, Hibernate will only load current object without loading any of its d
 * Lazy Fetching can be disable by setting `lazy="false"` for its dependent sets.
 * Lazy Fetching dependent objects can be forced to initialize by calling `Hibernate.initialize(object)`.
 
-**note:** Lazy Fetching is different from Lazy Loading. Lazy Loading will not load current object until we access it.
+**Note:** Lazy Fetching is different from Lazy Loading. Lazy Loading will not load current object until we access it.
 
 ### Transaction
-A: Atomicity -
-C: Consistency - 
-I: Isolation -
-D: Durability -
+A: Atomicity -  
+C: Consistency -  
+I: Isolation -  
+D: Durability -  
 
 #### Isolation Levels
 1. Read uncommitted (no lock) - may cause dirty read (read dirty data)
@@ -277,7 +280,7 @@ D: Durability -
 3. Repeatable Read (prevent non-repeatable read)
 4. Serializable (prevent phantom read)
 
-* dirty read: T2 update, T1 read before T2 commit. Because reading is faster than update, at some point, T1 will start reading non-updated data.
+    * dirty read: T2 update, T1 read before T2 commit. Because reading is faster than update, at some point, T1 will start reading non-updated data.
 
 #### Pessimistic locking vs Optimistic locking
 Optimistic locking: no lock, but we can add an indicator column (such as version), then we can use it to control reading without a lock.
