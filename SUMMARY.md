@@ -12,6 +12,6 @@
 * Java
    * [Language Specification](java_language_specification.md)
    * [J2EE](j2ee.md)
-   * Hibernate
+   * [Hibernate](hibernate.md)
 * [Summary](SUMMARY.md)
 
