@@ -8,12 +8,13 @@
 
 ### Structure
 ```
-					    Session Factory 	Connection Provider (optional)
-  						  		|open				  |
-	  Persistent Object			|	begin			  |  JNDI
-App -----------------------> Session ---> Transaction -> JDBC -> Database
-								   			  |		     JTA
-									Transaction Provider (optional)
+				Session Factory 	Connection Provider (optional)
+  				     |open				     |
+	  Persistent       |                         |
+	    Object		 |begin			        |JNDI
+App --------------> Session ---> Transaction -> JDBC -> Database
+								   	|		          JTA
+						Transaction Provider (optional)
 ```
 
 #### SessionFactory
