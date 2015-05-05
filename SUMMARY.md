@@ -7,7 +7,7 @@
 * Algorithms
    * [Dynamic Programming](dynamic_programming.md)
    * [Array](array.md)
-   * Bit Manipulation
+   * [Bit Manipulation](bit_manipulation.md)
 * Java
    * [Language Specification](java_language_specification.md)
    * [J2EE](j2ee.md)
