@@ -6,6 +6,7 @@
        * [Suffix Array](suffix_array.md)
 * Algorithms
    * [Dynamic Programming](dynamic_programming.md)
+   * Array
 * Java
    * [Language Specification](java_language_specification.md)
    * [J2EE](j2ee.md)
