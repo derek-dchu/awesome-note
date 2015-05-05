@@ -11,7 +11,7 @@
 				Session Factory 	Connection Provider (optional)
   				     |open				     |
 	  Persistent       |                         |
-	    Object		 |begin			        |JNDI
+	    Object		 |   begin			     |JNDI
 App --------------> Session ---> Transaction -> JDBC -> Database
 								   	|		          JTA
 						Transaction Provider (optional)
