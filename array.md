@@ -1,7 +1,7 @@
 # Array
 
 ### Find the two repeating elements in a given array
-For an array of n+2 elements, all elements of the array are in range 1 to n, and all elements occur once except two numbers which occur twice. Find the two repeating numbers.
+Given an array of n+2 elements with all elements of the array are in range 1 to n, and all elements occur once except two numbers which occur twice. Find the two repeating numbers.
 
 For example, array = {4, 2, 4, 5, 2, 3, 1} and n = 5
 
@@ -19,10 +19,61 @@ Solution:
     Pseudocode
     ```
     for i := 1..n
-        if Arr[abs(i)] > 0
+        index := abs(arr[i])
+        if arr[index] > 0
             // mark it negative
-            Arr[abs(i)] = -Arr[abs(i)]
+            arr[index] = -Arr[index]
         else
-            // Arr[abs(i)] is negative, we revisit integer i
+            // arr[index] is negative, we revisit integer i
             integer i is a repetition
     ```
+    
+### Find duplicates in a given array
+Given an array of n elements which contains elements from 0 to n-1, with **ANY** of these numbers appearing **ANY** number of times. Find these repeating numbers in O(n) and using only constant memory space.
+
+### Find the smallest positive integer missing from an unsorted array
+Given an unsorted array with both **positive** and **negative** integers. Find the smallest positive integer missing from the array in O(n) time using constant extra space. The array can be modified.
+
+Solution:
+1. Double Loop: O(n*n), Space: O(1)
+2. Sorting: O(nlogn), Space: O(1)
+3. Hashing: O(n), Space: O(1)
+4. **Use array element as index**: O(n), Space: O(1)
+    Negative integers cause a problem here. We can first segregate them to the right side.
+
+    Pesudocode  
+    ```
+    len := length of arr
+    // segregate
+    i := -1
+    j := len
+    while i < j
+        i := i + 1
+        j := j - 1
+        while arr[i] > 0
+            i := i + 1
+            if i == len
+                break
+        while arr[j] <= 0
+            j := j - 1
+            if j < 0
+                break
+        if i < j
+            swap arr[i] with arr[j]
+    
+    len := j
+    
+    // mark integer using array element as index
+    for i in 1..len
+        index = abs(arr[i])
+        if index < len and arr[index] > 0
+            arr[index] = -arr[index]
+            
+    // look for missing positive integer
+    for i in 1..len
+        if arr[i] > 0
+            return i
+    return len + 1
+    ```
+  
+
