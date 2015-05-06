@@ -159,13 +159,13 @@ Caching on SessionFactory: shallow copies will be shared across different sessio
     </property>
     ```
     
-    | Provider | read-only | nonstrict-read-write | read-write| transactional |  
-    |----------|-----------|----------------------|------------|---------------|  
-    | Hashtable | Y | Y | Y | N |  
-    | EH Cache | Y | Y | Y | Y |  
-    | Swarm Cache | Y | Y | N | N |  
-    | OS Cache | Y | Y | Y | N |  
-    | JBoss Cache | Y | N | N | Y |  
+| Provider | read-only | nonstrict-read-write | read-write| transactional |  
+|----------|-----------|----------------------|------------|---------------|  
+| Hashtable | Y | Y | Y | N |  
+| EH Cache | Y | Y | Y | Y |  
+| Swarm Cache | Y | Y | N | N |  
+| OS Cache | Y | Y | Y | N |  
+| JBoss Cache | Y | N | N | Y |  
 
 2. Add cache usage to hbm file
     ```xml
