@@ -85,6 +85,28 @@ Input: numbers={2, 7, 11, 15}, target=9
 Output: index1=1, index2=2
 
 #### 3 Sum
+Given an array of n integers, find all **UNIQUE** triplets in the array which gives the sum of zero. Elements in a triplet (a,b,c) must be in non-descending order (a ≤ b ≤ c). For example, given array S = {-1 0 1 2 -1 -4}, A solution set is: (-1, 0, 1), (-1, -1, 2).
+
+#### 3 Sum closest
+Given an array of n integers, find three integers in the array such that the sum is closest to a given number, target. Return the sum of the three integers.
+For example, given array S = {-1 2 1 -4}, and target = 1. The closest sum to the target is 2 (-1 + 2 + 1 = 2). You may assume that each input would have exactly one solution.
+
+#### 4 Sum
+Given an array of n integers, find all unique quadruplets in the array which gives the sum of target.
+
+Example
+For example, given array S = {1 0 -1 0 -2 2}, and target = 0. A solution set is:
+
+(-1, 0, 0, 1)
+
+(-2, -1, 1, 2)
+
+(-2, 0, 0, 2)
+
+Note
+Elements in a quadruplet (a,b,c,d) must be in non-descending order. (ie, a ≤ b ≤ c ≤ d)
+
+The solution set must not contain duplicate quadruplets.
 
 Solution:
 1. Brute Force:
@@ -114,12 +136,15 @@ Solution:
             sum_of_two := arr[l] + arr[r]
             if sum_of_two == remain
                 return target
-                
+            
+            /* following block is for finding the closest sum */
             sum_of_three = sum_of_two + arr[i]
             distance = abs(sum_of_three - target)
             if distance == closest_distance
                 closest_distance = distance
                 closest_sum = sum_of_three
+            /*------------------------------------------------*/
+            
             if sum_of_two < remain
                 l := l + 1
             else
