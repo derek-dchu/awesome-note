@@ -58,13 +58,14 @@ It represents an unknown type.
 * An in variable is defined with an upper bounded wildcard, using `extends`.
 
   > If a collection referenced by Collection<? extends ...>, it can be informally thought of as read-only (cannot store a new element or change an existing element without knowing the exact class when it is originally defined).
-  
   > ```java
   B extends A
   List<B> listB = new ArrayList<>();
   List<? extends B> list = listB;
   list.add(new A));     // compile-time error
   ```
+
+
 * An out variable is defined with a lower bounded, using `super`.
 * In the case where the "in" variable can be accessed using methods defined in the Object class, use an unbounded wildcard.
 * In the case where the code needs to access the variable as both an "in" and an "out" variable, do not use a wildcard.
