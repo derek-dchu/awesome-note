@@ -1,36 +1,7 @@
 # Language Specification
 
-
-
-## Arrays
-An array is a container object that holds a fixed number of values of a single type.
-
-### Creating, Initializing
-```java
-// 1
-int[] anArray = new int[10];
-anArray[0] = 100;
-anArray[1] = 200;
-
-// 2
-int [] anArray = {100, 200};
-```
-
-
-## Operations
-### Logical and Bitwise
-* Priority: `!` > `&&` > `||`.
-* `&`, `|`: both sides will be checked.
-
 ## Enum Types
 **Note:** all enums implicitly extend `java.lang.Enum`, therefore it cannot extend anything else.
-
-
-## Control Flow
-### switch statement
-`switch` works with `byte`, `short`, `char`, `int`, `Enum`, `Character, `Short, `Byte`, `Integer`, `String` (Java 7).
-
-**Note:** if expression in any switch statement is `null`, then a `NullPointerException` is thrown.
 
 
 ## Number Class
