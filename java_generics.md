@@ -55,10 +55,11 @@ It represents an unknown type.
 ### Wildcard Guidelines: 
 `method(in, out)`
 
-* in: `extends`.
-* out: `super`.
+* An in variable is defined with an upper bounded wildcard, using `extends`. Because A collection defined by Collection<? extends ...> can be informally thought of as read-only.
+* An out variable is defined with a lower bounded, using `super`.
 * In the case where the "in" variable can be accessed using methods defined in the Object class, use an unbounded wildcard.
 * In the case where the code needs to access the variable as both an "in" and an "out" variable, do not use a wildcard.
+* Using a wildcard as a return type shoud be avoided.
 
 ### Type Erasure
 Instead of creating new classes
