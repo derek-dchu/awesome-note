@@ -1,5 +1,19 @@
 # Java EE
 
+## Terms
+* Java EE (JEE): Java Platform, Enterprise Edition
+* JCP: Java Community Process
+* JSRs: Java Specification Requests
+* POJOs: Plain Old Java Objects
+* JSP: JavaServer Page
+
+
+## Java EE Application Model
+JEE uses a distributed multitiered application model for enterprise applications. Generally, it can be divided into tiers in following list:
+  1. Client-tier components run on the client machine. (Web Pages)
+  2. Web-tier components run on the Java EE server. (JavaServer Page)
+  3. Business-tier components run on the Java EE server. (Enterprise Beans)
+  4. Enterprise information system (EIS)-tier software runs on the EIS server. (Database)
 
 
 ## Web Server
