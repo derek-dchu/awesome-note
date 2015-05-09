@@ -5,9 +5,9 @@ Given an array of n+2 elements with all elements of the array are in range 1 to 
 
 For example, array = {4, 2, 4, 5, 2, 3, 1} and n = 5
 
-The above array has n + 2 = 7 elements with all elements occurring once except 2 and 4 which occur twice. So the output should be 4 2.
+The above array has n + 2 = 7 elements with all elements occurring once except 2 and 4 which occur twice, then output should be 4 2.
 
-Solution:  
+##### Solution:  
 1. Double Loop:O($$n^2$$), Space: O(1)
 2. Count Array: O(n), Space: O(n)
 3. Base on math: O(n), Space: O(1)  
@@ -108,7 +108,7 @@ Elements in a quadruplet (a,b,c,d) must be in non-descending order. (ie, a ≤ b
 
 The solution set must not contain duplicate quadruplets.
 
-Solution:
+##### Solution:
 1. Brute Force:
   * Two Sum: O($$n^2$$)
   * 3 Sum: O($$n^3$$)
@@ -153,7 +153,7 @@ Solution:
     
   * 4 Sum: O(nlogn) + O($$n^3$$) = O($$n^3$$)
 3. HashMap:
-  We can store integers into a hashmap with their index as value to reduce lookup time from O(n) to O(1).
+  We can store integers into a hashmap with their index as value to reduce lookup time from O(n) to O(1). Cannot be used to solve closest problems.
   * Two Sum: O(1), Space: O(n)
   * 3 Sum: O($$n^2$$), Space: O(n)
   * 4 Sum: O($$n^3$$), Space: O(n)
