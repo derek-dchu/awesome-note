@@ -1,2 +1,228 @@
 # Concurrency
 
+## How to create a thread?
+1. extends `Thread`
+    ```java
+    class A extends Thread {
+	    @Override
+	    public void run() { ... }
+    }
+
+    A a = new A();
+    a.start();
+    ```
+
+2. implements `Runnable`
+    ```java
+    class B implements Runnable {
+    	@Override
+    	public void run() { ... }
+    }
+    
+    B b = new B();
+    new Thread(b).start();
+    ```
+
+Method 2 is better than method 1, because it is more flexible (B can still extend another class).
+
+* can we call `a.run()`, `b.run()` directly?
+
+    Yes, it will be called by current thread.
+
+### `Thread` class
+* implements `Runnable` interface
+* contains a `Runnable` object
+* follows Decorator pattern
+
+
+## How to start a thread
+Invoke `start()` of a thread object.
+
+1. for object implements `runnable`, `new Thread(obj).start()`.
+2. for thread object, `thread.start()`. 
+
+* Calling it will:
+  1. create a separate thread
+  2. call `run()` method
+* `start()` can be only called once, or it throws a `IllegalThreadStateException`.
+
+
+## Thread Lifecycle
+Four stages:
+1. READY:
+  * to Running
+2. RUNNING
+  * back to Ready: `join()`, `yield()`
+  * to Waiting: `sleep()`, `wait()`
+  * to Dead
+3. DEAD
+4. WAITING
+  * back to Ready: `notify()`, `notifyAll()`
+
+```
+		notify(), notifyAll()
+Ready <------------------------- Waiting
+ | ^                                ^
+ | |join(), yield()                 |	
+ v |								|
+Running ----------------------------
+ |			sleep(), wait()
+ v
+Dead
+```
+
+```java
+public final void wait() throws InterruptedException;
+public final void notify();
+public final void notifyAll();
+```
+
+### `join` method
+It is like a stop sign. Push the current thread into READY status. When a thread calls `t.join()`, it will wait until thread `t` is finished.
+
+### `yield` method
+It is like a yield sign. Any thread calls `yield()` will make it back to READY status and wait for OS to pick it up.
+
+* `yield()` is a static method.
+
+### `sleep` method
+Push the thread into WAITING status. `Sleep()` method has the control and will wake up automatically after a period of time.
+
+* `Thread.sleep(ms)` is a static method.
+
+### `wait` method
+Causes the current thread to wait until another thread invokes the notify() method or the notifyAll() method for this object. In other words, this method behaves exactly as if it simply performs the call wait(0). So `wait()` has no control.
+
+* If we use `wait()` without synchronized, it will throw `IllegalMonitorStateException` - the current thread is not the owner of the object's monitor.
+
+### `notify` method
+Wake up the thread that is waiting on this object's monitor.
+
+* If we use `notify()` without synchronized, it will throw `IllealMonitorStateException`.
+
+### `notifyAll`
+Wake up all threads that are waiting on this object's monitor. A thread waits on an object's monitor by calling one of the wait methods.
+
+
+## Daemon Thread
+Daemon Thread is a special thread that keeps running until all other threads stop and is forced to stop by OS.
+
+* Garbage collection is a daemon thread.
+
+### Convert regular thread to daemon thread
+```java
+t.setDaemon(true);
+t.start();
+```
+
+## Synchronized
+```java
+synchronized void foo() { ... }
+synchronized (obj) { ... }
+```
+
+### Lock <=> Monitor
+* methods don't have lock
+* to call a synchronized static method, the caller requires the lock of the class which contains that method. (class level lock)
+* to call a synchronized non-static method, the caller requires the lock of the object which contains that method. (object level lock)
+* a class level lock can be converted to object level lock
+
+```java
+class A {
+	static void foo2() {
+		synchronized(A.class) {
+			/* ... */
+		}
+	}
+}
+```
+
+
+## Thread-safe
+1. the class is thread-safe: only one thread can access that class at a time.
+2. the program is thread-safe: return consistence output.
+
+
+## Mutex
+
+
+## Semaphore
+
+
+## How to prevent dead lock
+1. Use `Lock` class (safe lock)
+
+
+## `volatile` keyword
+* If an object is `volatile`, then all thread can read it, but only one thread can write.
+* If a thread modify a `volatile` object, this modification will be seen by all other threads immediately.
+
+
+## How to stop a thread?
+Doesn't support. Because stop a thread during running may lead to memory leak.
+
+
+## `interrupt` method
+It throws an exception.
+
+
+## ThreadLocal
+ThreadLocal is like an agent of shared resource. It wraps shared resource, and different threads will have their own shallow copies of the shared resource from ThreadLocal.
+
+```java
+class ThreadLocal<V> {
+	public V get();
+	public void set(V value);
+	protected V initialValue();
+}
+```
+
+* non-blocking algorithm.
+
+## Immutable Objects
+An object is considered *immutable* if its state caonnot change after it is constructed.
+
+Benefits: immutable object is thread-safe and commonly used in multi-threading environment.
+
+### (#1) How to define an immutable class:
+* Declare class as final OR make the constructor private and construct instances in factory methods
+* All fields are `private` and `final`
+* Constructor for initialization
+* No setters - methods that modify fields or objects referred to by fields.
+* If the instance fields include references to mutable objects, don't allow those objects to be changed:
+  1. don't provide methods that modify the mutable objects.
+  2. don't share references to the mutable objects. Never store references to external, create copies in constructor. Similarly, create copies of your internal mutable objects in getter.
+* If the field is a collection, use `Collections.unmodifiableXXX(XXX collection)` to change it into a unmodifiable collection.
+
+```java
+public final class ImmutablePerson {
+    private final String name;
+    private final int age;
+    private final Date birthday;
+    private final List<ImmutablePerson> friends;
+
+    public ImmutablePerson(String name, int age, Date birthday, 
+                            List<ImmutablePerson> friends) {
+        this.name = name;
+        this.age = age;
+        this.birthday = new Date(birthday.getTime());
+        this.friends = Collections.unmodifiableList(friends);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public Date getBirthday() {
+        return new Date(birthday.getTime());
+    }
+
+    public List<ImmutablePerson> getFriends() {
+        return friends;
+    }
+}
+```
