@@ -11,6 +11,7 @@
    * [Bit Manipulation](bit_manipulation.md)
 * Java
    * [Language Specification](java_language_specification.md)
+       * Language Basic
    * [J2EE](j2ee.md)
    * [Object Relational Mapping (ORM)](object_relational_mapping.md)
        * [Hibernate](hibernate.md)
