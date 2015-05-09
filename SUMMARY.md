@@ -13,6 +13,7 @@
    * [Language Specification](java_language_specification.md)
        * [Language Basic](java_language_basic.md)
        * [Classes and Objects](java_classes_and_objects.md)
+       * Generics
    * [J2EE](j2ee.md)
    * [Object Relational Mapping (ORM)](object_relational_mapping.md)
        * [Hibernate](hibernate.md)
