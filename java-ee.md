@@ -3,12 +3,12 @@
 ## Terms
 | Term | Definition |
 | -- | -- |
-| [Java EE (JEE)](#java-ee) | Java Platform, Enterprise Edition |
+| Java EE (JEE) | Java Platform, Enterprise Edition |
 | JCP | Java Community Process |
 | JSRs | Java Specification Requests |
 | POJOs | Plain Old Java Objects |
 | JSP | JavaServer Page |
-| EJB | Enterprise JavaBeans |
+| [EJB](#ejb) | Enterprise JavaBeans |
 | XML | Extensible Markup Language |
 | SOAP | Simple Object Access Protocol |
 | WSDL | Web Service Description Language |
@@ -25,7 +25,7 @@
 | JASPIC | Java Authentication Service Provider Interface for Containers |
 
 
-## Java EE Application Model <a id="java-ee"></a>
+## Java EE Application Model
 JEE uses a distributed multitiered application model for enterprise applications. Generally, it can be divided into tiers in following list:
   1. Client-tier components run on the client machine. (Web Pages)
   2. Web-tier components run on the Java EE server. (JavaServer Page)
