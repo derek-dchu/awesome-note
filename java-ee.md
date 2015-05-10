@@ -6,6 +6,21 @@
 * JSRs: Java Specification Requests
 * POJOs: Plain Old Java Objects
 * JSP: JavaServer Page
+* EJB: Enterprise JavaBeans
+* XML: Extensible Markup Language
+* SOAP: Simple Object Access Protocol
+* WSDL: Web Service Description Language
+* JAR: Java Archive file
+* WAR: Web Archive file
+* EAR: Enterprise Archive file
+* JSP: JavaServer Pages
+* JSTL: JavaServer Pages Standard Tag Library
+* JPA: Java Persistence API
+* JTA: Java Transaction API
+* JAX-RS: Java API for RESTful Web Services
+* JMS: Java Message Service
+* JACC: Java Authorization Contract for Containers
+* JASPIC: Java Authentication Service Provider Interface for Containers
 
 
 ## Java EE Application Model
@@ -14,6 +29,40 @@ JEE uses a distributed multitiered application model for enterprise applications
   2. Web-tier components run on the Java EE server. (JavaServer Page)
   3. Business-tier components run on the Java EE server. (Enterprise Beans)
   4. Enterprise information system (EIS)-tier software runs on the EIS server. (Database)
+
+
+## Java EE Containers
+**Containers** are the interface between a component and the low-level platform-specific functionality that supports the component.
+
+### Container Types
+* Java EE server: The runtime portion of a Java EE product, which provides EJB and web containers.
+* EJB container: Manages the execution of enterprise beans.
+* Web container: Manages the execution of web pages, servlets, and some EJB components.
+* Application client container: Manages the execution of application client components.
+* Applet container: Manages the execution of applets. Consists of a web browser and Java Plug-in running on the client together.
+
+### Java EE APIs
+### EJB
+EJB is a body of code having fields and methods to implement modules of business logic.
+
+* session bean: a transient conversation with a client. When the client finishes executing, the session bean and its data are gone.
+* message-driven bean: combines features of a session bean and a message listener, allowing a business component to receive messages asynchronously.
+
+### Servlet
+A servlet class extends the capabilities of servers that host applications accessed by way of a request-resoponse programming model.
+
+### JSP
+JSP lets us put snippets of servlet code directly into a text-based document (HTML or XML).
+
+### JSTL
+JSTL encapsulates core functionality common to many JSP applications.
+
+### JTA
+JTA provides a standard interface for demarcating transactions.
+
+### Bean Validation
+The Bean Validation specification defines a metadata model and API for validating data in JavaBeans components.
+
 
 
 ## Web Server
