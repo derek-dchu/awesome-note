@@ -1,4 +1,14 @@
 # Concurrency
+In concurrent programming, there are two basic units of execution: processes and threads. For single execution core, it have one thread actually executing at any given moment. Processing time for a single core is shared among processes and threads through an OS feature called *time slicing*.
+
+## Processes
+A process has a self-contained execution environment. A process generally has a complete, private set of basic run-time resources; in particular, each process has its own memory space.
+
+To facilitate communication between processes, most operating systems support Inter Process Communication (IPC) resources, such as pipes and sockets.
+
+Most implementations of the Java virtual machine run as a single process. A Java application can create additional processes using a `ProcessBuilder` object.
+
+
 
 ## How to create a thread?
 1. extends `Thread`
