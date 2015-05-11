@@ -26,3 +26,30 @@ def sqrt(integer x)
 ```
 
 **Note:** because the method returns an integer, we don't need to perform float multiplication which is much slower than integer multiplication.
+
+### Search for a value in an m x n matrix.
+Integers in each row are sorted from left to right.
+The first integer of each row is greater than the last integer of the previous row.
+
+Solution:
+Treat matrix as an array and perform binary search. Remember that `row = index // n` and `col = index % n`.
+
+### Binary search with duplicates
+For a given sorted array (ascending order) and a target number, find the first index of this number in O(log n) time complexity. Array may contain duplicates. If the target number does not exist in the array, return -1.
+
+```
+while l < r
+    if arr[mid] < target
+        l := mid + 1
+    else
+        """
+        if equals, we still shrink r, but keep mid as the upper
+        bound, because it may be the first index of target 
+        """
+        r := mid
+        
+if arr[l] == target
+    return l
+else
+    return -1
+```
