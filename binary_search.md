@@ -38,6 +38,7 @@ Treat matrix as an array and perform binary search. Remember that `row = index /
 For a given sorted array (ascending order) and a target number, find the first index of this number in O(log n) time complexity. Array may contain duplicates. If the target number does not exist in the array, return -1.
 
 ```
+l := 0, r := arr.length - 1
 while l < r
     if arr[mid] < target
         l := mid + 1
@@ -53,3 +54,22 @@ if arr[l] == target
 else
     return -1
 ```
+
+### Find Minimum in Rotated Sorted Array
+Suppose a sorted array is rotated at some pivot unknown to you beforehand.
+
+(i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
+
+Find the minimum element.
+
+```
+l := 0, r := arr.length - 1
+while l < r
+    if arr[mid] < arr[r]
+        l := mid + 1
+    else
+        r := mid
+        
+return arr[l]
+```
+
