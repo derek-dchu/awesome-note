@@ -8,7 +8,18 @@ To facilitate communication between processes, most operating systems support In
 
 Most implementations of the Java virtual machine run as a single process. A Java application can create additional processes using a `ProcessBuilder` object.
 
+## Threads
+Threads are sometimes called lightweight processes. Both processes and threads provide an execution environment, but creating a new thread requires fewer resources than creating a new process.
 
+Threads exist within a process — every process has at least one. Threads share the process's resources, including memory and open files. This makes for efficient, but potentially problematic, communication.
+
+For a application programmer, an application starts with just one thread, called the main thread. This thread has the ability to create additional threads.
+
+## Thread Objects
+Each thread is associated with an instance of the class Thread. There are two basic strategies for using Thread objects to create a concurrent application.
+
+* To **directly control** thread creation and management, simply instantiate Thread each time the application needs to initiate an asynchronous task.
+* To **abstract** thread management from the rest of your application, pass the application's tasks to an executor.
 
 ## How to create a thread?
 1. extends `Thread`
