@@ -115,6 +115,9 @@ An interrupt is an indication to a thread that it should stop what it is doing a
 
 A thread sends an interrupt by invoking interrupt on the Thread object for the thread to be interrupted. For the interrupt mechanism to work correctly, the interrupted thread must support its own interruption (try ... catch InterruptedException or invoke Thread.interrupted() periodically).
 
+#### The Interrupt Status Flag
+The interrupt mechanism is implemented using an **internal flag** known as the **interrupt status**. Invoking Thread.interrupt sets this flag. When a thread checks for an interrupt by invoking the static method Thread.interrupted, interrupt status is cleared. The non-static isInterrupted method, which is used by one thread to query the interrupt status of another, does not change the interrupt status flag.
+
 ### `wait` method
 Causes the current thread to wait until another thread invokes the notify() method or the notifyAll() method for this object. In other words, this method behaves exactly as if it simply performs the call wait(0). So `wait()` has no control.
 
