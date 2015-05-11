@@ -21,54 +21,47 @@ Each thread is associated with an instance of the class Thread. There are two ba
 * To **directly control** thread creation and management, simply instantiate Thread each time the application needs to initiate an asynchronous task.
 * To **abstract** thread management from the rest of your application, pass the application's tasks to an executor.
 
-## How to create a thread?
-1. extends `Thread`
-    ```java
-    class A extends Thread {
-	    @Override
-	    public void run() { ... }
-    }
+### `Thread` class
+* Implements `Runnable` interface
+* Contains a `Runnable` object
+* Follows Decorator pattern
 
-    A a = new A();
-    a.start();
-    ```
+### How to create and start a thread
+An application that creates an instance of Thread must provide the code that will run in that thread.
 
-2. implements `Runnable`
+1. Provide a Runnable object.
+
     ```java
-    class B implements Runnable {
+    class A implements Runnable {
     	@Override
     	public void run() { ... }
     }
     
-    B b = new B();
-    new Thread(b).start();
+    Runnable a = new A();
+    new Thread(a).start();
+    ```
+    
+2. Subclass Thread.
+
+    ```java
+    class B extends Thread {
+	    @Override
+	    public void run() { ... }
+    }
+
+    Thread t = new B();
+    t.start();
     ```
 
-Method 2 is better than method 1, because it is more flexible (B can still extend another class).
+Method 1 is more flexible than method 2, because A can still extend another class.
 
-* can we call `a.run()`, `b.run()` directly?
+* Both `a.run()`, `b.run()` can be called directly, but it is called by current thread.
+* Calling `start()` will:
+    1. create a separate thread
+    2. call `run()` method
+* `start()` can be only called once, or it throws a `IllegalThreadStateException`, because it cannot be reset from DEAD to READY.
 
-    Yes, it will be called by current thread.
-
-### `Thread` class
-* implements `Runnable` interface
-* contains a `Runnable` object
-* follows Decorator pattern
-
-
-## How to start a thread
-Invoke `start()` of a thread object.
-
-1. for object implements `runnable`, `new Thread(obj).start()`.
-2. for thread object, `thread.start()`. 
-
-* Calling it will:
-  1. create a separate thread
-  2. call `run()` method
-* `start()` can be only called once, or it throws a `IllegalThreadStateException`.
-
-
-## Thread Lifecycle
+### Thread Lifecycle
 Four stages:
 1. READY:
   * to Running
