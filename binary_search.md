@@ -94,7 +94,7 @@ Note: The array may contains multiple peeks, find any of them.
 l := 1
 # since arr[arr.length-2] > arr[arr.length-1], 
 # eliminate arr[arr.length-1]
-r := len(A) - 2
+r := arr.length - 2
 while l < r:
     mid := (r - l) / 2 + l
     if arr[mid-1] < arr[mid]:
