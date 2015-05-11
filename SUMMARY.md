@@ -9,6 +9,7 @@
    * [Dynamic Programming](dynamic_programming.md)
    * [Array](array.md)
    * [Bit Manipulation](bit_manipulation.md)
+   * Binary Search
 * Java
    * [Language Specification](java_language_specification.md)
        * [Language Basic](java_language_basic.md)
