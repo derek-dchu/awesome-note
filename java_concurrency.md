@@ -103,7 +103,17 @@ It is like a yield sign. Any thread calls `yield()` will make it back to READY s
 `static void sleep(long millis)`,
 `static void sleep(long millis, int nanos)`: millisecond + nanosecond.
 
-Thread.sleep causes the current thread to suspend execution for a specified period. The sleep period can be terminated by interrupts. We cannot assume that invoking sleep will suspend the thread for precisely the time period specified.
+Thread.sleep causes the current thread to suspend execution for a specified period. We cannot assume that invoking sleep will suspend the thread for precisely the time period specified.
+
+**Note:** The sleep period can be terminated by interrupts, and an `InterruptedException` will be thrown.
+
+### `interrupt` method
+`void interrupt()`
+
+Interrupts this thread.
+An interrupt is an indication to a thread that it should stop what it is doing and do something else.
+
+A thread sends an interrupt by invoking interrupt on the Thread object for the thread to be interrupted. For the interrupt mechanism to work correctly, the interrupted thread must support its own interruption (try ... catch InterruptedException or invoke Thread.interrupted() periodically).
 
 ### `wait` method
 Causes the current thread to wait until another thread invokes the notify() method or the notifyAll() method for this object. In other words, this method behaves exactly as if it simply performs the call wait(0). So `wait()` has no control.
