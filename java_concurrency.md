@@ -100,9 +100,7 @@ It is like a yield sign. Any thread calls `yield()` will make it back to READY s
 * `yield()` is a static method.
 
 ### `sleep` method
-Push the thread into WAITING status. `Sleep()` method has the control and will wake up automatically after a period of time.
-
-* `Thread.sleep(ms)` is a static method.
+Thread.sleep causes the current thread to suspend execution for a specified period. The sleep period can be terminated by interrupts. We cannot assume that invoking sleep will suspend the thread for precisely the time period specified.
 
 ### `wait` method
 Causes the current thread to wait until another thread invokes the notify() method or the notifyAll() method for this object. In other words, this method behaves exactly as if it simply performs the call wait(0). So `wait()` has no control.
