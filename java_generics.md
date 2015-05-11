@@ -70,6 +70,6 @@ It represents an unknown type.
 
 ## Type Erasure
 Instead of creating new classes
-* Replace all type parameters.
-* Insert type casts.
-* Generate bridge methods.
+1. Replace all type parameters.
+2. Insert type casts.
+3. Generate bridge methods.
