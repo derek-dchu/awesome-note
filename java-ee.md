@@ -23,6 +23,13 @@
 | JMS | Java Message Service |
 | JACC | Java Authorization Contract for Containers |
 | JASPIC | Java Authentication Service Provider Interface for Containers |
+| JAF | JavaBeans Activation Framework |
+| JAXP | Java API for XML Processing |
+| JAXB | Java API for XML Binding |
+| SAAJ | SOAP with Attachments API for Java |
+| JAX-WS | Java API for XML Web Services |
+| JAAS | Java Authentication and Authorization |
+| JPDA | Java Platform Debugger Architecture |
 
 
 ## Java EE Application Model
@@ -65,6 +72,29 @@ JTA provides a standard interface for demarcating transactions.
 ### Bean Validation
 The Bean Validation specification defines a metadata model and API for validating data in JavaBeans components.
 
+
+## Web Application
+
+```
+            HTTP Request
+Web Client --------------> HttpServlet
+    ^                           |
+    |  HTTP Response            |
+    ---------------------- Web Components --> Database
+                                |
+                                |
+                        JavaBeans Components --> Database
+```
+
+A web application consists of web components; static resource files, such as images; and helper classes and libraries.
+
+### Web Application Lifecycle
+1. Develop the web component code.
+2. Develop the web application deployment descriptor, if necessary.
+3. Compile the web application components and helper classes referenced by the components.
+4. Optionally, package the application into a deployable unit.
+5. Deploy the application into a web container.
+6. Access a URL that references the web application.
 
 
 ## Web Server
