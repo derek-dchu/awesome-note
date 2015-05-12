@@ -145,8 +145,8 @@ while l <= r
     mid := (r - l) / 2 + l
     if arr[mid] == target
         return mid
-    elif arr[mid] > target
-        if A[mid] > arr[l] and target < arr[l]
+    else if arr[mid] > target
+        if arr[mid] > arr[l] and target < arr[l]
             l := mid + 1
         else
             r := mid - 1
