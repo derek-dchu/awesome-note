@@ -149,14 +149,14 @@ value
 |       |        x              mid > arr[l] and target < arr[l],
 |--------------------> index    we search right side.
 value                           Otherwise, we search left side.
-^   5      mid
-|   x       |                   Same strategy applies to the
+^          mid
+|5  x       |                   Same strategy applies to the
 |x          |                   situation that mid < target.
 |           |       6   x       Target can be in 4, 5, 6
-|           |       x
-|           |   x
-|       3   x
-|       x   |
+|           |       x           When mid < arr[l] and
+|           |   x               target >= arr[l], we search
+|       3   x                   left side. Otherwise, we search
+|       x   |                   right side.
 |-------------------------> index
 ```
 
@@ -174,7 +174,7 @@ while l <= r
         else
             r := mid - 1
     else
-        if arr[mid] < arr[l] and target > arr[l]
+        if arr[mid] < arr[l] and target >= arr[l]
             r := mid - 1
         else
             l := mid + 1
