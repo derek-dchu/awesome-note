@@ -9,4 +9,5 @@
     Integer.bitCount(int)
     ```
 
-x & -x: returns the least significant '1' bit of x.
+* `x & -x`: returns the least significant '1' bit of x.
+* `-1 >> n`: returns -1, since -1 is represented by all '1' bits.
