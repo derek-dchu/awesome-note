@@ -65,12 +65,32 @@ Find the minimum element.
 ```
 l := 0, r := arr.length - 1
 while l < r
-    if arr[mid] < arr[r]
+    if arr[mid] > arr[r]
         l := mid + 1
     else
         r := mid
         
 return arr[l]
+```
+
+**FOLLOW UP:** The array may contain duplicates.
+
+```
+while l < r
+    if arr[mid] > arr[r]
+        l := mid + 1
+    else if arr[mid] < arr[r]
+        r := mid
+    """
+    Deal with duplicates:
+    Because we cannot determine which side to search, 
+    we can only shrink left if left equals mid and
+    right if right equals mid by one.
+    """
+    else
+        if arr[mid] == arr[l]
+            l := l + 1
+        r := r - 1
 ```
 
 ### Find Peak Element
@@ -107,7 +127,7 @@ while l < r
 return l
 ```
 
-### Search in Rotated Sorted Array Show result 
+### Search in Rotated Sorted Array
 Suppose a sorted array is rotated at some pivot with  no duplicate.
 
 (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
