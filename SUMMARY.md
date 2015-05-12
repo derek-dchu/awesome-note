@@ -10,6 +10,7 @@
    * [Bit Manipulation](bit_manipulation.md)
    * [Binary Search](binary_search.md)
    * [Dynamic Programming](dynamic_programming.md)
+   * Math
 * Java
    * [Language Specification](java_language_specification.md)
        * [Language Basic](java_language_basic.md)
