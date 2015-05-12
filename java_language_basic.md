@@ -39,10 +39,36 @@ int [] anArray = {100, 200};
 ```
 
 
-## Operations
+## Operators
+Operator Precedence
+
+| Operators | Precedence |
+| --------- | ---------- |
+| postfix | expr++ expr-- |
+| unary | ++expr --expr +expr -expr ~ !
+| multiplicative | * / % |
+| additive | + - |
+| shift | << >> >>> |
+| relational | < > <= >= instanceof |
+| equality | == != |
+| bitwise AND | & |
+| bitwise exclusive OR | ^ |
+| bitwise inclusive OR | &#124; |
+| logical AND | && |
+| logical OR | &#124;&#124; |
+| ternary | ? : |
+| assignment | = += -= *= /= %= &= ^= &#124;= <<= >>= >>>= |
+
+### Relational
+Because `null` is not an instance of anything, `null instanceof anything` always return false.
+
 ### Logical and Bitwise
 * Priority: `!` > `&&` > `||`.
 * `&`, `|`: both sides will be checked.
+* `>>`: signed right shift operator that shifts a bit pattern to the right with the number of positions to shift by the right-hand operand.
+* `<<`: signed left shift operator.
+* `>>>`: unsigned right shift operator that shifts **a zero** into the leftmost position.
+
 
 ## Control Flow
 ### switch statement
