@@ -92,7 +92,12 @@ public final void notifyAll();
 ```
 
 ### `join` method
-It is like a stop sign. Push the current thread into READY status. When a thread calls `t.join()`, it will wait until thread `t` is finished.
+`void join()`
+
+It is like a stop sign. When a thread calls `t.join()`, it push the thread into READY and wait for thread `t` to be terminated. `join` responds to an interrupt by exiting with an `InterruptedException`.
+
+`void join(long millis)`,
+`void join(long millis, int nanos)`: Waits at most millis milliseconds [+ nanos nanoseconds] for this thread to die.
 
 ### `yield` method
 It is like a yield sign. Any thread calls `yield()` will make it back to READY status and wait for OS to pick it up.
