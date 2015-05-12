@@ -95,16 +95,65 @@ l := 1
 # since arr[arr.length-2] > arr[arr.length-1], 
 # eliminate arr[arr.length-1]
 r := arr.length - 2
-while l < r:
+while l < r
     mid := (r - l) / 2 + l
-    if arr[mid-1] < arr[mid]:
-        if arr[mid+1] < arr[mid]:
+    if arr[mid-1] < arr[mid]
+        if arr[mid+1] < arr[mid]
             return mid
-        else:
+        else
             l := mid + 1
-    else:
+    else
         r := mid - 1
 return l
 ```
 
+### Search in Rotated Sorted Array Show result 
+Suppose a sorted array is rotated at some pivot with  no duplicate.
 
+(i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
+
+Given a target value to search. If it is found in the array return its index, otherwise return -1.
+
+Analysis
+```
+value
+^      mid  4                   When mid > target
+|       |   x                   target can be in
+|       x                       1, 2, 3.
+|1   x  |                       For 1, 3 we search left side
+|x      |                       For 2 we search right side
+|       |        2   x          In other words, when 
+|       |        x              mid > arr[l] and target < arr[l],
+|--------------------> index    we search right side.
+value                           Otherwise, we search left side.
+^   5      mid
+|   x       |                   Same strategy applies to the
+|x          |                   situation that mid < target.
+|           |       6   x       Target can be in 4, 5, 6
+|           |       x
+|           |   x
+|       3   x
+|       x   |
+|-------------------------> index
+```
+
+Pseudocode
+```
+l := 0
+r := arr.length - 1
+while l <= r
+    mid := (r - l) / 2 + l
+    if arr[mid] == target
+        return mid
+    elif arr[mid] > target
+        if A[mid] > arr[l] and target < arr[l]
+            l := mid + 1
+        else
+            r := mid - 1
+    else
+        if arr[mid] < arr[l] and target > arr[l]
+            r := mid - 1
+        else
+            l := mid + 1
+return -1
+```
