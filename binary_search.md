@@ -86,11 +86,14 @@ while l < r
     Because we cannot determine which side to search, 
     we can only shrink left if left equals mid and
     right if right equals mid by one.
+    
+    worst case degenerates to the order of O(n).
     """
     else
         if arr[mid] == arr[l]
             l := l + 1
         r := r - 1
+return arr[l]
 ```
 
 ### Find Peak Element
