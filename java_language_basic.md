@@ -65,7 +65,8 @@ Because `null` is not an instance of anything, `null instanceof anything` always
 ### Logical and Bitwise
 * Priority: `!` > `&&` > `||`.
 * `&`, `|`: both sides will be checked.
-* `>>`: signed right shift operator that shifts a bit pattern to the right with the number of positions to shift by the right-hand operand.
+* `>>`: signed right shift operator that shifts a bit pattern to the right by extending the sign bit with the number of positions to shift by the right-hand operand. 
+    * `-1 >> n` => `-1`.
 * `<<`: signed left shift operator.
 * `>>>`: unsigned right shift operator that shifts **a zero** into the leftmost position.
 
