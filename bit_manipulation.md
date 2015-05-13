@@ -11,3 +11,4 @@
 
 * `x & -x`: returns the least significant '1' bit of x.
 * `-1 >> n`: returns -1, since -1 is represented by all '1' bits.
+* flags &= ~MASK: reset the kth bit flag within flags using MASK equals to 100...00 (k length).
