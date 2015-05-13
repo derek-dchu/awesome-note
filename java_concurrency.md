@@ -175,7 +175,13 @@ Making these methods synchronized using `synchronized` keyword has two effects:
 
 **Note:** constructor with `synchronized` is a syntax error.
 
+### Synchronized Statements
+Synchronized statements must specify the object that provides the intrinsic lock
+
+```java
 synchronized (obj) { ... }
+```
+
 ### Intrinsic Locks and Synchronization
 Synchronization is built around an internal entity known as the intrinsic lock or monitor lock (monitor).
 
@@ -195,7 +201,16 @@ Synchronization is built around an internal entity known as the intrinsic lock o
     	}
     }
     ```
+### Reentrant Synchronization
+A thread can acquire a lock that it already owns. Allowing a thread to acquire the same lock more than once enables *reentrant synchronization*, which avoids having a thread cause itself to block.
 
+### Atomic Access
+* Reads and writes are atomic for reference variables and for most primitive variables (all types except long and double).
+* Reads and writes are atomic for all variables declared `volatile` (including long and double variables).
+
+### `volatile` keyword
+* If an object is `volatile`, then all thread can read it, but only one thread can write.
+* If a thread modify a `volatile` object, this modification will be seen by all other threads immediately.
 
 ## Thread-safe
 1. the class is thread-safe: only one thread can access that class at a time.
@@ -212,9 +227,7 @@ Synchronization is built around an internal entity known as the intrinsic lock o
 1. Use `Lock` class (safe lock)
 
 
-## `volatile` keyword
-* If an object is `volatile`, then all thread can read it, but only one thread can write.
-* If a thread modify a `volatile` object, this modification will be seen by all other threads immediately.
+
 
 
 ## How to stop a thread?
