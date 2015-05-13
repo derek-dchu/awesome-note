@@ -178,20 +178,23 @@ Making these methods synchronized using `synchronized` keyword has two effects:
 synchronized (obj) { ... }
 ### Intrinsic Locks and Synchronization
 Synchronization is built around an internal entity known as the intrinsic lock or monitor lock (monitor).
-* methods don't have lock
-* to call a synchronized static method, the caller requires the lock of the class which contains that method. (class level lock)
-* to call a synchronized non-static method, the caller requires the lock of the object which contains that method. (object level lock)
-* a class level lock can be converted to object level lock
 
-```java
-class A {
-	static void foo2() {
-		synchronized(A.class) {
-			/* ... */
-		}
-	}
-}
-```
+* Every object has an intrinsic lock associated with it.
+* A thread that needs exclusive and consistent access to an object's fields has to acquire the object's intrinsic lock before accessing them, and then release the intrinsic lock when it's done with them. The other thread will block when it attempts to acquire the lock.
+* Methods don't have lock.
+* To invoke a synchronized static method, the caller requires the intrinsic lock of the `Class` object associated with the class. (class level lock)
+* To call a synchronized non-static method, the caller requires the intrinsic lock of that method's object. (object level lock)
+* A class level lock can be converted to an object level lock.
+
+    ```java
+    class A {
+    	static void foo2() {
+    		synchronized(A.class) {
+    			/* ... */
+    		}
+    	}
+    }
+    ```
 
 
 ## Thread-safe
