@@ -28,7 +28,7 @@ where $$C(n)$$ equals the number of structurally unique BSTs for n numbers.
 
 Above formular represents the fact that for n numbers, the number of structurally unique BSTs equals to summation of all senarios in each which a number is choosen to be the root, all numbers smaller form a left subtree, all numbers greater form a right subtree.
 
-#### Pseducode
+#### Pseudocode
 ```
 # 0 number: 1
 # 1 number: 1
