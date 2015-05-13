@@ -8,7 +8,7 @@ For example:
 sqrt(3) = 1  
 sqrt(4) = 2
 
-#### Pseudocode:
+##### Pseudocode:
 ```
 integer l := 0
 integer r := x + 1 # add 1 for the case that x = 1
@@ -29,13 +29,13 @@ return l
 Integers in each row are sorted from left to right.
 The first integer of each row is greater than the last integer of the previous row.
 
-#### Analysis
+##### Analysis
 Treat matrix as an array and perform binary search. Remember that `row = index // n` and `col = index % n`.
 
 ### Binary search with duplicates
 For a given sorted array (ascending order) and a target number, find the first index of this number in O(log n) time complexity. Array may contain duplicates. If the target number does not exist in the array, return -1.
 
-#### Pseudocode
+##### Pseudocode
 ```
 l := 0, r := arr.length - 1
 while l < r
@@ -61,7 +61,7 @@ Suppose a sorted array is rotated at some pivot unknown to you beforehand.
 
 Find the minimum element.
 
-#### Pseudocode
+##### Pseudocode
 ```
 l := 0, r := arr.length - 1
 while l < r
@@ -73,7 +73,7 @@ while l < r
 return arr[l]
 ```
 
-#### FOLLOW UP
+##### FOLLOW UP
 The array may contain duplicates.
 
 ```
@@ -113,7 +113,7 @@ return index 1 (which is number 2)  or 6 (which is number 7)
 
 Note: The array may contains multiple peeks, find any of them.
 
-#### Pseudocode
+##### Pseudocode
 ```
 # since arr[0] < arr[1], eliminate arr[0]
 l := 1
@@ -139,7 +139,7 @@ Suppose a sorted array is rotated at some pivot with  no duplicate.
 
 Given a target value to search. If it is found in the array return its index, otherwise return -1.
 
-#### Analysis
+##### Analysis
 ```
 value
 ^      mid  4                   When mid > target
@@ -162,7 +162,7 @@ value                           Otherwise, we search left side.
 |-------------------------> index
 ```
 
-#### Pseudocode
+##### Pseudocode
 ```
 l := 0
 r := arr.length - 1
