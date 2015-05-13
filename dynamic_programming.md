@@ -1,8 +1,9 @@
 # Dynamic Programming
 
-## Longest Common Substring (LCS)
+### Longest Common Substring (LCS)
 Suppose we have a source string with length $$p$$ and a target string with length $$q$$, then we can construct a $$\mathit{LCSuffix}$$ table using following formular.
 
+#### Analysis
 $$
 \mathit{LCSuff}(S_{1..p}, T_{1..q}) = (S[p] = T[q]) \, ? \, \mathit{LCSuff}(S_{1..p-1}, T_{1..q-1}) + 1 : 0
 $$
@@ -12,7 +13,7 @@ $$
 \mathit{LCSubstr}(S, T) = \max_{1 \leq i \leq m, 1 \leq j \leq n} \mathit{LCSuff}(S_{1..i}, T_{1..j}) \;
 $$
 
-Pseudocode
+#### Pseudocode
 ```
 function LCSubstr(S[1..m], T[1..n])
     LCSuffix := matrix(m, n)
