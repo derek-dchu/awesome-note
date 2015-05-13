@@ -7,7 +7,7 @@ For example, array = {4, 2, 4, 5, 2, 3, 1} and n = 5
 
 The above array has n + 2 = 7 elements with all elements occurring once except 2 and 4 which occur twice, then output should be 4 2.
 
-##### Solution:  
+##### Solution
 1. Double Loop:O($$n^2$$), Space: O(1)
 2. Count Array: O(n), Space: O(n)
 3. Base on math: O(n), Space: O(1)  
@@ -16,7 +16,6 @@ The above array has n + 2 = 7 elements with all elements occurring once except 2
 4. **Use array element as index**: O(n), O(1)  
     The idea is that, since all elements are in range 1-n, we can mark the ith element to negative if we meet an integer equals to i. If i is a repetition, then we will revisit the ith element which has been marked to negative.
 
-    Pseudocode
     ```
     for i := 1..n
         index := abs(arr[i])
@@ -34,14 +33,13 @@ Given an array of n elements which contains elements from 0 to n-1, with **ANY**
 ### Find the smallest positive integer missing from an unsorted array
 Given an unsorted array with both **positive** and **negative** integers. Find the smallest positive integer missing from the array in O(n) time using constant extra space. The array can be modified.
 
-Solution:
+##### Solution
 1. Double Loop: O($$n^2$$), Space: O(1)
 2. Sorting: O(nlogn), Space: O(1)
 3. Hashing: O(n), Space: O(1)
 4. **Use array element as index**: O(n), Space: O(1)  
     Negative integers cause a problem here. We can first segregate them to the right side.
 
-    Pesudocode  
     ```
     len := length of arr
     // segregate
@@ -108,7 +106,7 @@ Elements in a quadruplet (a,b,c,d) must be in non-descending order. (ie, a ≤ b
 
 The solution set must not contain duplicate quadruplets.
 
-##### Solution:
+##### Solution
 1. Brute Force:
   * Two Sum: O($$n^2$$)
   * 3 Sum: O($$n^3$$)
@@ -118,7 +116,6 @@ The solution set must not contain duplicate quadruplets.
   * Two Sum: O(nlogn) + O(n) = O(nlogn)
   * 3 Sum [closest]: O(nlogn) + O($$n^2$$) = O($$n^2$$)
   
-    Pesudocode
     ```
     sort(arr)
     # if all elements are not less than target
