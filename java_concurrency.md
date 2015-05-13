@@ -166,10 +166,18 @@ Can be solved by enforcing happens-before relationship that make sure data modif
 ### Synchronized Method
 ```java
 synchronized method() { ... }
-synchronized (obj) { ... }
 ```
+Making these methods synchronized using `synchronized` keyword has two effects:
 
-### Lock <=> Monitor
+  1. It is not possible for two invocations of synchronized methods on the same object to interleave. One thread executing a synchronzied method for an object, all other threads that invoke the same method are suspended until that thread is done with the object.
+
+  2. When a synchronized method exits, it automatically establishes a happens-before relationship with any subsequent invocation of a synchronized method for the same object.
+
+**Note:** constructor with `synchronized` is a syntax error.
+
+synchronized (obj) { ... }
+### Intrinsic Locks and Synchronization
+Synchronization is built around an internal entity known as the intrinsic lock or monitor lock (monitor).
 * methods don't have lock
 * to call a synchronized static method, the caller requires the lock of the class which contains that method. (class level lock)
 * to call a synchronized non-static method, the caller requires the lock of the object which contains that method. (object level lock)
