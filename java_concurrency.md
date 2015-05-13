@@ -61,6 +61,9 @@ Method 1 is more flexible than method 2, because A can still extend another clas
     2. call `run()` method
 * `start()` can be only called once, or it throws a `IllegalThreadStateException`, because it cannot be reset from DEAD to READY.
 
+### How to stop a thread
+Doesn't support. Because stop a thread during running may lead to memory leak.
+
 ### Thread Lifecycle
 Four stages:
 1. READY:
@@ -230,12 +233,7 @@ A thread can acquire a lock that it already owns. Allowing a thread to acquire t
 
 
 
-## How to stop a thread?
-Doesn't support. Because stop a thread during running may lead to memory leak.
 
-
-## `interrupt` method
-It throws an exception.
 
 
 ## ThreadLocal
