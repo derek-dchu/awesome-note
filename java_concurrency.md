@@ -137,16 +137,27 @@ Wake up the thread that is waiting on this object's monitor.
 Wake up all threads that are waiting on this object's monitor. A thread waits on an object's monitor by calling one of the wait methods.
 
 
-## Daemon Thread
+### Daemon Thread
 Daemon Thread is a special thread that keeps running until all other threads stop and is forced to stop by OS.
 
 * Garbage collection is a daemon thread.
 
-### Convert regular thread to daemon thread
+#### Convert regular thread to daemon thread
 ```java
 t.setDaemon(true);
 t.start();
 ```
+
+## Synchronization
+Synchronization prevents two possible errors when threads are sharing access to fields and the objects reference fields refer to: *thread interference* and *memory consistency* errors.
+
+Synchronization can introduce *thread contention*, which occurs when two or more threads try to access the same resource simultaneously and cause the Java runtime to execute one or more threads more slowly, or even suspend their execution.
+
+### Thread Interference
+interleave: different threads are acting on the same data.
+
+### Memory Consistency
+Memory consistency errors occur when different threads have inconsistent views of what should be the same data.
 
 ## Synchronized
 ```java
