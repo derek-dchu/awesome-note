@@ -153,15 +153,19 @@ Synchronization prevents two possible errors when threads are sharing access to 
 
 Synchronization can introduce *thread contention*, which occurs when two or more threads try to access the same resource simultaneously and cause the Java runtime to execute one or more threads more slowly, or even suspend their execution.
 
+Java provides two basic synchronization idioms: synchronized methods and synchronized statements.
+
 ### Thread Interference
 interleave: different threads are acting on the same data.
 
 ### Memory Consistency
 Memory consistency errors occur when different threads have inconsistent views of what should be the same data.
 
-## Synchronized
+Can be solved by enforcing happens-before relationship that make sure data modification in thread A happens-before thread B.
+
+### Synchronized Method
 ```java
-synchronized void foo() { ... }
+synchronized method() { ... }
 synchronized (obj) { ... }
 ```
 
