@@ -459,3 +459,4 @@ If none of the executors provided by the above factory methods meet the needs, i
 
 * Avoid the liveness (deadlock, starvation, livelock) impact of unnecessary synchronization.
 
+* [Compare and Swap (CAS)](http://en.wikipedia.org/wiki/Compare-and-swap): an atomic instruction used in multithreading to achieve synchronization.
