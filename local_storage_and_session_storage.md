@@ -1,8 +1,8 @@
 # Local Storage and Session Storage (HTML 5)
 *  Store data locally within the user's browser.
-* Can store large amount of data without affecting website performance.
-* Nothing to do wih server.
-* Each domain can only access to its own storage.
+*  Can store large amount of data without affecting website performance.
+*  Nothing to do wih server.
+*  Each domain can only access to its own storage.
 
 ### Local Storage vs Cookies
 Cookies are added to every HTTP request header, which may end up having a measurable impact on response time.
