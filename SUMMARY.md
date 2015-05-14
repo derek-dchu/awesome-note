@@ -22,6 +22,6 @@
    * [Object Relational Mapping (ORM)](object_relational_mapping.md)
        * [Hibernate](hibernate.md)
 * [Front End](front_end.md)
-   * [Vector Graphic](vector_graphics.md)
+   * [Vector Graphics](vector_graphics.md)
 * [Summary](SUMMARY.md)
 
