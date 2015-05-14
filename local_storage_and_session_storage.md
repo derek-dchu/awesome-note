@@ -8,11 +8,11 @@
 Cookies are added to every HTTP request header, which may end up having a measurable impact on response time.
 In HTML5, we can use sessionStroage and localStroage in place of cookies.
 
-sessionStroage: for the length of the session
-localStroage: for persisting indefinitely
+*  sessionStroage: duration of the page session (as long as the browser is open, including page reloads and restores).
+*  localStroage: for persisting indefinitely
+*  Both are properties of Window object.
 
-Both are properties of Window object.
-Note: A different Storages object is used for the sessionStorageand localStorage for each origin.
+**Note:** A different Storage object is used for the sessionStorageand localStorage for each origin.
 
 Example using cookies as a fallback
 Note: cookies are within document.cookie as plain string
