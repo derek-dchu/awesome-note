@@ -431,7 +431,7 @@ provides the following factory methods:
 
 * Several factory methods are ScheduledExecutorService versions of the above executors.
 
-
+If none of the executors provided by the above factory methods meet the needs, instances of `java.util.concurrent.ThreadPoolExecutor` or `java.util.concurrent.ScheduledThreadPoolExecutor` have additional options.
 
 
 
