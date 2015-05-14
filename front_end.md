@@ -6,6 +6,21 @@
 * `usemap` attr in img tag: the partial URL (starting with '#') of an image map associated with the element.
 * [`<map>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map): used with `<area>` elements to define an image map (a clickable link area).
 
+### HTML5 new tags
+```
+-----------------------
+|      <header>       |
+|---------------------|
+|       <nav>         |
+|---------------------|
+| <section> | <aside> |
+|-----------|         |
+| <article> |         |
+|---------------------|
+|      <footer>       |
+-----------------------
+```
+
 
 ## Design
 * 216 Web Safe Color: cross-browser color palette was created to ensure that all computers would display colors correctly.
