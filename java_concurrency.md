@@ -335,7 +335,7 @@ public final class ImmutablePerson {
 ```
 
 
-## High Level Concurrency Objects (Java 5+)
+## High Level Concurrency Objects (JDK 5)
 ### Lock Objects
 ```java
 package java.util.concurrent.locks
