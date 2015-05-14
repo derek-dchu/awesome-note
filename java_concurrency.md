@@ -131,6 +131,8 @@ Causes the current thread to wait until another thread invokes the notify() meth
 
 * If we use `wait()` without synchronized, it will throw `IllegalMonitorStateException` - the current thread is not the owner of the object's monitor.
 
+**Note:** Always invoke wait inside a loop that tests for the condition being waited for. Don't assume that the interrupt was for the particular condition you were waiting for, or that the condition is still true.
+
 ### `notify` method
 Wake up the thread that is waiting on this object's monitor.
 
