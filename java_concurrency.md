@@ -365,6 +365,18 @@ try {
 
 
 ## Executor Interfaces
+* `Executor`: a simple interface that supports launching new tasks.
+* `ExecutorService`: a subinterface of Executor, which adds features that help manage the lifecycle, both of the individual tasks and of the executor itself.
+* `ScheduledExecutorService`: a subinterface of ExecutorService, supports future and/or periodic execution of tasks.
+
+### The Executor Interface
+The Executor interface provides a single method, `execute`, designed to be a drop-in replacement for a common thread-creation idiom.
+
+```
+(new Thread(r)).start(); --> executor.execute(r);
+```
+
+However, Runnable r could be run by an new thread or existing worker thread (most likely).
 
 
 
