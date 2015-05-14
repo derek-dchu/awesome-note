@@ -31,7 +31,7 @@
 * Each domain can only access to its own storage.
 
 ### Local Storage vs Cookies
-cookies are added to every HTTP request header, which may end up having a measurable impact on response time.
+Cookies are added to every HTTP request header, which may end up having a measurable impact on response time.
 In HTML5, we can use sessionStroage and localStroage in place of cookies.
 
 sessionStroage: for the length of the session
