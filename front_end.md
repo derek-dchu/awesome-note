@@ -24,6 +24,11 @@
 -----------------------
 ```
 
+## HTML5 Local Storage
+* Store data locally within the user's browser.
+* Can store large amount of data without affecting website performance.
+* Nothing to do wih server.
+* Each domain can only access to its own storage.
 
 ## Design
 * 216 Web Safe Color: cross-browser color palette was created to ensure that all computers would display colors correctly.
