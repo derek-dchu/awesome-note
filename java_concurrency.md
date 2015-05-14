@@ -457,5 +457,5 @@ If none of the executors provided by the above factory methods meet the needs, i
 
 * Have get and set methods that work like reads and writes on `volatile` variables.
 
-
+* Avoid the liveness (deadlock, starvation, livelock) impact of unnecessary synchronization.
 
