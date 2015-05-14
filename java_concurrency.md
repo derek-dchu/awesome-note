@@ -378,7 +378,32 @@ The Executor interface provides a single method, `execute`, designed to be a dro
 
 However, Runnable r could be run by an new thread or existing worker thread (most likely).
 
+### The ExecutorService Interface
+* supplements `Execute` with `submit` method which accepts `Runnable` objects, but also accepts `Callable` objects, which allow the task to return a value.
 
+* provides a number of methods for managing the shutdown of the executor. To support immediate shutdown, tasks should handle interrupts correctly.
+
+#### The `submit` method
+```java
+<T> Future<T> submit(Callable<T> task),
+<T> Future<T> submit(Runnable task, T result),
+<T> Future<T> submit(Runnable task)
+```
+
+It returns a `Future` object, which is used to retrieve the Callable return value and to manage the status of both Callable and Runnable tasks.
+
+### The ScheduledExecutorService Interface
+* supplements `ExecutorService` with `schedule` method, which executes a Runnable or Callable task after a specified delay.
+
+* `scheduleAtFixedRate` and `scheduleWithFixedDelay`, which executes specified tasks repeatedly, at defined intervals.
+
+#### The `schedule` method
+```java
+<V> ScheduledFuture<V> schedule(Callable<V> callable,
+                            long delay, TimeUnit unit),
+ScheduledFuture<?> schedule(Runnable command, 
+                        long delay, TimeUnit unit)
+```
 
 
 
