@@ -11,7 +11,7 @@
    * [Binary Search](binary_search.md)
    * [Dynamic Programming](dynamic_programming.md)
    * [Math](math.md)
-   * Greedy
+   * [Greedy](greedy.md)
 * Java
    * [Language Specification](java_language_specification.md)
        * [Language Basic](java_language_basic.md)
