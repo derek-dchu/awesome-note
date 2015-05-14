@@ -452,3 +452,10 @@ If none of the executors provided by the above factory methods meet the needs, i
 *  `ConcurrentNavigableMap`: a subinterface of ConcurrentMap that supports approximate matches. The standard general-purpose implementation of ConcurrentNavigableMap is ConcurrentSkipListMap, which is a concurrent analog of TreeMap.
 
 
+## Atomic Variables
+* `java.util.concurrent.atomic` package: defines classes that support atomic operations on single variables.
+
+* Have get and set methods that work like reads and writes on `volatile` variables.
+
+
+
