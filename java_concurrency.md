@@ -439,5 +439,5 @@ If none of the executors provided by the above factory methods meet the needs, i
 *  Takes advantage of multiple processors.
 *  Work-stealing algorithm: worker threads that run out of things to do can steal tasks from other threads that are still busy.
 *  `ForkJoinPool` implements the core work-stealing algorithm and can execute ForkJoinTask processes.
-
+* Good examples:  `java.util.Arrays.parallelSort()`, methods in the `java.util.streams`.
 
