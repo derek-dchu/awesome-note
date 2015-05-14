@@ -7,6 +7,8 @@
 * [`<map>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map): used with `<area>` elements to define an image map (a clickable link area).
 
 ### HTML5 New Tags
+* [html5shiv](https://github.com/aFarkas/html5shiv/): enable use of HTML5 sectioning elements in legacy Internet Explorer.
+
 #### Semantic Layout
 ```
 -----------------------
