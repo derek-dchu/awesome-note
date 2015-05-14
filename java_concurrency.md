@@ -445,7 +445,16 @@ If none of the executors provided by the above factory methods meet the needs, i
 ## Concurrent Collections
 *  Collections that help avoid Memory Consistency Errors by defining a happens-before relationship between an operation that adds an object to the collection with subsequent operations that access or remove that object.
 
-*  `BlockingQueue`: a first-in-first-out data structure that blocks or times out when you attempt to add to a full queue, or retrieve from an empty queue.
+### `BlockingQueue`
+A first-in-first-out data structure that blocks or times out when you attempt to add to a full queue, or retrieve from an empty queue.
+
+| | Throws exception | Special value | Blocks | Times out |
+|-| ---------------- | ------------- | ------ | -------- |
+| Insert | add(e) | offer(e) | put(e) | offer(e, time, unit) |
+| Remove | remove() | poll() | take() | poll(time, unit) |
+| Examine | element() | peek() | not applicable | not applicable |
+
+* Not null elements.
 
 *  `ConcurrentMap`: a subinterface of `java.util.Map` that defines atomic operations to remove or replace a key-value pair only if the key is present, or add a key-value pair only if the key is absent. The standard general-purpose implementation of ConcurrentMap is ConcurrentHashMap, which is a concurrent analog of HashMap.
 
