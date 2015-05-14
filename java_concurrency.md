@@ -434,6 +434,10 @@ provides the following factory methods:
 If none of the executors provided by the above factory methods meet the needs, instances of `java.util.concurrent.ThreadPoolExecutor` or `java.util.concurrent.ScheduledThreadPoolExecutor` have additional options.
 
 
+### Fork/Join Framework
+*  Implementation of the ExecutorService interface.
+*  Takes advantage of multiple processors.
+*  Work-stealing algorithm: worker threads that run out of things to do can steal tasks from other threads that are still busy.
 
 
 
