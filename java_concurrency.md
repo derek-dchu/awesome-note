@@ -333,3 +333,17 @@ public final class ImmutablePerson {
     }
 }
 ```
+
+
+## High Level Concurrency Objects (Java 5+)
+### Lock Objects
+```java
+package java.util.concurrent.locks
+Interface Lock
+```
+
+Monitor lock forces all lock acquisition and release to occur in a block-structured way: when multiple locks are acquired they must be released in the **opposite order**, and all locks must be released in the **same lexical scope** in which they were acquired.
+
+Implementations of the Lock interface allows a lock to be acquired and released in different scopes, and multiple locks to be acquired and released in any order.
+
+
