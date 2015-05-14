@@ -25,6 +25,7 @@ Each thread is associated with an instance of the class Thread. There are two ba
 * Implements `Runnable` interface
 * Contains a `Runnable` object
 * Follows Decorator pattern
+* `static Thread Thread.currentThread()`: returns a reference to the currently executing thread object. Commonly used by a Runnable object to retrive information of its executing thread.
 
 ### How to create and start a thread
 An application that creates an instance of Thread must provide the code that will run in that thread.
