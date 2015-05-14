@@ -346,4 +346,27 @@ Monitor lock forces all lock acquisition and release to occur in a block-structu
 
 Implementations of the Lock interface allows a lock to be acquired and released in different scopes, and multiple locks to be acquired and released in any order.
 
+In most cases, the following idiom should be used:
+```java
+Lock l = ...;
+l.lock();
+try {
+    // access the resource protected by this lock
+} finally {
+    l.unlock();
+}
+```
+* `boolean tryLock()`: a non-blocking attempt to acquire a lock.
+* `void lockInterruptibly() throws InterruptedException`: an attempt to acquire the lock that can be interrupted.
+* `boolean tryLock(long time, TimeUnit unit) throws InterruptedException`: an attempt to acquire the lock that can timeout
+.
+
+**Note:** Acquiring the monitor lock of a Lock instance has no specified relationship with invoking any of the lock() methods of that instance. It is recommended that never use Lock instances in this way.
+
+
+## Executor Interfaces
+
+
+
+
 
