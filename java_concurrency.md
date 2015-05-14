@@ -455,6 +455,7 @@ A first-in-first-out data structure that blocks or times out when you attempt to
 | Examine | element() | peek() | not applicable | not applicable |
 
 * Not null elements.
+* Can safely be used with multiple producers and multiple consumers.
 
 *  `ConcurrentMap`: a subinterface of `java.util.Map` that defines atomic operations to remove or replace a key-value pair only if the key is present, or add a key-value pair only if the key is absent. The standard general-purpose implementation of ConcurrentMap is ConcurrentHashMap, which is a concurrent analog of HashMap.
 
