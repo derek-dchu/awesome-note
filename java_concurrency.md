@@ -464,3 +464,7 @@ If none of the executors provided by the above factory methods meet the needs, i
 
 ## Concurrent Random Numbers (JDK 7)
 `ThreadLocalRandom`, for applications that expect to use random numbers from multiple threads or `ForkJoinTasks`.
+
+```java
+int r = ThreadLocalRandom.current().nextInt(4, 77);
+```
