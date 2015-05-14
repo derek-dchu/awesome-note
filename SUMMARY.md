@@ -23,5 +23,6 @@
        * [Hibernate](hibernate.md)
 * [Front End](front_end.md)
    * [Vector Graphics](vector_graphics.md)
+   * Local Storage and Session Storage (HTML 5)
 * [Summary](SUMMARY.md)
 
