@@ -71,7 +71,7 @@ System.out.printf("%s: %d, %s%n", name, idnum, address);
 ### Override
 Subclass provides a specific implementation of a method that is already provided by its parent class.
 
-* How to create a valid override
+*  How to create a valid override
 	To override method A into method B
 	1. A cannot be static or final
 	2. B & A have same methodName
@@ -80,7 +80,7 @@ Subclass provides a specific implementation of a method that is already provided
 	5. B has higher than or equal to the accessibility of A
 	6. Exception of B "is a" Exception of A, and only for checked exception, or B doesn't throw exception (ExceptionB is null)
 
-	* Covariant return type: method can be overridden by changing the return type if the return type is subclass type which is a covariant return type (>= Java 5).
+*  Covariant return type (JDK 5): method can be overridden by changing the return type if the return type is subclass type (covariant return type).
 
 	```java
 	class A {}
@@ -89,25 +89,28 @@ Subclass provides a specific implementation of a method that is already provided
 	class C { A getFoo() { return new A(); } }
 	class D extends C {
 		//Overriding getFoo() in father class C
+		@Override
 		B getFoo() { 
 			return new B();
 		}
 	}
 	```
-* Defining a Method with the Same Signature as a Superclass's Method  
-|   | Superclass Instance Method | Superclass Static Method |  
-|---|----------------------------|--------------------------|  
+
+*  When subclass defines a Method with the Same Signature as a Superclass's Method
+
+| | Superclass Instance Method | Superclass Static Method |  
+|-|----------------------------|--------------------------|  
 | Subclass Instance Method | Overrides | compile-time error |  
 | Subclass Static Method | compile-time error |	Hides |  
 
 ### Overload
 In the same class, two methods with same method name, same return type, but different parameter list.
 
-> A class have methods by same name but different parameters.
+> A class have methods with same names but different parameters.
 
-* overloaded method can be overridden.
+* Overloaded method can be overridden.
 
-* different parameters: different types, different order, different numbers.
+* Different parameters: different types, different order, different numbers.
 
 ### Runtime (Dynamic) Polymorphism vs Compile-time (Static) Polymorphism
 * Override is Runtime Polymorphism
@@ -129,10 +132,11 @@ public static void main(String[] args) {
 	a.process();
 }
 ```
+
 Above code results a compile-time error. Because A.process() will only be overridden by B.process() at runtime. During compile time, compiler is still checking A.process() which throws an exception and doesn't handle or re-throw by main(). If the main() also throws an exception, it will print "B".
 
 
-## static vs Non-static
+## static vs non-static
 static member is class level, which will be loaded in stack (Because class are loaded in stack).
 
 * static method cannot be overridden.
