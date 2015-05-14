@@ -21,6 +21,6 @@
    * [Java EE](java-ee.md)
    * [Object Relational Mapping (ORM)](object_relational_mapping.md)
        * [Hibernate](hibernate.md)
-* [Summary](SUMMARY.md)
 * [Front End](front_end.md)
+* [Summary](SUMMARY.md)
 
