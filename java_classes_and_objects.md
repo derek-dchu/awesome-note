@@ -59,7 +59,7 @@ A method can be defined as follow:
 
   *  Signature: the method's name and the parameter types.
 
-#### `vararags`
+#### vararags
 `varargs` is used to pass an arbitrary number of values to a method as an array. To use `varargs`, we follow the type of the last parameter by an ellipsis (three dots, ...), then a space, and the parameter name. 
 
 ```java
