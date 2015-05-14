@@ -366,7 +366,9 @@ try {
 
 ## Executor Interfaces
 * `Executor`: a simple interface that supports launching new tasks.
+
 * `ExecutorService`: a subinterface of Executor, which adds features that help manage the lifecycle, both of the individual tasks and of the executor itself.
+
 * `ScheduledExecutorService`: a subinterface of ExecutorService, supports future and/or periodic execution of tasks.
 
 ### The Executor Interface
@@ -410,10 +412,24 @@ Most of the executor implementations in java.util.concurrent use thread pools, w
 
 * Minimizes the overhead due to thread creation (Thread objects use a significant amount of memory => significant memory management overhead).
 
-* Types: fixed thread pool
+* Types: fixed thread pool, cached thread pool.
 
 #### Fixed Thread Pool
-* 
+* Always has a specified number of threads running.
+* Automatically replaced a terminated thread with a new thread.
+* Tasks are submitted to the pool via an internal queue, which holds extra tasks whenever there are more active tasks than threads.
+* Degrade gracefully: handle larget amount of tasks gracefully without overwhelming the system. For example, larget amount of HTTP requests.
+* Creation: 
+
+### The `java.util.concurrent.Executors` Factory Class
+provides the following factory methods:
+* `newFixedThreadPool`: creates an executor with a fixed thread pool.
+
+* `newCachedThreadPool`: creates an executor with an expandable thread pool. This executor is suitable for applications that launch many short-lived tasks.
+
+* `newSingleThreadExecutor`: creates an executor that executes a single task at a time.
+
+* Several factory methods are ScheduledExecutorService versions of the above executors.
 
 
 
