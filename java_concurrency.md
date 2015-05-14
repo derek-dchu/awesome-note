@@ -405,5 +405,19 @@ ScheduledFuture<?> schedule(Runnable command,
                         long delay, TimeUnit unit)
 ```
 
+### Thread Pools
+Most of the executor implementations in java.util.concurrent use thread pools, which consist of worker threads.
+
+* Minimizes the overhead due to thread creation (Thread objects use a significant amount of memory => significant memory management overhead).
+
+* Types: fixed thread pool
+
+#### Fixed Thread Pool
+* 
+
+
+
+
+
 
 
