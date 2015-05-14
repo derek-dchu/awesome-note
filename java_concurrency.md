@@ -134,11 +134,11 @@ Causes the current thread to wait until another thread invokes the notify() meth
 **Note:** always invoke wait inside a loop that tests for the condition being waited for. Don't assume that the interrupt was for the particular condition you were waiting for, or that the condition is still true.
 
 ### `notify` method
-Wake up the thread that is waiting on this object's monitor.
+Wakes up a single thread that is waiting on this object's monitor. It doesn't allow us to specify the thread that is woken up, it is useful only in massively parallel applications — that is, programs with a large number of threads, all doing similar chores. In such an application, you don't care which thread gets woken up.
 
 * If we use `notify()` without synchronized, it will throw `IllealMonitorStateException`.
 
-### `notifyAll`
+### `notifyAll` method
 Wake up all threads that are waiting on this object's monitor. A thread waits on an object's monitor by calling one of the wait methods.
 
 
@@ -229,6 +229,27 @@ Starvation describes a situation where a thread is unable to gain regular access
 
 ### Livelock
 A thread often acts in response to the action of another thread. If the other thread's action is also a response to the action of another thread, then livelock may result.
+
+### Guarded Blocks
+Guarded block begins by polling a condition that must be true before the block can proceed. Block for a specific condition.
+
+```java
+public synchronized void guardedLock() {
+    // This guard only loops once for each special event,
+    // which may not be the event we're waiting for.
+    while(!satisfied) {
+        try {
+            wait();
+        } catch (InterruptedException e) {}
+    }
+    System.out.println("Job done!");
+}
+
+public synchronized notifyWaiter() {
+    satisfied = true;
+    notifyAll();
+}
+```
 
 
 ## Thread-safe
