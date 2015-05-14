@@ -196,7 +196,7 @@ class C extends A.B {
 #### Local class
 An inner class within a block (typically the body of a method). Because a local class is nested class that cannot be a member of top class.
 
-* Cannot access local variables in its enclosing scope that are not declared as `final` or effectively final.
+* Cannot access local variables in its enclosing scope that are not declared as `final` or *effectively final* (value is never changed after it is initialized).
 
 **Note:** a local class cannot have access modifier `public`, `protected`, `private`, and modifier `static`.
 
@@ -216,14 +216,14 @@ I a = new I() {
 	}
 };
 ```
-An anonymous class expression consists:
-1. `new`
-2. name of interface or class
-3. invocation of constructor
-4. a class declaration body
+*  An anonymous class expression consists:
+  1. `new`
+  2. name of interface or class
+  3. invocation of constructor
+  4. a class declaration body
 
-* cannot declare constructors.
-* cannot access local variables in its enclosing scope that are not declared as `final` or effectively final.
+*  Cannot declare constructors.
+*  Cannot access local variables in its enclosing scope that are not declared as `final` or effectively final.
 
 
 ### Instantiate an nested class  
@@ -235,7 +235,7 @@ An anonymous class expression consists:
 * local inner class: `<class>$<function_num><local_inner_class>.class`
 * anonymous inner class: `<class>$<function_num>.class`
 
-***note: serialization of inner classes, including local and anonymous classes, is strongly discouraged.***
+**Note:** serialization of inner classes, including local and anonymous classes, is strongly discouraged.
 
 ### Lambda Expressions
 
