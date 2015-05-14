@@ -6,7 +6,8 @@
 * `usemap` attr in img tag: the partial URL (starting with '#') of an image map associated with the element.
 * [`<map>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map): used with `<area>` elements to define an image map (a clickable link area).
 
-### HTML5 new tags
+### HTML5 New Tags
+#### Semantic Layout
 ```
 -----------------------
 |      <header>       |
