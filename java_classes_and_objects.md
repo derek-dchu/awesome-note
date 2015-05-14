@@ -28,10 +28,10 @@ Create an object in heap.
 3. execute the instance initializers and instance variable initializers for this class in textual order.
 4. execute the rest of the body of constructors
 
-**Note:** for final instance variable, its initializer will execute before superclass constructor.
+**Note:** for each step, if that execution completes abruptly, then this procedure completes abruptly for the same reason.
 
 ### Constant Variable
-A variable of primitive type of type `String` that is declared `static final` and can initialized only with a compile-time constant expression.
+A variable of primitive type or `String` that is declared `static final` and can initialized only with a compile-time constant expression.
 
 
 ## Modifier
@@ -39,7 +39,7 @@ A variable of primitive type of type `String` that is declared `static final` an
 1. access (`public`, `protected`, `private`)
 2. `static`, `final`  
 
-They can be in different order. But we usually put accessibility before static, final.
+They can be in different order. But we usually in following order: `[accessibility][static][final] type`.
 
 ### Access Levels
 | Modifier | Class | Package | Subclass | World |  
@@ -51,13 +51,13 @@ They can be in different order. But we usually put accessibility before static, 
 
 
 ## Polymorphism: Override vs Overload
-***note: Polymorphism can be applied only for non-static non-private METHODs. It is applied before object creation.***
+Polymorphism can be applied only for non-static non-private METHODs. It is applied before object creation.
 
 ### Method
 A method can be defined as follow:  
 **[access][static][final] RT methodName(params) [throws Exception] {body}**
 
-  * Signature: the method's name and the parameter types.
+  *  Signature: the method's name and the parameter types.
 
 #### `vararags`
 `varargs` is used to pass an arbitrary number of values to a method as an array. To use `varargs`, we follow the type of the last parameter by an ellipsis (three dots, ...), then a space, and the parameter name. 
