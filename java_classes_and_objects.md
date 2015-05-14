@@ -133,14 +133,14 @@ public static void main(String[] args) {
 }
 ```
 
-Above code results a compile-time error. Because A.process() will only be overridden by B.process() at runtime. During compile time, compiler is still checking A.process() which throws an exception and doesn't handle or re-throw by main(). If the main() also throws an exception, it will print "B".
+Above code results a compile-time error. Because A.process() will only be overridden by B.process() at runtime. During compile time, compiler is still checking process() in A which throws an exception that is not handled. If the main() throws an exception, it will print "B".
 
 
 ## static vs non-static
 static member is class level, which will be loaded in stack (Because class are loaded in stack).
 
-* static method cannot be overridden.
-* static method cannot access instance variables or instance methods directly.
+* Static method cannot be overridden.
+* Static method cannot access instance variables or instance methods directly.
 
 ### Static Initialization Block
 ```java
@@ -163,13 +163,21 @@ Static initialization block runs before main(), because static blocks run during
 
 ## Nested Class
 ### Static Nested Class
-* cannot refer directly to instance variables or methods defined in its enclosing class.
+Cannot refer directly to instance variables or methods defined in its enclosing class: it can use them only through an object reference.
 
 ### Inner Classes
 non-static nested classes.
 
-* cannot define any static members itself.
-* it has direct access to the methods and fields of its enclosing instance.
+*  Instantiate an inner class: 
+  1.  must first instantiate the outer class.
+  2.  create the inner object within the outer object with this syntax:
+  
+    ```java
+    Outer.Inner innerObj = outerObj.new Inner();
+    ```
+
+* Cannot define any static members itself.
+* Has direct access to the methods and fields of its enclosing instance.
 * Inner class can be extended by outer class, but the outer class has to define constructor.
 
 ```java
@@ -188,9 +196,9 @@ class C extends A.B {
 #### Local class
 An inner class within a block (typically the body of a method). Because a local class is nested class that cannot be a member of top class.
 
-* cannot access local variables in its enclosing scope that are not declared as `final` or effectively final.
+* Cannot access local variables in its enclosing scope that are not declared as `final` or effectively final.
 
-***note: a local class cannot have access modifier `public`, `protected`, `private`, and modifier `static`.***
+**Note:** a local class cannot have access modifier `public`, `protected`, `private`, and modifier `static`.
 
 #### Anonymous class
 An inner class within the body of a method without naming the class which is a expression.
