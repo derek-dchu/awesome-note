@@ -180,7 +180,7 @@ for currentEndIndex in 1 .. n
     
     if currentSum < 0 then
         currentSum := 0
-        currentStartIndex := currentStartIndex + 1
+        currentStartIndex := currentEndIndex + 1
         
 return (maxSum, startIndex, endIndex)
 ```
