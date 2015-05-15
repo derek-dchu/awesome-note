@@ -28,5 +28,13 @@
 ## [Application Cache](https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache)
 
 
+## CSS3 New Features
+### Prefix
+For supporting the attribute before that become to a W3C recommended.
+
+*  check at [shouldiprefix](http://shouldiprefix.com/).
+*  develop with [autoprefixer](https://github.com/postcss/autoprefixer).
+
+
 ## Design
 * 216 Web Safe Color: cross-browser color palette was created to ensure that all computers would display colors correctly.
