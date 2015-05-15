@@ -170,7 +170,7 @@ startIndex := 0
 endIndex := 0
 
 currentSum := 0
-currentStartIndex := 0
+currentStartIndex := 1
 for currentEndIndex in 1 .. n
     currentSum := currentSum + arr[currentEndIndex]
     if currentSum > maxSum then
