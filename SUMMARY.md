@@ -12,6 +12,7 @@
    * [Dynamic Programming](dynamic_programming.md)
    * [Math](math.md)
    * [Greedy](greedy.md)
+   * Linked List
 * Java
    * [Language Specification](java_language_specification.md)
        * [Language Basic](java_language_basic.md)
