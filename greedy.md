@@ -151,6 +151,33 @@ Note
 The list may contains duplicate integers.
 
 ##### Analysis
-Start from the end of list, we are looking the first de
+Start from the end of list, we are looking the first decreasing point (arr[i] < arr[i+1]). We know that we can generate next permutation by replace the decreasing point next larger number, and then sort rest numbers on its right in acsending order.
 
+For example:  
+1. `1|2|543 => 1|3|245`, 3 is next avaliable number for 2
+2. `1|2|432 => 1|3|224`, 3 is next avaliable number for 2
+3. `4321`, if we cannot find the decreaing point, that means we reach a last permutation, then we can simply reverse entire list to start over.
+
+##### Pseudocode
+```
+tail := arr.length
+head := tail
+while head > 0 then
+    head := head - 1
+    if arr[head] < arr[head+1] then
+        we found the first decreasing point, break loop
+# find next available larger number
+i = tail
+while i > head then
+    if arr[i] > arr[head] then
+        swap the ith element with head element
+        we found next available larger number, break loop
+    i := i - 1
+if i == head:
+    # we cannot find next available larger number.
+    reverse the entire list
+else:
+    reverse rest numbers from head+1 to tail
+return arr (It stores next permutation now)
+```
 
