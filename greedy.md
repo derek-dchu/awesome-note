@@ -90,3 +90,56 @@ define cmp(a, b)
             return 1
     return 0
 ```
+
+### Delete Digits
+Given string A representative a positive integer which has N digits, remove any k digits of the number, the remaining digits are arranged according to the original order to become a new positive integer. Make this new positive integers as small as possible.
+
+Constraint  
+N <= 240 and k <= N
+
+Example  
+Given an integer A="178542", k=4
+
+return a string "12"
+
+##### Analysis
+Look at "178542" each digits, we can easily find that for each round:
+
+  1. remove 8 => 17542
+  2. remove 7 => 1542
+  3. remove 5 => 142
+  4. remove 4 => 12
+    
+They are all the first digit that is larger than its next digit in their round. Following this rule, we can return the result with O(nk) complexity (O(n) for k rounds).
+
+However, we don't need to start from the beginning for next round. After remove 8, we can backtrack to 7 and start from there. By doing so, we can make sure that all digits before starting point are smaller or equals to starting point.
+
+Be careful that, if digits are in sorted order, eventually we will meet the last digit which doesn't has next digit to compare with and should be removed.
+For duplicates, we can safely pass them.
+
+##### Pseudocode
+```
+i := 0
+while k > 0:
+    if i == arr.length - 1 then
+        remove the ith digit from arr
+        k := k - 1
+        i := i - 1
+    if arr[i] > arr[i+1] then
+        remove the ith digit from arr
+        k := k - 1
+        """
+        i could be the first digit 
+        which cannot backtrack to previous digit
+        example: 5,4,3,2,1
+        """
+        if i != 0
+            i := i - 1
+    else
+        i := i + 1
+return all remaining digits in arr.
+```
+
+
+
+
