@@ -5,7 +5,7 @@
    * [Suffix Tree and Suffix Array](suffix_tree_and_suffix_array.md)
        * [Suffix Array](suffix_array.md)
    * Trie
-* Algorithms
+* [Algorithms](algorithms.md)
    * [Array](array.md)
    * [Bit Manipulation](bit_manipulation.md)
    * [Binary Search](binary_search.md)
