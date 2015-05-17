@@ -169,6 +169,55 @@ while k > 0:
 return all remaining digits in arr.
 ```
 
+### Jump Game
+Given an array of non-negative integers. Each element in the array represents a maximum jump length at that position. Determine if we are able to reach the last index when starting from the first index.
+
+Example  
+A = [2,3,1,1,4], return true.
+
+A = [3,2,1,0,4], return false.
+
+##### Analysis
+We can keep calculating the maximum index we can reach by adding jump length at that position to its index (i + arr[i]). Remember that if current index larger than maximum index, it means this position is not reachable, and we cannot jump anymore which means the last index is also not reachable.
+
+##### Pseudocode
+```
+max_index := 0
+for i in 1 .. arr.length
+    if i > max_index then
+        return False
+    
+    current_max := i + arr[i]
+    if current_max > max_index then
+        max_index = current_max
+        if max_index >= arr.length - 1
+            return True
+```
+
+#### Follow Up
+Also return the minimum number of steps that we need to jump from the first index to the last index.
+
+##### Analysis
+We just need to count the each step we extend the maximum index.
+
+##### Pseudocode
+```
+max_index := 0
+count := 0
+for i in 1 .. arr.length
+    if i > max_index then
+        # cannot reach the last index
+        return -1
+    
+    current_max := i + arr[i]
+    if current_max > max_index then
+        max_index = current_max
+        # add counter here
+        count := count + 1
+        if max_index >= arr.length - 1
+            return count
+```
+
 ### Next Permutation
 Given a list of integers, which denote a permutation. Find the next permutation in ascending order.
 
