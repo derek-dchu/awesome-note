@@ -87,7 +87,34 @@ Suppose the two exceptions are x, y. By doing xor of all numbers, we will get x 
 The rightmost set bit x ^ y represents a set bit from either x or y, which means, if we divide all numbers into two groups, one for all numbers that have that bit set, the other one for the rest. In other words, we will have x, y seperate into two groups.
 
 ##### Pseudocode
+```
+x_xor_y = 0
+for integer as i in arr
+    x_xor_y := x_xor_y ^ i
+    
+# find the right most set bit as a mask
+mask = x_xor_y & -x_xor_y
 
+# seperate integers into two groups
+group_one = {}
+group_two = {}
+for integer as i in arr
+    if i & mask > 0 then
+        group_one append i
+    else
+        group_two append i
+
+# find x from group_one
+# x is now the only one with single occurrence
+x = 0
+for integer as i in group_one
+    x := x ^ i
+# find y from group_two
+y = 0
+for integer as i in group two
+    y := y ^ i
+return x, y
+```
 
 
 ### Majority Number
