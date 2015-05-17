@@ -68,7 +68,6 @@ if count of majority_element > arr.length / 2 then
     majority_element is the acutal result.
 ```
 
-
 ### Largest Number
 Given a list of non negative integers, arrange them such that they form the largest number. The number can be very big, so return it in string.
 
