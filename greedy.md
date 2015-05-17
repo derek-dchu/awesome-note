@@ -39,6 +39,36 @@ if total < 0 then
 return start_index
 ```
 
+### Majority Number
+Given an array of integers, the majority number is the number that occurs **more than half** of the size of the array. Find it.
+
+Example  
+Given [1, 1, 1, 1, 2, 2, 2], return 1
+
+##### Analysis
+[Linear Time Majority Vote Algorithm](http://www.cs.utexas.edu/~moore/best-ideas/mjrty/index.html): O(n), Space O(1)
+
+##### Pseudocode
+```
+count := 0
+majority_element := null
+for element as e in arr
+    if count == 0 then
+        majority_element = e
+        count := 1
+    else
+        if e == majority_element then
+            count := count + 1
+        else
+            count := count - 1
+
+# majority_element is a potential result.
+# we need to make sure it by count its occurrences.
+if count of majority_element > arr.length / 2 then
+    majority_element is the acutal result.
+```
+
+
 ### Largest Number
 Given a list of non negative integers, arrange them such that they form the largest number. The number can be very big, so return it in string.
 
