@@ -78,6 +78,17 @@ for count as c in bit_count
 return an integer with the binary_form
 ```
 
+#### Follow Up 2
+Given 2*n + 2 numbers, every numbers occurs twice except two, find them.
+
+##### Analysis
+Suppose the two exceptions are x, y. By doing xor of all numbers, we will get x ^ y.
+
+The rightmost set bit x ^ y represents a set bit from either x or y, which means, if we divide all numbers into two groups, one for all numbers that have that bit set, the other one for the rest. In other words, we will have x, y seperate into two groups.
+
+##### Pseudocode
+
+
 
 ### Majority Number
 Given an array of integers, the majority number is the number that occurs **more than half** of the size of the array. Find it.
