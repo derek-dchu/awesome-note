@@ -39,6 +39,46 @@ if total < 0 then
 return start_index
 ```
 
+
+### Single Number
+Given 2*n + 1 numbers, every numbers occurs twice except one, find it.
+
+Example  
+Given [1,2,2,1,3,4,3], return 4
+
+##### Analysis
+* 0 ^ anything = 0
+* anything ^ itself = 0
+
+#### Follow Up 1
+Given 3*n + 1 numbers, every numbers occurs triple times except one, find it.
+
+##### Analysis
+If all numbers are 32bits integer, we can count number of 1s for each bit. Because we know, final count for the ith bit must be following:
+
+    3i * 0 + 3j * 1 + 0 or 1, where i + j = n
+    
+so, for each count, we have that if `count % 3 == 1`, the except number is set at the bit, otherwise, it is unset.
+
+##### Pseudocode
+```
+bit_count = {0,0, ... ,0} // 32 length
+for number as n in arr
+    mask = 1
+    for i in 32 .. 1
+        if i & mask != 0 then
+            bit_count[i] := bit_count[i] + 1
+        mask := mask << 1
+binary_form = ""
+for count as c in bit_count
+    if c % 3 != 0 then
+        add '1' into binary_form
+    else
+        add '0' into binary_form
+return an integer with the binary_form
+```
+
+
 ### Majority Number
 Given an array of integers, the majority number is the number that occurs **more than half** of the size of the array. Find it.
 
