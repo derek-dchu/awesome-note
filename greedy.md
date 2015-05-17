@@ -146,6 +146,7 @@ if count of majority_element > arr.length / 2 then
     majority_element is the acutal result.
 ```
 
+
 ### Largest Number
 Given a list of non negative integers, arrange them such that they form the largest number. The number can be very big, so return it in string.
 
@@ -198,6 +199,7 @@ define cmp(a, b)
     return 0
 ```
 
+
 ### Delete Digits
 Given string A representative a positive integer which has N digits, remove any k digits of the number, the remaining digits are arranged according to the original order to become a new positive integer. Make this new positive integers as small as possible.
 
@@ -247,6 +249,7 @@ while k > 0:
 return all remaining digits in arr.
 ```
 
+
 ### Jump Game
 Given an array of non-negative integers. Each element in the array represents a maximum jump length at that position. Determine if we are able to reach the last index when starting from the first index.
 
@@ -295,6 +298,7 @@ for i in 1 .. arr.length
         if max_index >= arr.length - 1
             return count
 ```
+
 
 ### Next Permutation
 Given a list of integers, which denote a permutation. Find the next permutation in ascending order.
