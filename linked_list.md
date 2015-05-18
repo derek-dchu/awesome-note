@@ -54,7 +54,7 @@ define recursive helper function(start, end)
     parent := create an new tree node with val = head.val
     parent.left := leftChild
     
-    ### Key Operation ###
+    ### Traversing the list here ###
     head := head.next
     
     parent.right := helper(mid+1, end)
