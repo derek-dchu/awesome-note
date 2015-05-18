@@ -40,6 +40,7 @@
 Define a contract associated with a web service that used by other web services to communicate with it.
 
 * Like an interface between different Java modules.
+* Written in XML format.
 
 
 ## Java EE Application Model
