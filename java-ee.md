@@ -32,6 +32,16 @@
 | JPDA | Java Platform Debugger Architecture |
 
 
+## Web Service vs Web Application
+* Web Service: produce data that can be consume by web application. Web Service can communicate with each other. It faces to server.
+* Web Application: consume data from web server and interact with users. It faces to user.
+
+### Web Service Description Language (WSDL)
+Define a contract associated with a web service that used by other web services to communicate with it.
+
+* Like an interface between different Java modules.
+
+
 ## Java EE Application Model
 JEE uses a distributed multitiered application model for enterprise applications. Generally, it can be divided into tiers in following list:
   1. Client-tier components run on the client machine. (Web Pages)
