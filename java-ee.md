@@ -32,6 +32,7 @@
 | JPDA | Java Platform Debugger Architecture |
 | UDDI | Universal Description, Discovery and Integration |
 | SOAP | Simple Object Access Protocol |
+| SEI | Service Endpoint Interface |
 
 
 ## Web Service vs Web Application
