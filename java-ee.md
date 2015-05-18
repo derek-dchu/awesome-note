@@ -30,6 +30,8 @@
 | JAX-WS | Java API for XML Web Services |
 | JAAS | Java Authentication and Authorization |
 | JPDA | Java Platform Debugger Architecture |
+| UDDI | Universal Description, Discovery and Integration |
+| SOAP | Simple Object Access Protocol |
 
 
 ## Web Service vs Web Application
