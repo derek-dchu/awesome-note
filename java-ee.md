@@ -45,6 +45,9 @@ Define a contract associated with a web service that used by other web services 
 * Like an interface between different Java modules.
 * Written in XML format.
 
+### Service Endpoint Interface
+Cover Java object to SOAP massage.
+
 
 ## Java EE Application Model
 JEE uses a distributed multitiered application model for enterprise applications. Generally, it can be divided into tiers in following list:
