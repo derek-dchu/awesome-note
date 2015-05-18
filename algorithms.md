@@ -8,3 +8,6 @@
 * [Delete Digits](http://derek-dchu.gitbooks.io/awesome-note/content/greedy.html#delete-digits)
 * [Jump Game](http://derek-dchu.gitbooks.io/awesome-note/content/greedy.html#jump-game)
 * [Next Permutation](http://derek-dchu.gitbooks.io/awesome-note/content/greedy.html#next-permutation)
+
+### Linked List
+*  [Convert Sorted List to Binary Search Tree](http://derek-dchu.gitbooks.io/awesome-note/content/linked_list.html#convert-sorted-list-to-binary-search)
