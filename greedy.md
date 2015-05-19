@@ -155,13 +155,15 @@ Given [1, 20, 23, 4, 8], the largest formed number is 8423201.
 
 ##### Analysis
 From intuitive, if we convert integers to string, we find following principals to arrange them:
-  1. Find the first mismatch digit, always put the bigger one on left to the other one. 
+  1. For each pair of digit pattern a & b, we compare the result of concatenation of them in two different orders ab & ba:  
+    1. if ab > ba, we adopt ab, where we put a on the left of b
+    2. if ab < ba, we adopt ba, where we put a on the right of b
+    3. if ab == ba, if does't matter.
+
     ```
-    9XX, 4XX, 8XX => 9XX8XX4XX
-    ```
-  2. For a digit pattern A, if A is a subpattern, from the first digit, of the other digit pattern B, check for the first extra digit, if it is smaller than the first digit of A, put B on right. Otherwise, put A on left.
-    ```
-    82, 82900, 82199 => 82900|82|82199
+    12, 121 => 12|121 > 121|12 => 12121
+    12, 123 => 12|123 < 123|12 => 12312
+    123,124 => 123|124 < 124|123 => 124123
     ```
     
 All in all, we perform a string sorting following above principals, and then concatenate them to create the largest number.
@@ -181,22 +183,14 @@ define cmp(a, b)
     # return -1: put a on the left of b
     # return 0: order of a and b doesn't match
     # return 1: put a on the right of b
-    for i in 1 .. min(a.length, b.length)
-        if a[i] > b[i]
-            return -1
-        else if a[i] < b[i]
-            return 1
-    if a.length > b.length
-        if a[b.length] < b[0]
-            return 1
-        else
-            return -1
-    if a.length < b.length
-        if b[a.length] < a[0]
-            return -1
-        else
-            return 1
-    return 0
+    ab := a concatenate b
+    ba := b concatenate a
+    if ab > ba then
+        return -1
+    else if ab < ba then
+        return 1
+    else then
+        return 0
 ```
 
 
