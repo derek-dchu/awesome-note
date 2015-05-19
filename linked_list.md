@@ -82,7 +82,7 @@ The key point is, we have to wait for the copied list to be generated then we ca
   
     ```
     curr.next.random        =       curr.random.next
-            |                               |
+            |                                 |
     curr node's copied node's random        |    
         curr node's random pointer pointed node's copied node
     ```
