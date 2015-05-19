@@ -92,3 +92,13 @@ The key point is, we have to wait for the copied list to be generated then we ca
     copy -> next = copy -> next -> next
     ```
   4. make sure the last element of origin list node's next points to `null`.
+
+
+### Linked List Cycle
+Given a linked list, determine if it has a cycle in it.
+
+Example  
+Given -21->10->4->5, tail connects to node index 1, return true
+
+##### Analysis
+Use slow (1 step), fast (2 step) pointers. If fast meets slow again, that means there is a cycle in the last.
