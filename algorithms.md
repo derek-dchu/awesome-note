@@ -11,3 +11,4 @@
 
 ### Linked List
 *  [Convert Sorted List to Binary Search Tree](http://derek-dchu.gitbooks.io/awesome-note/content/linked_list.html#convert-sorted-list-to-binary-search-tree)
+*  [Copy List with Random Pointer](http://derek-dchu.gitbooks.io/awesome-note/content/linked_list.html#copy-list-with-random-pointer)
