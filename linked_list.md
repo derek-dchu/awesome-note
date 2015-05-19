@@ -60,3 +60,35 @@ define recursive helper function(start, end)
     parent.right := helper(mid+1, end)
     return parent
 ```
+
+
+### Copy List with Random Pointer
+A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null.
+
+Return a deep copy of the list.
+
+##### Analysis
+The key point is, we have to wait for the copied list to be generated then we can assign random pointers. In other words, we need to remember the mapping between origin list node and copied list node.
+
+1. hash table => hashtable(origin list node, copied list node):  
+    Complexity: O(n), Space: O(n)
+2. make in place copies: Complexity: O(n), Space: O(1)  
+  1. make copies in between origin nodes.
+
+    ```
+    1 -> 2 -> 3 => 1 -> (1) -> 2 -> (2) - > 3 -> (3)
+    ```
+  2. then we can assign random pointer by using following operation
+  
+    ```
+    curr.next.random        =       curr.random.next
+            |                               |
+    curr node's copied node's random        |    
+        curr node's random pointer pointed node's copied node
+    ```
+  3. restore the original and copy nodes.
+    ```
+    origin -> next = origin -> next -> next
+    copy -> next = copy -> next -> next
+    ```
+  4. make sure the last element of origin list node's next points to `null`.
