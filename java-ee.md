@@ -45,6 +45,28 @@ Define a contract associated with a web service that used by other web services 
 * Like an interface between different Java modules.
 * Written in XML format.
 
+#### Elements
+*  definitions:
+*  types:
+*  message:
+*  portType:
+    *  operation:
+        *  input:
+        *  output:
+*  binding:
+*  service:
+    *  port:
+
+```
+        Service
+        /     \
+    Port    Binding -> Port Type
+                          |
+                      Operations
+                    /            \
+            Input Message   Output Message
+```
+
 ### Service Endpoint Interface
 Cover Java object to SOAP massage.
 
