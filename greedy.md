@@ -146,6 +146,40 @@ if count of majority_element > arr.length / 2 then
     majority_element is the acutal result.
 ```
 
+#### Follow Up
+Find the all majority elements that are more than **$$1/k$$** of the size of the array.
+
+##### Analysis
+Misra-Gries Alogrithm
+
+For example, [3,2,1,3,2,1,4,1,4,4,1], k = 3
+
+4  
+4 1  
+4 1  
+~~3 2 1~~  
+~~3 2 1~~
+
+4, 1 are candidates, we need to check each of them by counting again.
+
+##### Pseudocode
+```
+bins := empty hashmap
+for numbers as n in arr
+    if bins contains key n then
+        increase n's value by 1
+    else if bins contains less than k-1 keys
+        bins put (n, 1)
+    else
+        for each key in bins
+        decrease key's value by 1
+        if value == 0 then
+            remove key from bins
+
+# remaining numbers are all candidates
+check for frequency of each remaining number, if it is larger than 1/k of arr.len, 
+then the number is a majority number.
+```
 
 ### Largest Number
 Given a list of non negative integers, arrange them such that they form the largest number. The number can be very big, so return it in string.
