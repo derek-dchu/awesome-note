@@ -17,3 +17,10 @@
 3.  sed -n '${m},${n}p' file
 4.  awk 'NR>=${m}&&NR<=${n}{print;exit}' file
 ```
+
+### Word Frequency
+[Description](https://leetcode.com/problems/word-frequency/)
+
+```
+cat words.txt | tr -s ' ' '\n' | sort | uniq -c | sort -n -r | awk '{print $2" "$1}'
+```
