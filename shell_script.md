@@ -24,3 +24,13 @@
 ```
 cat words.txt | tr -s ' ' '\n' | sort | uniq -c | sort -n -r | awk '{print $2" "$1}'
 ```
+
+### Validate Phone Numbers
+[Description](https://leetcode.com/problems/valid-phone-numbers/)
+
+```
+grep -P '^(\(\d{3}\)\s|\d{3}-)\d{3}-\d{4}$' file.txt
+```
+
+
+
