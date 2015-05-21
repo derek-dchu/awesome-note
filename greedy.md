@@ -177,7 +177,8 @@ for numbers as n in arr
             remove key from bins
 
 # remaining numbers are all candidates
-check for frequency of each remaining number, if it is larger than 1/k of arr.len, 
+Make an extra traversal to check for frequency of each 
+remaining number, if it is larger than 1/k of arr.len, 
 then the number is a majority number.
 ```
 
