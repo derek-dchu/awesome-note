@@ -70,4 +70,18 @@ A)  3            B)    3
 The binary tree A is a height-balanced binary tree, but B is not.
 
 ##### Analysis
-By modified the algorithm for finding depth of subtrees, we can check the difference between depths of two subtrees. If depths are differ by more than 1, we can terminate process by return -1. 
+By modified the algorithm for finding depth of subtrees, we can check the difference between depths of two subtrees. If depths are differ by more than 1, we can terminate process by return -1. Otherwise, we return the larger height plus one as height of current subtree. In addition, if we have either left height or right height equals to -1, which means either left subtree or right subtree is not balanced, then current subtree is also not balanced.
+
+##### Pseudocode
+```
+define helper(root)
+if root is null then
+    return 0
+left_height = helper(root.left)
+if left_height == -1 then
+    return -1
+right_height = helper(root.right)
+if right_height == -1 or abs(left_height - right_height) > 1 then
+    return -1
+return max(left_height, right_height) + 1
+```
