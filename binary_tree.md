@@ -17,36 +17,36 @@ return [1,2,3].
 
 ##### Analysis
 *  Recursive:
-```
-add this.val into array
-preorderTraversal(this.left)
-preorderTraversal(this.right)
-```
+    ```
+    add this.val into array
+    preorderTraversal(this.left)
+    preorderTraversal(this.right)
+    ```
 
 *  Iterative  
 Use stack instead
 
 ##### Pseudocode
 *  Recursive
-```
-define preorderTraversal(root, arr)
-    if root is not null then
-        arr append root.val
-        preorderTraversal(root.left)
-        preorderTraversal(root.right)
-    return
-```
+    ```
+    define preorderTraversal(root, arr)
+        if root is not null then
+            arr append root.val
+            preorderTraversal(root.left)
+            preorderTraversal(root.right)
+        return
+    ```
 
 *  Iterative
-```
-stack := {root}
-arr := []
-while stack is not empty
-    node := stack.pop()
-    arr append node.val
-    if node.right is not null then
-        stack.push(node.right)
-    if node.left is not null then
-        stack.push(node.left)
-return arr
-```
+    ```
+    stack := {root}
+    arr := []
+    while stack is not empty
+        node := stack.pop()
+        arr append node.val
+        if node.right is not null then
+            stack.push(node.right)
+        if node.left is not null then
+            stack.push(node.left)
+    return arr
+    ```
