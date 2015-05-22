@@ -85,3 +85,56 @@ if right_height == -1 or abs(left_height - right_height) > 1 then
     return -1
 return max(left_height, right_height) + 1
 ```
+
+### Binary Tree Level Order Traversal
+Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level). The implement should use only one queue.
+
+Example
+Given binary tree {3,9,20,#,#,15,7},
+```
+    3
+   / \
+  9  20
+    /  \
+   15   7
+```
+
+return its level order traversal as:
+```
+[
+  [3],
+  [9,20],
+  [15,7]
+]
+```
+
+##### Analysis
+We know that level order traversal is equivalent to breadth first search (BFS). The problem is how do we know when a level is end. We can simply have two counters, one for current level of nodes and another one for next level of nodes. When current level counter reduce to 0, we know that current level is end, then we assign next level counter as current level counter, and reset next level counter.
+
+##### Pseudocode
+```
+arr := {}
+q := new queue
+q append root
+curr_level := 1
+next_level := 0
+level := {}
+while size of q != 0
+    node := pop from q
+    curr_level := curr_level - 1
+    level append node.val
+    if node.left is not null then
+        q append node.left
+        next_level := next_level + 1
+    if node.right is not null then
+        q append node.right
+        next_level := next_level + 1
+    if curr_level == 0 then
+        arr append level
+        level = {}
+        curr_level := next_level
+        next_level := 0
+return arr
+```
+
+
