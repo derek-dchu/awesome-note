@@ -115,7 +115,7 @@ We know that level order traversal is equivalent to breadth first search (BFS). 
 ```
 arr := {}
 q := new queue
-q append root
+put root into q
 curr_level := 1
 next_level := 0
 level := {}
@@ -124,10 +124,10 @@ while size of q != 0
     curr_level := curr_level - 1
     level append node.val
     if node.left is not null then
-        q append node.left
+        put node.left into q
         next_level := next_level + 1
     if node.right is not null then
-        q append node.right
+        put node.right into q
         next_level := next_level + 1
     if curr_level == 0 then
         arr append level
