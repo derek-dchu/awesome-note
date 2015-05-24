@@ -151,3 +151,49 @@ Binary tree {3,9,20,#,#,15,7}, denote the following structure:
   /  \
  15   7
 ```
+
+### Construct Binary Tree from Preorder and Inorder Traversal
+Given preorder and inorder traversal of a tree, construct the binary tree. Assume that duplicates do not exist in the tree.
+
+Example  
+Given pre-order [7,10,4,3,1,2,8,11] and in-order [4,10,3,1,7,11,8,2], return a tree:
+
+```
+     ___7___
+    /       \
+  10         2
+ /  \       /
+4    3     8
+      \   /
+       1 11
+```
+
+##### Analysis
+The key point is, from pre-order list, we can get the current root node, and then use in-order list to seperate remaining nodes into two subtrees. We also know that, remaining nodes in pre-order list actually is the combination of left subtree and right subtree with no intersection.
+
+for example:  
+from pre-order[0], we know 7 is the root, then we seperate two list as following:
+
+*  pre-order => 7 | 10,4,3,1 | 2,8,11 |  
+*  in-order => | 4,10,3,1 | 7 | 11,8,2 |
+
+Therefore, by doing this seperation recursively, we can reconstruct the binary tree.
+
+##### Pseudocode
+```
+define recursive_helper (preorder, inorder, p_l, p_r, i_l, i_r)
+    if p_l > p_r then
+        return nil
+    if p_l == p_r then
+        return new tree node with val = preorder[p_l]
+    # find root val in inorder list
+    i := 0
+    while inorder[i_l + i] != preorder[p_l]
+        i := i + 1
+    node := new tree node with val = preorder[p_l]
+    node.left = recursive_helper
+            (preorder, inorder, p_l+1, p_l+i, i_l, i_l+i-1)
+    node.right = recursive_helper
+            (preorder, inorder, p_l+i+1, p_r, i_l+i+1, i_r)
+    return node
+```
