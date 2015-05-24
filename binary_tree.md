@@ -137,4 +137,17 @@ while size of q != 0
 return arr
 ```
 
+### Serialization/Deserialization of a Binary Tree
+Design an algorithm and write code to serialize and deserialize a binary tree. Writing the tree to a file is called *serialization* and reading back from the file to reconstruct the exact same binary tree is *deserialization*.
 
+Example  
+An example of using BFS traversal from serialization:
+Binary tree {3,9,20,#,#,15,7}, denote the following structure:
+
+```
+  3
+ / \
+9  20
+  /  \
+ 15   7
+```
