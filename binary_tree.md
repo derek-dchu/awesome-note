@@ -48,11 +48,12 @@
 Use stack instead
   1. Pre-order
     ```
-    stack := {root}
     arr := {}
+    stack := {}
     node := root
     while stack is not empty or node is not nil
-        if node is not nil
+        if node is not nil then
+            append node.val to arr
             if node.right is not null then
                 stack.push(node.right)
             node := node.left
@@ -61,21 +62,19 @@ Use stack instead
     return arr
     ```
     
-  2. In-order: when push a right node into stack, also push all its left children into stack.
+  2. In-order
     ```
     arr := {}
     stack := {}
     curr := root
-    while curr is not nil
-        push curr into stack
-        curr = curr.left
-    while stack is not empty
-        node := stack.pop()
-        append node.val to arr
-        curr := node.right
-        while curr is not nil
-            push curr into stack
-            curr = curr.left
+    while stack is not empty or node is not nil
+        if node is not nil then
+            stack.push(node)
+            node := node.left
+        else
+            node := stack.pop()
+            append node.val to arr
+            curr = curr.right
     return arr
     ```
 
