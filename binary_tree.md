@@ -224,3 +224,78 @@ define recursive_helper (preorder, inorder, p_l, p_r, i_l, i_r)
             (preorder, inorder, p_l+i+1, p_r, i_l+i+1, i_r)
     return node
 ```
+
+### Binary Search Tree
+#### Delete Max / Min
+*  Delete Max: go right until finding a node that it has a null right link and then replace the link to that node by its left link
+
+*  Delete Min: go left until finding a node that it has a null left link and then replace the link to that node by its right link
+
+#### Delete node with specific value
+Maintain a *current* pointer and its *parent* pointer while travsing the tree until we find the value of node pointed by current pointer equal to the specific value.
+
+Current node can be in only three cases:
+1.  No child: delete it directly
+2.  One child: replace it self with its child
+3.  Two children:
+    1.  Set x to point to curr's successor (minimum value of curr's right subtree).
+    2.  Set the right link of x (which is supposed to point to the BST containing all the keys larger than curr.key) to current right subtree with minimum value is deleted, the link to the BST containing all the keys that are larger than curr.key after the deletion.
+    3.  Set the left link of x (which was null) to curr.left (all the keys that are less than both the deleted key and its successor).
+    4.  Replace curr with x
+    
+    ```
+    If we want to delete 20
+    
+      3     
+     / \
+    9  20
+      /  \
+     15   27
+         /
+        25
+    
+      3 <-- parent  
+     / \
+    9  20 <-- curr
+      /  \
+     15   27
+         /
+        25
+    
+    Step i: 
+      3 <-- parent      
+     / \
+    9  20 <-- curr
+      /  \
+     15   27
+         /
+        25 <-- x
+    
+    Step ii:
+      3 <-- parent      25 <-- x
+     / \                 \
+    9  20 <-- curr        27
+      /  \               /
+     15   27            nil
+         /
+        25
+    
+    Step iii:
+      3 <-- parent      25 <-- x
+     / \                / \
+    9  20 <-- curr     15 27
+      /  \               /
+     15   27            nil
+         /
+        25
+    
+    Step iv:
+      3 <-- parent
+     / \
+    9  25 <-- x    20 <-- avaliable for garbage collection
+      /--\--------/ |
+     15   27 -------|
+         /
+        nil
+    ```
+
