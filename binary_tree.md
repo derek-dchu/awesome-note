@@ -1,53 +1,81 @@
 # Binary Tree
 
-### Binary Tree Preorder Traversal
-Given a binary tree, return the preorder traversal of its nodes' values.
-
-Example  
-Given binary tree {1,#,2,3}:
-
-```
-1
- \
-  2
- /
-3
-```
-return [1,2,3].
-
-##### Analysis
-*  Recursive:
-    ```
-    add this.val into array
-    preorderTraversal(this.left)
-    preorderTraversal(this.right)
-    ```
-
-*  Iterative  
-Use stack instead
+### Binary Tree Depth First Traversal
+*  Pre-order:
+  1. current node
+  2. left subtree
+  3. right subtree
+*  In-order
+  1. left subtree
+  2. current node
+  3. right subtree
+*  Post-order
+  1. left subtree
+  2. right subtree
+  3. current node
 
 ##### Pseudocode
-*  Recursive
+*  Recursive:
+  1. Pre-order
     ```
     define preorderTraversal(root, arr)
         if root is not null then
-            arr append root.val
-            preorderTraversal(root.left)
-            preorderTraversal(root.right)
+            append root.val to arr
+            preorderTraversal(root.left, arr)
+            preorderTraversal(root.right, arr)
         return
     ```
-
-*  Iterative
+  2. In-order
+    ```
+    define preorderTraversal(root, arr)
+        if root is not null then
+            inorderTraversal(this.left, arr)
+            append this.val to arr
+            inorderTraversal(this.right, arr)
+        return
+    ```
+  3. Post-order
+    ```
+    define preorderTraversal(root, arr)
+        if root is not null then
+            postorderTraversal(this.left, arr)
+            postorderTraversal(this.right, arr)
+            append this.val to arr
+        return
+    ```
+    
+*  Iterative:
+Use stack instead
+  1. Pre-order
     ```
     stack := {root}
-    arr := []
+    arr := {}
+    node := root
+    while stack is not empty or node is not nil
+        if node is not nil
+            if node.right is not null then
+                stack.push(node.right)
+            node := node.left
+        else
+            node := stack.pop()
+    return arr
+    ```
+    
+  2. In-order: when push a right node into stack, also push all its left children into stack.
+    ```
+    arr := {}
+    stack := {}
+    curr := root
+    while curr is not nil
+        push curr into stack
+        curr = curr.left
     while stack is not empty
         node := stack.pop()
-        arr append node.val
-        if node.right is not null then
-            stack.push(node.right)
-        if node.left is not null then
-            stack.push(node.left)
+        append node.val to arr
+        curr := node.right
+        while curr is not nil
+            push curr into stack
+            curr = curr.left
     return arr
     ```
 
