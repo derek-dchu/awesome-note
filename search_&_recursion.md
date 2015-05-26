@@ -10,6 +10,7 @@ Given a digraph, put the vertices in order such that all its directed edges poin
 ##### Pseudocode
 Suppose each node contains a label for 1 to n, n is the number of nodes
 *  DFS
+
     ```
     def topo_sort(graph)
         sorted_list = {}
