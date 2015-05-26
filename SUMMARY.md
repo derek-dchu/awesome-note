@@ -14,7 +14,7 @@
    * [Greedy](greedy.md)
    * [Linked List](linked_list.md)
    * [Binary Tree](binary_tree.md)
-   * Search & Recursion
+   * [Search & Recursion](search_&_recursion.md)
 * Java
    * [Language Specification](java_language_specification.md)
        * [Language Basic](java_language_basic.md)
