@@ -53,7 +53,7 @@ Note
 
 ##### Analysis
 ###### BFS
-Consider each word as a vertex in a undirect graph, we add edge between two words if and only if they have only one miss matching letter. Then the problem reduce to finding a shortest path from start vertex to end vertex with each edge has weight 1. In this cases, BFS can serve the purpose.
+Consider each word as a vertex in a undirect graph, we add edge between two words if and only if they have only one mismatching letter. Then the problem reduce to finding a shortest path from start vertex to end vertex with each edge has weight 1. In this cases, BFS can serve the purpose.
 
 For example, dictionary ["hit","hot","dot","dog"] has following graph.
 
@@ -67,6 +67,8 @@ hot  dog
 By doing BFS, we can easily find that there is only one path from "hit" to "dog".
 
 **Important Notes:** 
-1.  Constructing the graph is time consuming, because we may need to perform $$n^2$$ comparisons to find all edges. One trick to reduce number of comparisons is we put words into buckets first.
+Constructing the graph is time consuming, because we may need to perform $$n^2$$ comparisons to find all edges. One trick to reduce number of comparisons is we put words into buckets first, then we add edges between words within a bucket.
 
-    For each word, we consider it fitting k buckets where k is the length of word. For example, "hit" fits "?it", "h?t", "hi?" buckets, "hot" fits "?ot", "h?t", "hi?".
+For each word, we consider it fitting k buckets where k is the length of word. For example, "hit" fits "?it", "h?t", "hi?" buckets, "hot" fits "?ot", "h?t", "hi?". We have "hit" and "hot" both fit in bucket "h?t", then we know that they meet the criteria and add an edge between them.
+    
+In this way, we limit comparison between related words, because in real problems (words in English dictionary), words have only one mismatching letter are much less than random pairs.
