@@ -50,3 +50,23 @@ Note
 *  Return 0 if there is no such transformation sequence.
 *  All words have the same length.
 *  All words contain only lowercase alphabetic characters.
+
+##### Analysis
+###### BFS
+Consider each word as a vertex in a undirect graph, we add edge between two words if and only if they have only one miss matching letter. Then the problem reduce to finding a shortest path from start vertex to end vertex with each edge has weight 1. In this cases, BFS can serve the purpose.
+
+For example, dictionary ["hit","hot","dot","dog"] has following graph.
+
+```
+hit  dot
+ |  / |
+ | /  |
+hot  dog
+```
+
+By doing BFS, we can easily find that there is only one path from "hit" to "dog".
+
+**Important Notes:** 
+1.  Constructing the graph is time consuming, because we may need to perform $$n^2$$ comparisons to find all edges. One trick to reduce number of comparisons is we put words into buckets first.
+
+    For each word, we consider it fitting k buckets where k is the length of word. For example, "hit" fits "?it", "h?t", "hi?" buckets, "hot" fits "?ot", "h?t", "hi?".
