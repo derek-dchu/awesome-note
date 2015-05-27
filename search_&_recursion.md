@@ -72,3 +72,44 @@ Constructing the graph is time consuming, because we may need to perform $$n^2$$
 For each word, we consider it fitting k buckets where k is the length of word. For example, "hit" fits "?it", "h?t", "hi?" buckets, "hot" fits "?ot", "h?t", "hi?". We have "hit" and "hot" both fit in bucket "h?t", then we know that they meet the criteria and add an edge between them.
     
 In this way, we limit comparison between related words, because in real problems (words in English dictionary), words have only one mismatching letter are much less than random pairs.
+
+##### Pseudocode
+###### BFS
+```python
+def ladderLength(self, start, end, dictionary):
+    if start is None or end is None or dictionary is None:
+        return 0
+    # generate buckets
+    buckets = {}
+    for word in dictionary:
+        for i in range(len(word)):
+            bucket = word[:i] + '?' + word[i+1:]
+            if bucket in buckets:
+                buckets[bucket].append(word)
+            else:
+                buckets[bucket] = [word]
+    # add edges to adjacency list
+    vertices = {word: [] for word in dictionary}
+    for b in buckets.keys():
+        for i in range(len(buckets[b])):
+            for j in range(i+1, len(buckets[b])):
+                vertices[buckets[b][i]].append(buckets[b][j])
+                vertices[buckets[b][j]].append(buckets[b][i])
+    # BFS
+    vertex_visited = {word: False for word in dictionary}
+    vertex_distance = {start: 1}
+    from collections import deque
+    q = deque()
+    q.append(start)
+    vertex_visited[start] = True
+    while len(q) > 0:
+        curr_vert = q.popleft()
+        for nbr in vertices[curr_vert]:
+            if nbr == end:
+                return vertex_distance[curr_vert] + 1
+            if not vertex_visited[nbr]:
+                vertex_distance[nbr] = vertex_distance[curr_vert] + 1
+                q.append(nbr)
+                vertex_visited[nbr] = True
+    return 0
+```
