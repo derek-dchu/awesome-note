@@ -13,6 +13,10 @@
 ### Binary Search
 *  [Sqrt(x)](http://derek-dchu.gitbooks.io/awesome-note/content/binary_search.html#sqrt-x)
 *  [Search for a value in an m x n matrix](http://derek-dchu.gitbooks.io/awesome-note/content/binary_search.html#search-for-a-value-in-an-m-x-n-matrix)
+*  [Binary search with duplicates](http://derek-dchu.gitbooks.io/awesome-note/content/binary_search.html#binary-search-with-duplicates)
+*  [Find Minimum in Rotated Sorted Array](http://derek-dchu.gitbooks.io/awesome-note/content/binary_search.html#find-minimum-in-rotated-sorted-array)
+*  [Find Peak Element](http://derek-dchu.gitbooks.io/awesome-note/content/binary_search.html#find-peak-element)
+*  [Search in Rotated Sorted Array](http://derek-dchu.gitbooks.io/awesome-note/content/binary_search.html#search-in-rotated-sorted-array)
 
 ### Greedy
 *  [Gas Station](http://derek-dchu.gitbooks.io/awesome-note/content/greedy.html#gas-station)
