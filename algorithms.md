@@ -10,6 +10,10 @@
 *  [4 Sum](http://derek-dchu.gitbooks.io/awesome-note/content/array.html#4-sum)
 *  [Maximum Subarray](http://derek-dchu.gitbooks.io/awesome-note/content/array.html#maximum-subarray)
 
+### Binary Search
+*  [Sqrt(x)](http://derek-dchu.gitbooks.io/awesome-note/content/binary_search.html#sqrt-x)
+*  [Search for a value in an m x n matrix](http://derek-dchu.gitbooks.io/awesome-note/content/binary_search.html#search-for-a-value-in-an-m-x-n-matrix)
+
 ### Greedy
 *  [Gas Station](http://derek-dchu.gitbooks.io/awesome-note/content/greedy.html#gas-station)
 *  [Single Number](http://derek-dchu.gitbooks.io/awesome-note/content/greedy.html#single-number)
