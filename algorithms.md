@@ -18,6 +18,9 @@
 *  [Find Peak Element](http://derek-dchu.gitbooks.io/awesome-note/content/binary_search.html#find-peak-element)
 *  [Search in Rotated Sorted Array](http://derek-dchu.gitbooks.io/awesome-note/content/binary_search.html#search-in-rotated-sorted-array)
 
+### Dynamic Programming
+*  [Longest Common Substring (LCS)](http://derek-dchu.gitbooks.io/awesome-note/content/dynamic_programming.html#longest-common-substring-lcs)
+
 ### Greedy
 *  [Gas Station](http://derek-dchu.gitbooks.io/awesome-note/content/greedy.html#gas-station)
 *  [Single Number](http://derek-dchu.gitbooks.io/awesome-note/content/greedy.html#single-number)
