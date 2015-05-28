@@ -21,6 +21,10 @@
 ### Dynamic Programming
 *  [Longest Common Substring (LCS)](http://derek-dchu.gitbooks.io/awesome-note/content/dynamic_programming.html#longest-common-substring-lcs)
 
+### Math
+*  [Trailing Zeros](http://derek-dchu.gitbooks.io/awesome-note/content/math.html#trailing-zeros)
+*  [Unique Binary Search Trees](http://derek-dchu.gitbooks.io/awesome-note/content/math.html#unique-binary-search-trees)
+
 ### Greedy
 *  [Gas Station](http://derek-dchu.gitbooks.io/awesome-note/content/greedy.html#gas-station)
 *  [Single Number](http://derek-dchu.gitbooks.io/awesome-note/content/greedy.html#single-number)
