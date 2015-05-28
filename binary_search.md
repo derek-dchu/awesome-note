@@ -25,7 +25,7 @@ return l
 
 **Note:** because the method returns an integer, we don't need to perform float multiplication which is much slower than integer multiplication.
 
-### Search for a value in an m x n matrix.
+### Search for a value in an m x n matrix
 Integers in each row are sorted from left to right.
 The first integer of each row is greater than the last integer of the previous row.
 
