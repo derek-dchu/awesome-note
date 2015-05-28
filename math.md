@@ -41,6 +41,23 @@ for i in 2 .. n
 return cache[n]
 ```
 
+### Pow(x,n)
+[Exponentiation by squaring](http://en.wikipedia.org/wiki/Exponentiation_by_squaring)
+
+### Modulo Exponentiation
+Calculate the $$a^n \mod b$$ where a, b and n are all 32bit integers.
+
+Example  
+$$2^{31} \mod 3 = 2$$
+
+$$100^{1000} \mod 1000 = 0$$
+
+#### Modular arithmetic
+$$(A \pm B) \% C = (A \% C \pm B \% C) \% C$$
+$$(A * B) \% C = (A \% C * B \% C) \% C$$
+$$A^B \% C = ( (A \% C)^B ) \% C$$
+
+
 
 
 
