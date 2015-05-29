@@ -142,8 +142,8 @@ Use 8-queens puzzle as an example, where n = 8.
 define solveNQueens(n)
     avaliable_cols := {1 .. n}
     used_cols := {}
-    locations = {}
-    solve(n, avaliable_cols, used_cols, locations)
+    configurations = {}
+    solve(n, avaliable_cols, used_cols, configurations)
     return configurations
     
 define solve(n, avaliable_cols, used_cols, result)
