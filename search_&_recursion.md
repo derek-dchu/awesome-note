@@ -127,10 +127,48 @@ Use 8-queens puzzle as an example, where n = 8.
 *  Brute Force:  
 
     Check all $$8^8$$ possibilities, and output thoses valid configurations.
+
 *  Permutation:  
 
     One basic strategy is that, we place queens in different rows one by one, and for each queen, it cannot be placed in a column that exists a queen. In other words, possibilites reduces to $$8!$$. We can also guarantee that there is no row and col violation.
 
-    We can use ***backtracking depth-first search*** to examine all possibilites and optimized with constraint.
+    We can use ***backtracking depth-first search*** to examine all possibilites and optimize with constraint (backtraking tree early prune).
     
-    The useful constraint is that
+    A useful constraint is that for each newly places queen, it cannot violate diagonal constraint with previously placed queens.
+
+##### Pseudocode
+###### Backtracking
+```
+define solveNQueens(n)
+    avaliable_cols := {1 .. n}
+    used_cols := {}
+    locations = {}
+    solve(n, avaliable_cols, used_cols, locations)
+    return configurations
+    
+define solve(n, avaliable_cols, used_cols, result)
+    # if we have placed n queens, it is a valid configuration
+    if avaliable_cols.length == 0 then
+        n = len(used_cols)-1
+            result.append(["."*col+"Q"+"."*(n-col) for col in used_cols])
+        else:
+            for col in list(avaliable_cols):
+                avaliable_cols.remove(col)
+                if self.is_valid(used_cols, col, n):
+                    used_cols.append(col)
+                    self.solve(n, avaliable_cols, used_cols, result)
+                    used_cols.pop()
+                avaliable_cols.add(col)
+
+    def is_valid(self, used_cols, col, n):
+        r = len(used_cols) - 1
+        left_col = col-1
+        right_col = col+1
+        while r >= 0 and (left_col >= 0 or right_col < n):
+            if used_cols[r] == left_col or used_cols[r] == right_col:
+                return False
+            r -= 1
+            left_col -= 1
+            right_col += 1
+        return True
+```
