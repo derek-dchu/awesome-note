@@ -142,33 +142,31 @@ Use 8-queens puzzle as an example, where n = 8.
 define solveNQueens(n)
     avaliable_cols := {1 .. n}
     used_cols := {}
-    configurations = {}
+    configurations := {}
     solve(n, avaliable_cols, used_cols, configurations)
     return configurations
     
-define solve(n, avaliable_cols, used_cols, result)
-    # if we have placed n queens, it is a valid configuration
-    if avaliable_cols.length == 0 then
-        n = len(used_cols)-1
-            result.append(["."*col+"Q"+"."*(n-col) for col in used_cols])
-        else:
-            for col in list(avaliable_cols):
-                avaliable_cols.remove(col)
-                if self.is_valid(used_cols, col, n):
-                    used_cols.append(col)
-                    self.solve(n, avaliable_cols, used_cols, result)
-                    used_cols.pop()
-                avaliable_cols.add(col)
+define solve(n, avaliable_cols, used_cols, configurations)
+    # if we successfully placed n queens, it is a valid configuration
+    if used_cols.length == n then
+        generate configuration based on the
+        order of used_cols (row by row) and
+        append it to configurations
+    else
+        for col in avaliable_cols
+            remove col from avaliable_cols
+            # if it is valid after placed a queen in this col
+            if is_valid(used_cols, col, n) then
+                append col to used_cols
+                # place next queen
+                solve(n, avaliable_cols, used_cols, result)
+                # backtrack to previous state
+                pop col from used_cols
+            # backtrack to previous state
+            add col back to avaliable_cols
 
-    def is_valid(self, used_cols, col, n):
-        r = len(used_cols) - 1
-        left_col = col-1
-        right_col = col+1
-        while r >= 0 and (left_col >= 0 or right_col < n):
-            if used_cols[r] == left_col or used_cols[r] == right_col:
-                return False
-            r -= 1
-            left_col -= 1
-            right_col += 1
-        return True
+define isValid(used_cols, col, n)
+        check whether placing a queen at col violates
+        diagonal constraint with previous queen at used_col
 ```
+
