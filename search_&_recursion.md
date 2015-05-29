@@ -113,3 +113,24 @@ def ladderLength(self, start, end, dictionary):
                 vertex_visited[nbr] = True
     return 0
 ```
+
+### N-Queens
+The n-queens puzzle is the problem of placing n queens on an n×n chessboard such that no two queens attack each other.
+
+Given an integer n, return all distinct solutions to the n-queens puzzle.
+
+Each solution contains a distinct board configuration of the n-queens' placement, where 'Q' indicates a queen, and '.' indicates an empty space respectively.
+
+##### Analysis
+Use 8-queens puzzle as an example, where n = 8.
+
+*  Brute Force:  
+
+    Check all $$8^8$$ possibilities, and output thoses valid configurations.
+*  Permutation:  
+
+    One basic strategy is that, we place queens in different rows one by one, and for each queen, it cannot be placed in a column that exists a queen. In other words, possibilites reduces to $$8!$$. We can also guarantee that there is no row and col violation.
+
+    We can use ***backtracking depth-first search*** to examine all possibilites and optimized with constraint.
+    
+    The useful constraint is that
