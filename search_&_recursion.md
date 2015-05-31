@@ -311,7 +311,7 @@ Given a list of numbers with no duplicates, return all possible permutations. Do
 A list of numbers contains duplicates.
 
 ##### Analysis
-Above algorithms don't work for duplicates. We have to **sort** the list first, and keep generate next permutation in lexical order using [this]() algorithm.
+Above algorithms don't work for duplicates. We have to **sort** the list first, and keep generate next permutation in lexical order using [this](http://derek-dchu.gitbooks.io/awesome-note/content/greedy.html#next-permutation) algorithm.
 
 
 
