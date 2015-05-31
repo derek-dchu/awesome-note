@@ -78,40 +78,42 @@ In this way, we limit comparison between related words, because in real problems
 ```python
 def ladderLength(self, start, end, dictionary):
     if start is None or end is None or dictionary is None:
+            return 0
+        dictionary.add(start)
+        dictionary.add(end)
+        buckets = {}
+        for word in dictionary:
+            for i in range(len(word)):
+                bucket = word[:i] + '_' + word[i+1:]
+                if bucket in buckets:
+                    buckets[bucket].append(word)
+                else:
+                    buckets[bucket] = [word]
+        
+        vertices = {word: set() for word in dictionary}
+        for bucket in buckets.keys():
+            for i in range(len(buckets[bucket])):
+                for j in range(i+1, len(buckets[bucket])):
+                    vertices[buckets[bucket][i]].add(buckets[bucket][j])
+                    vertices[buckets[bucket][j]].add(buckets[bucket][i])
+        # BFS
+        vertex_visited = {start: True}
+        vertex_distance = {start: 1}
+        from collections import deque
+        q = deque()
+        q.append(start)
+        while len(q) > 0:
+            curr_vert = q.popleft()
+            for nbr in vertices[curr_vert]:
+                if nbr == end:
+                    return vertex_distance[curr_vert] + 1
+                if nbr not in vertex_visited:
+                    vertex_visited[nbr] = False
+                if not vertex_visited[nbr]:
+                    vertex_distance[nbr] = vertex_distance[curr_vert] + 1
+                    q.append(nbr)
+                    vertex_visited[nbr] = True
         return 0
-    # generate buckets
-    buckets = {}
-    for word in dictionary:
-        for i in range(len(word)):
-            bucket = word[:i] + '?' + word[i+1:]
-            if bucket in buckets:
-                buckets[bucket].append(word)
-            else:
-                buckets[bucket] = [word]
-    # add edges to adjacency list
-    vertices = {word: [] for word in dictionary}
-    for b in buckets.keys():
-        for i in range(len(buckets[b])):
-            for j in range(i+1, len(buckets[b])):
-                vertices[buckets[b][i]].append(buckets[b][j])
-                vertices[buckets[b][j]].append(buckets[b][i])
-    # BFS
-    vertex_visited = {word: False for word in dictionary}
-    vertex_distance = {start: 1}
-    from collections import deque
-    q = deque()
-    q.append(start)
-    vertex_visited[start] = True
-    while len(q) > 0:
-        curr_vert = q.popleft()
-        for nbr in vertices[curr_vert]:
-            if nbr == end:
-                return vertex_distance[curr_vert] + 1
-            if not vertex_visited[nbr]:
-                vertex_distance[nbr] = vertex_distance[curr_vert] + 1
-                q.append(nbr)
-                vertex_visited[nbr] = True
-    return 0
 ```
 
 #### Follow Up
@@ -126,6 +128,109 @@ dict = ["hot","dot","dog","lot","log"]
 We have  
 "hit" -> "hot" -> "dot" -> "dog" -> "cog"  
 "hit" -> "hot" -> "lot" -> "log" -> "cog"
+
+##### Analysis
+Because we need to print out the path, in addition to depth, we also need to save the parent of current vertex. 
+
+Be careful:
+  1. it could be multiple parents, for example:
+
+    ``` 
+    a -- b  start: a end: b
+    |    |  we will have d's parents as b,c
+    c -- d
+    ```
+    
+    Therefore, we have to mark each vertex with 3 states instead of 2 as usual. In above example, after we visit b and explore d, d will be mark as visited, then c will not explore d again, however c is a potential parent of d. By marking d as under_explore (the third state) instead until we visit it (pop from queue), we can solve this problem.
+    
+  2. Some parents are not valid (which is at the same level of current vertex), for example:
+  
+    ```
+    a --- b     Both a,b will be parent of c.
+      \    |    However, b,c are in the same level,
+       \__ c    b cannot be a parent of c.
+    ```
+  3.  We cannot terminate BFS at the first time we meet end vertex, instead, we want to terminate after we exceed the shortest depth.
+
+##### Code
+```python
+def findLadders(self, start, end, dictionary):
+    if start is None or end is None or dictionary is None:
+        return 0
+    dictionary.add(start)
+    dictionary.add(end)
+    
+    # Same code for building the tree as above
+    buckets = {}
+    for word in dictionary:
+        for i in range(len(word)):
+            bucket = word[:i] + '_' + word[i+1:]
+            if bucket in buckets:
+                buckets[bucket].append(word)
+            else:
+                buckets[bucket] = [word]
+    
+    vertices = {word: set() for word in dictionary}
+    for bucket in buckets.keys():
+        for i in range(len(buckets[bucket])):
+            for j in range(i+1, len(buckets[bucket])):
+                vertices[buckets[bucket][i]].add(buckets[bucket][j])
+                vertices[buckets[bucket][j]].add(buckets[bucket][i])
+                
+    # BFS
+    # three states: white, black, gray
+    vertex_visited = {start: "white"}
+    
+    # record parent of each vertex
+    vertex_parent = {start: set()}
+    vertex_distance = {start: 1}
+    shortest_distance = None
+    from collections import deque
+    q = deque()
+    q.append(start)
+    while len(q) > 0:
+        curr_vert = q.popleft()
+        vertex_visited[curr_vert] = "black"
+        
+        # if current depth exceed shortest_distance, terminate BFS
+        if vertex_distance[curr_vert] == shortest_distance:
+            break
+        for nbr in vertices[curr_vert]:
+            if nbr not in vertex_visited:
+                vertex_visited[nbr] = "white"
+            if vertex_visited[nbr] != "black":
+                if vertex_visited[nbr] == "white":
+                    vertex_distance[nbr] = vertex_distance[curr_vert] + 1
+                    q.append(nbr)
+                    vertex_visited[nbr] = "gray"
+                if nbr not in vertex_parent:
+                    vertex_parent[nbr] = set()
+                if vertex_distance[curr_vert] != vertex_distance[nbr]:
+                    vertex_parent[nbr].add(curr_vert)
+            
+            # instead of terminating BFS, we record the shortest distance
+            if nbr == end and shortest_distance is None:
+                shortest_length = vertex_distance[nbr]
+                break
+    
+    # build all paths
+    result = []
+    self.build_path(vertex_parent, end, [], result)
+    return result
+    
+# build all paths using backtracking
+def build_path(self, vertex_parent, end, path, result):
+    if end not in vertex_parent:
+        return
+    if  len(vertex_parent[end]) == 0:
+        temp = path[:]+[end]
+        temp.reverse()
+        result.append(temp)
+    path.append(end)
+    for v in vertex_parent[end]:
+        self.build_path(vertex_parent, v, path, result)
+    path.pop()
+```
 
 
 ### N-Queens
