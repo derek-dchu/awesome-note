@@ -291,7 +291,7 @@ define isValid(used_cols, col, n)
 
 
 ### Permutations
-Given a list of numbers, return all possible permutations. Do it without recursion.
+Given a list of numbers with no duplicates, return all possible permutations. Do it without recursion.
 
 ##### Analysis
 1.  For n elements, we start generating permutation from length 1 to n by adding new element at all possible locations. For example, 
@@ -307,7 +307,11 @@ Given a list of numbers, return all possible permutations. Do it without recursi
 
     [heap's algorithm](http://en.wikipedia.org/wiki/Heap%27s_algorithm)
 
+#### Follow Up
+A list of numbers contains duplicates.
 
+##### Analysis
+Above algorithms don't work for duplicates. We have to **sort** the list first, and keep generate next permutation in lexical order using [this]() algorithm.
 
 
 
