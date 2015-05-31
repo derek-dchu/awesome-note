@@ -37,3 +37,11 @@
 *  [Convert Sorted List to Binary Search Tree](http://derek-dchu.gitbooks.io/awesome-note/content/linked_list.html#convert-sorted-list-to-binary-search-tree)
 *  [Copy List with Random Pointer](http://derek-dchu.gitbooks.io/awesome-note/content/linked_list.html#copy-list-with-random-pointer)
 *  [Linked List Cycle](http://derek-dchu.gitbooks.io/awesome-note/content/linked_list.html#linked-list-cycle)
+
+### Binary Tree
+*   [Binary Tree Depth First Traversal](http://derek-dchu.gitbooks.io/awesome-note/content/binary_tree.html#binary-tree-depth-first-travrsal)
+*   [Valid Height-Balanced Binary Tree](http://derek-dchu.gitbooks.io/awesome-note/content/binary_tree.html#valid-height-balanced-binary-tree)
+*   [Binary Tree Level Order Traversal](http://derek-dchu.gitbooks.io/awesome-note/content/binary_tree.html#binary-tree-level-order-traversal)
+*   [Serialization/Deserialization of a Binary Tree](http://derek-dchu.gitbooks.io/awesome-note/content/binary_tree.html#serialization-deserialization-of-a-binary-tree)
+*   [Construct Binary Tree from Preorder and Inorder Traversal](http://derek-dchu.gitbooks.io/awesome-note/content/binary_tree.html#construct-binary-tree-from-preorder-and-inorder-traversal)
+*   [Binary Search Tree](http://derek-dchu.gitbooks.io/awesome-note/content/binary_tree.html#binary-search-tree)
