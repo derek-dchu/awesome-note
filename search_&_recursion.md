@@ -259,33 +259,55 @@ Use 8-queens puzzle as an example, where n = 8.
 ###### Backtracking
 ```
 define solveNQueens(n)
-    avaliable_cols := {1 .. n}
+    available_cols := {1 .. n}
     used_cols := {}
     configurations := {}
-    solve(n, avaliable_cols, used_cols, configurations)
+    solve(n, available_cols, used_cols, configurations)
     return configurations
     
-define solve(n, avaliable_cols, used_cols, configurations)
+define solve(n, available_cols, used_cols, configurations)
     # if we successfully placed n queens, it is a valid configuration
     if used_cols.length == n then
         generate configuration based on the
         order of used_cols (row by row) and
         append it to configurations
     else
-        for col in avaliable_cols
-            remove col from avaliable_cols
+        for col in available_cols
+            remove col from available_cols
             # if it is valid after placed a queen in this col
             if is_valid(used_cols, col, n) then
                 append col to used_cols
                 # place next queen
-                solve(n, avaliable_cols, used_cols, result)
+                solve(n, available_cols, used_cols, result)
                 # backtrack to previous state
                 pop col from used_cols
             # backtrack to previous state
-            add col back to avaliable_cols
+            add col back to available_cols
 
 define isValid(used_cols, col, n)
         check whether placing a queen at col violates
         diagonal constraint with previous queen at used_col
 ```
+
+
+### Permutations
+Given a list of numbers, return all possible permutations. Do it without recursion.
+
+##### Analysis
+1.  For n elements, we start generating permutation from length 1 to n by adding new element at all possible locations. For example, 
+
+    ```
+    Permutations of [1,2,3] can be generated as following:
+                            1
+            1,2                         2,1
+    3,1,2   1,3,2   1,2,3       3,2,1   2,3,1   2,1,3 
+    ```
+
+2.  More effecient algorithm which guarantees to generate next permutation with a single swap opertaion.
+
+    [heap's algorithm](http://en.wikipedia.org/wiki/Heap%27s_algorithm)
+
+
+
+
 
