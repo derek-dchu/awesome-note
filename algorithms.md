@@ -39,7 +39,7 @@
 *  [Linked List Cycle](http://derek-dchu.gitbooks.io/awesome-note/content/linked_list.html#linked-list-cycle)
 
 ### Binary Tree
-*   [Binary Tree Depth First Traversal](http://derek-dchu.gitbooks.io/awesome-note/content/binary_tree.html#binary-tree-depth-first-travrsal)
+*   [Binary Tree Depth First Traversal](http://derek-dchu.gitbooks.io/awesome-note/content/binary_tree.html#binary-tree-depth-first-traversal)
 *   [Valid Height-Balanced Binary Tree](http://derek-dchu.gitbooks.io/awesome-note/content/binary_tree.html#valid-height-balanced-binary-tree)
 *   [Binary Tree Level Order Traversal](http://derek-dchu.gitbooks.io/awesome-note/content/binary_tree.html#binary-tree-level-order-traversal)
 *   [Serialization/Deserialization of a Binary Tree](http://derek-dchu.gitbooks.io/awesome-note/content/binary_tree.html#serialization-deserialization-of-a-binary-tree)
