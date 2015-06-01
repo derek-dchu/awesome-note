@@ -230,7 +230,10 @@ Annotations, a form of metadata, provide data about a program that is not part o
 
 ### Environment Variables
 *  `System.getenv()` returns a read-only `Map` where the map keys are the environment variable names, and values are the environment variable values.
-*  `System.getenv(String varName)` returns the value for environment variable named varName or returns null if it is not defined. **Note:** To maximize portability, never refer to an environment variable when the same value is available in a system property.
+*  `System.getenv(String varName)` returns the value for environment variable named varName or returns null if it is not defined. 
+    
+    **Note:** To maximize portability, never refer to an environment variable when the same value is available in a system property.
+
 *  Create a new process: `ProcessBuilder`.
 
 ### System Properties
