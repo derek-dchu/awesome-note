@@ -87,7 +87,7 @@ Stream objects that implement formatting are instances of either `PrintWriter` (
 *  `DataOutputStream` -> `DataOutput`.
 *  ReturnType read\[Type\]/write\[Type\] ().
 *  Throws `EOFException` when reach of EOF.
-*  Uses floating point numbers to represent monetary values -> bad decimal fractions, should use `Object Stream` & `BigDecimal`.
+*  Don't use floating point numbers to represent monetary values because of bad decimal fractions. We should use `Object Stream` & `BigDecimal`.
 
 
 ## Object Streams
