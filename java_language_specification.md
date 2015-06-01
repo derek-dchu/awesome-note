@@ -80,9 +80,9 @@ Will be collected at the next GC cycle. A example of it is `WeakHashMap`.
 Like a weak reference but it is less likely to be GC. Soft references are cleared at the discretion of the garbage collector in response to memory demand.
 
 ### Phantom Reference (`java.lang.ref.Phantom<T>`)
-* Cannot be used to retrieve the object.
-* It gets enqueued into a `ReferenceQueue` when the object is physically removed.
-* It is the only way to determine exactly when an object was removed from memory.
+*  Cannot be used to retrieve the object.
+*  It gets enqueued into a `ReferenceQueue` when the object is physically removed.
+*  It is the only way to determine exactly when an object was removed from memory.
 
 
 ## Lazy-loading
@@ -117,12 +117,12 @@ This is done by `ObjectOutputStream.writeObject(obj)` and `ObjectOutputStream.re
 ### Serialization vs Deserialization
 Serialization: convert a serializable object into a binary stream which can be persisted into disk or sent over network to any other running JVM.
 
-* For an class, each level of fields need to be serializable (regarding `transient`) to perform serialization.
-* For an class, it must has at less one superclass that is serializable to perform serialization.
+*  For an class, each level of fields need to be serializable (regarding `transient`) to perform serialization.
+*  For an class, it must has at less one superclass that is serializable to perform serialization.
 
 Deserialization: a reverse process of serialization.
 
-* Deserialization will construct the object directly without calling its constructor. However, if the class is subclass, then it will call constructors of its superclass which are not serializable.
+*  Deserialization will construct the object directly without calling its constructor. However, if the class is subclass, then it will call constructors of its superclass which are not serializable.
 
 ### Override Default Serialization
 We can provide following method to override default serialization:
@@ -145,9 +145,9 @@ If deserialize an object with a different `SerialVersionUID`, Java Serialization
 ### `transient` keyword
 Make a field non-serialiable in a serialiable class.
 
-* We can put `transient` in any class.
-* We can put `transient` in any field.
-* Static fields cannot be serialize, because it is implicitly `transient`.
+*  We can put `transient` in any class.
+*  We can put `transient` in any field.
+*  Static fields cannot be serialize, because it is implicitly `transient`.
 
 ### Create a deep copy using serializable
 **note:** If an object implements serializable at each level, then deep copy of the object can be made via serializable.
@@ -167,17 +167,17 @@ It provides complete control on format and content of Serialization process to a
 
 However, it is not flexible due to the complete responsibility to control serialization when we change the class definition.
 
-* `transient` has no effect in externalizable object.
-* externalizable class will only invoke default constructor of the object (no invocation of superclass constructors) to deserialize.
+*  `transient` has no effect in externalizable object.
+*  externalizable class will only invoke default constructor of the object (no invocation of superclass constructors) to deserialize.
 
 
 ## Annotations
 Annotations, a form of metadata, provide data about a program that is not part of the program itself.
 
-* if there is just one element named `value`, then the name can be omitted.
-* Java 8 supports repeating annotations (applying same types of annotations)
-* Java 8 supports **type annotation**.
-* annotation is form of interface.
+*  If there is just one element named `value`, then the name can be omitted.
+*  Java 8 supports repeating annotations (applying same types of annotations)
+*  Java 8 supports **type annotation**.
+*  Annotation is a form of interface.
 
 ### Declaring an Annotation Type
 ```java
@@ -189,8 +189,8 @@ Annotations, a form of metadata, provide data about a program that is not part o
 
 ## Platform Environment
 ### Properties
-* extends Hashtable -> Dictionary
-* Life Cycle:
+*  Extends Hashtable -> Dictionary
+*  Life Cycle:
   1. Starting Up  
   
   ```java
@@ -228,22 +228,22 @@ Annotations, a form of metadata, provide data about a program that is not part o
   ```
 
 ### Environment Variables
-* `System.getenv()` returns a read-only `Map` where the map keys are the environment variable names, and values are the environment variable values.
-* `System.getenv(String varName)` returns the value for environment variable named varName or returns null if it is not defined. **Note:** To maximize portability, never refer to an environment variable when the same value is available in a system property.
-* Create a new process: `ProcessBuilder`.
+*  `System.getenv()` returns a read-only `Map` where the map keys are the environment variable names, and values are the environment variable values.
+*  `System.getenv(String varName)` returns the value for environment variable named varName or returns null if it is not defined. **Note:** To maximize portability, never refer to an environment variable when the same value is available in a system property.
+*  Create a new process: `ProcessBuilder`.
 
 ### System Properties
 `System` class maintains a Properties object that describes the configuration of the current working environment.
 
-* The runtime system re-initializes the system properties each time its starts up. That is, changing the system properties within an application will not affect future invocations of the Java interpreter for this or any other application.
+*  The runtime system re-initializes the system properties each time its starts up. That is, changing the system properties within an application will not affect future invocations of the Java interpreter for this or any other application.
 
 
 ## CLASSPATH variable
 The CLASSPATH variable is one way to tell applications, including the JDK tools, where to look for user classes.
 
-* default value: "."
-* Using `-cp`, `-classpath` command line switch to override default value for each application without affecting other applications.
-* We can also set CLASSPATH directly.
+*  default value: "."
+*  Using `-cp`, `-classpath` command line switch to override default value for each application without affecting other applications.
+*  We can also set CLASSPATH directly.
 
 
 
