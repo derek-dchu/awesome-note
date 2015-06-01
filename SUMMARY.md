@@ -1,7 +1,6 @@
 # Summary
 
 * [Introduction](README.md)
-   * SQL
 * Data Structures
    * [Suffix Tree and Suffix Array](suffix_tree_and_suffix_array.md)
        * [Suffix Array](suffix_array.md)
@@ -32,6 +31,7 @@
 * [Front End](front_end.md)
    * [Vector Graphics](vector_graphics.md)
    * [Local Storage and Session Storage (HTML 5)](local_storage_and_session_storage.md)
+* SQL
 * [Shell Script](shell_script.md)
 * [Summary](SUMMARY.md)
 
