@@ -24,7 +24,7 @@ It runs normally. If a class has the same name as Java file name, it is default 
 ## Import
 *  Package/class can imported multiple times but JVM will load only once.
 *  Static import: access static method without qualify it by the class name.
-*  [JAR hell](http://en.wikipedia.org/wiki/Java_Classloader#JAR_hell): if we have different versions of jar files on the same class path, the classloader will load the first one on the class path. The class we import will come from that version of jar file. We call.
+*  [JAR hell](http://en.wikipedia.org/wiki/Java_Classloader#JAR_hell): if we have different versions of jar files on the same class path, the classloader will load the first one on the class path. The class we import will come from that version of jar file.
 
 
 ## final, finally, finalize
