@@ -28,7 +28,7 @@ It runs normally. If a class has the same name as Java file name, it is default 
 
 
 ## final, finally, finalize
-### final
+### The `final` keyword
 Initialize final variable
 ```java
 // 1
@@ -56,10 +56,10 @@ Only 1 & 2 can be used. A final variable that is not initialized at the time of 
 * final method cannot be overridden.
 * final class cannot be inherited.
 
-### finally {}
+### The `finally` block
 `finally` block will not be executed if program exits `system.exit()` or fatal error (e.g. OutOfMemoryError).
 
-### finalize()
+### The `finalize` method
 `finalize` is a method can be called by the garbage collector on an object when garbage collection determines that there are no more references to the object. It performs like a destructor in C++. It can be override.
 
 
