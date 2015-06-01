@@ -19,7 +19,7 @@
    * [Language Specification](java_language_specification.md)
        * [Language Basic](java_language_basic.md)
        * [Classes and Objects](java_classes_and_objects.md)
-       * Interfaces and Inheritance
+       * [Interfaces and Inheritance](interfaces_and_inheritance.md)
        * [Generics](java_generics.md)
        * [Concurrency](java_concurrency.md)
    * [Java EE](java-ee.md)
