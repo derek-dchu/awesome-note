@@ -13,6 +13,7 @@
        * [Generics](java_generics.md)
        * [Basic I/O](basic_io.md)
        * [Concurrency](java_concurrency.md)
+       * Exception Handling
    * [Garbage Collection](garbage_collection.md)
    * [Java EE](java-ee.md)
    * [Object Relational Mapping (ORM)](object_relational_mapping.md)
