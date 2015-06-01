@@ -75,19 +75,19 @@ Stream objects that implement formatting are instances of either `PrintWriter` (
 
 
 ## The Console
-* useful for secure password entry.
-* provides both input and output streams that are true character streams.
-* invoking `System.console()` to retrieve `Console` object if it is available.
-* `readPassword()` returns char array.
+*  Useful for secure password entry.
+*  Provides both input and output streams that are true character streams.
+*  Invoking `System.console()` to retrieve `Console` object if it is available.
+*  `readPassword()` returns char array.
 
 
 ## Data Streams
-* Support binary I/O of primitive data type values as well as String values.
-* `DataInputStream` -> `DataInput`.
-* `DataOutputStream` -> `DataOutput`.
-* returnType read\[Type\]/write\[Type\] ().
-* throws `EOFException` when reach of EOF.
-* Uses floating point numbers to represent monetary values -> bad decimal fractions, should use `Object Stream` & `BigDecimal`.
+*  Support binary I/O of primitive data type values as well as String values.
+*  `DataInputStream` -> `DataInput`.
+*  `DataOutputStream` -> `DataOutput`.
+*  ReturnType read\[Type\]/write\[Type\] ().
+*  Throws `EOFException` when reach of EOF.
+*  Uses floating point numbers to represent monetary values -> bad decimal fractions, should use `Object Stream` & `BigDecimal`.
 
 
 ## Object Streams
