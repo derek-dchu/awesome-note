@@ -15,22 +15,22 @@ Error		Exception (checked)
 ```
 
 
-## checked vs unchecked
+## Checked vs Unchecked
 ### Checked exception 
 It is a compile time exception, the compiler will force you to handle it or a compile-time error is thrown.
 
 ### Unchecked exception
-It is a runtime exception, it happens during runtime. we may or may not handle it.
+It is a run-time exception, it happens during run-time. we may or may not handle it.
 
 #### Error
 Error are exceptional conditions that are external to the application, and that the application usually cannot anticipate or recover from.
 
-#### Runtime Exception
-Runtime exception are exceptional conditions that are internal to the application, and that the application usually cannot anticipate or recover from.
+#### Run-time Exception
+Run-time exception are exceptional conditions that are internal to the application, and that the application usually cannot anticipate or recover from.
 
 
 ## How to `throw` an exception
-Throwing an exception means an method creating an exception object and handing it to the runtime system.
+Throwing an exception means an method creating an exception object and handing it to the run-time system.
 
 ```java
 throw someThrowableObject;
