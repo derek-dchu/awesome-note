@@ -15,6 +15,7 @@ It runs normally. If a class has the same name as Java file name, it is default 
     public static void main(String[] args)
     ```
     
+
 *  Without public or static: Runtime error.
 *  Can be overloaded.
 *  Can be final.
