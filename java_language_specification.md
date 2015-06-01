@@ -8,10 +8,16 @@ It is valid. It can be compiled and run with inner public class name.
 It runs normally. If a class has the same name as Java file name, it is default to be public.
 
 
-## Main Function 
-* Without public or static: Runtime error.
-* Can be overloaded.
-* Can be final.
+## The `main` Method
+*  Every application must contain a main method whose signature is:
+
+    ```java
+    public static void main(String[] args)
+    ```
+    
+*  Without public or static: Runtime error.
+*  Can be overloaded.
+*  Can be final.
 
 
 ## Import
