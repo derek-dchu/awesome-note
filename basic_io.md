@@ -125,36 +125,36 @@ Stream objects that implement formatting are instances of either `PrintWriter` (
   3. `endsWith(<path>)`
 
 
-## Checking a File or Directory
-* Checking existence:
+### Checking a File or Directory
+*  Checking existence:
   1. verified to exist: `exists(Path, LinkOption...)`
   2. verified to not exist: `notExists(Path, LinkOption...)`
   3. status is unknown.
-* Checking Accessibility:
+*  Checking Accessibility:
   1. `isReadable(Path)`
   2. `isWritable(Path)`
   3. `isExecutable(Path)`
 * Checking whether two paths locate the same file.
 
 
-## Deleting a File or Directory
+### Deleting a File or Directory
 * If deleting symbolic link, only the link is deleted.
 * `delete(Path)`: throws an exception if the deletion fails.
 * `deleteIfExists(Path)`: no exception is thrown.
 
 
-## Copying a File or Directory
+### Copying a File or Directory
 `copy(sourcePath, targetPath, CopyOptions...)`
 
 * `copy(InputStream, Path, CopyOptions...)`: copy all bytes from an input stream to a file.
 * `copy(Path, OutputStream)`: copy all bytes from a file to an output stream.
 
 
-## Moving a File or Directory
+### Moving a File or Directory
 `move(sourcePath, targetPath, CopyOptions...)`
 
 
-## Managing Metadata
+### Managing Metadata
 
 
 
