@@ -43,14 +43,14 @@ class A {
 }
 
 // 3
-// cannot assign a value to final variable x
+// error: cannot assign a value to final variable x
 class A {
 	final int x;
 	A(int x) { init(x); }
 	void init(int x) { this.x = x; }
 }
 ```
-Only 1 & 2 can be used. A final variable that is not initialized at the time of declaration which can be initialize only in constructor.
+Only 1 & 2 can be used. A final variable that is not initialized at the time of declaration, can be initialize only in constructor.
 
 * final object still can change value. (e.g. Array)
 * final method cannot be overridden.
