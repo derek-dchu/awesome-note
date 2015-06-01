@@ -12,10 +12,10 @@
        * [Interfaces and Inheritance](interfaces_and_inheritance.md)
        * [Generics](java_generics.md)
        * [Concurrency](java_concurrency.md)
+   * Garbage Collection
    * [Java EE](java-ee.md)
    * [Object Relational Mapping (ORM)](object_relational_mapping.md)
        * [Hibernate](hibernate.md)
-   * Garbage Collection
 * [Algorithms](algorithms.md)
    * [Array](array.md)
    * [Bit Manipulation](bit_manipulation.md)
