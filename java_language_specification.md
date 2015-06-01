@@ -1,25 +1,5 @@
 # Language Specification
 
-## Immutable vs Final 
-### Immutable
-value can not be changed.
-
-** (#1) How to define an immutable class:**
-* Declare class as final OR make the constructor private and construct instances in factory methods
-* All fields are `private` and `final`
-* Constructor for initialization
-* No setters - methods that modify fields or objects referred to by fields.
-* If the instance fields include references to mutable objects, don't allow those objects to be changed:
-  1. don't provide methods that modify the mutable objects.
-  2. don't share references to the mutable objects. Never store references to external, create copies in constructor. Similarly, create copies of your internal mutable objects in getter.
-* If the field is a collection, use `Collections.unmodifiableXXX(XXX collection)` to change it into a unmodifiable collection.
-
-Benefits: Immutable object is thread-safe and commonly used in multi-threading environment.
-
-### Final
-The modifier prohibiting value modification.
-
-
 ## Upcast vs Downcast
 ### Upcast  
 * Primitive: shorter byte to longer byte.
