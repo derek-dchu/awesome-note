@@ -5,32 +5,32 @@ An I/O Stream represents an input source or an output destination.
 
 
 ## Byte Streams
-* Perform input and output of 8-bit bytes
-* All byte stream classes are descended from `InputStream` and `OutputStream`.
-* **ALWAYS** close streams by invoking `close()` in finally block
-* **ALL** other stream types are built on byte streams.
+*  Perform input and output of 8-bit bytes
+*  All byte stream classes are descended from `InputStream` and `OutputStream`.
+*  **ALWAYS** close streams by invoking `close()` in finally block
+*  **ALL** other stream types are built on byte streams.
 
 ### `FileInputStream` & `FileOutputStream`
-* input and output int (holds a `byte` value) with `read()`.
-* input and output byte array. 
-* return -1 when reach the end of file.
+*  Input and output int (holds a `byte` value) with `read()`.
+*  Input and output byte array. 
+*  Return -1 when reach the end of file.
 
 
 ## Character Streams
-* In addition to byte stream, character stream automatically translates to and from the local character set.
-* Java uses Unicode convention to store characters.
-* Usually, 8-bit superset of ASCII
-* All character stream classes are descended from `Reader` and `Writer`.
+*  In addition to byte stream, character stream automatically translates to and from the local character set.
+*  Java uses Unicode convention to store characters.
+*  Usually, 8-bit superset of ASCII
+*  All character stream classes are descended from `Reader` and `Writer`.
 
 ### `FileReader` & `FileWriter`
-* input and output int  (hold a `character` value) with `read()`.
-* input and output character array or String.
-* return -1 when reach the end of file.
+*  Input and output int  (hold a `character` value) with `read()`.
+*  Input and output character array or String.
+*  Return -1 when reach the end of file.
 
 
 ## Buffered Streams
-* read data from buffer, then native input API is called only when the buffer is empty.
-* write data to buffer, then native output API is called only when the buffer is full
+*  Read data from buffer, then native input API is called only when the buffer is empty.
+*  Write data to buffer, then native output API is called only when the buffer is full
 * Buffered stream classes:
   1. BufferedInputStream -> FileInputStream
   2. BufferedOutputStream -> FileOutputStream
