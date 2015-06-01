@@ -112,7 +112,7 @@ If an object is `instanceof` of class, that means the object can do either upcas
 ### What is a serialiable object?
 A serialiable object can be converted into a binary string, so that it can be transfered via Internet or saved to a file.
 
-And it is done by `ObjectOutputStream.writeObject(obj)` and `ObjectOutputStream.readObject()`.
+This is done by `ObjectOutputStream.writeObject(obj)` and `ObjectOutputStream.readObject()`.
 
 ### Serialization vs Deserialization
 Serialization: convert a serializable object into a binary stream which can be persisted into disk or sent over network to any other running JVM.
@@ -120,16 +120,19 @@ Serialization: convert a serializable object into a binary stream which can be p
 * For an class, each level of fields need to be serializable (regarding `transient`) to perform serialization.
 * For an class, it must has at less one superclass that is serializable to perform serialization.
 
-Deserialization: the reverse process of serialization.
+Deserialization: a reverse process of serialization.
 
 * Deserialization will construct the object directly without calling its constructor. However, if the class is subclass, then it will call constructors of its superclass which are not serializable.
 
 ### Override Default Serialization
 We can provide following method to override default serialization:
-  1. `private void writeObject(java.io.ObjectOutputStream out) throws IOException`
-  2. `private void readObject(java.io.ObjectInputputStream in) throws IOException`
 
-And why we want to override it?
+```java
+1. private void writeObject(java.io.ObjectOutputStream out) throws IOException
+2. private void readObject(java.io.ObjectInputputStream in) throws IOException
+```
+
+*  Why we want to override it?  
 Because if super class become serializable, we can throw `NotSerializableException` to prevent current class from serialization.
 
 ### What is the purpose of `SerialVersionUID`?
