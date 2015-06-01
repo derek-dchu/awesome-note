@@ -193,21 +193,21 @@ Annotations, a form of metadata, provide data about a program that is not part o
 *  Life Cycle:
   1. Starting Up  
   
-  ```java
-  // create and load default properties
-  Properties defaultProps = new Properties();
-  FileInputStream in = new FileInputStream("defaultProperties");
-  defaultProps.load(in);
-  in.close();
-
-  // create application properties with default
-  Properties applicationProps = new Properties(defaultProps);
-
-  // load properties from last invocation
-  in = new FileInputStream("appProperties");
-  applicationProps.load(in);
-  in.close();
-  ```
+    ```java
+    // create and load default properties
+    Properties defaultProps = new Properties();
+    FileInputStream in = new FileInputStream("defaultProperties");
+    defaultProps.load(in);
+    in.close();
+    
+    // create application properties with default
+    Properties applicationProps = new Properties(defaultProps);
+    
+    // load properties from last invocation
+    in = new FileInputStream("appProperties");
+    applicationProps.load(in);
+    in.close();
+    ```
 
   2. Running
     1. `contains(Object value)`, `contains(Object key)`
@@ -220,12 +220,13 @@ Annotations, a form of metadata, provide data about a program that is not part o
     8. `remove(Object key)`
 
   3. Exiting
-  ```java
-  // save application properties
-  FileOutputStream out = new FileOutputStream("appProperties");
-  applicationProps.store(out, "---No Comment---");
-  out.close();
-  ```
+
+    ```java
+    // save application properties
+    FileOutputStream out = new FileOutputStream("appProperties");
+    applicationProps.store(out, "---No Comment---");
+    out.close();
+    ```
 
 ### Environment Variables
 *  `System.getenv()` returns a read-only `Map` where the map keys are the environment variable names, and values are the environment variable values.
