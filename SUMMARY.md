@@ -19,9 +19,9 @@
    * [Language Specification](java_language_specification.md)
        * [Language Basic](java_language_basic.md)
        * [Classes and Objects](java_classes_and_objects.md)
+       * Interfaces and Inheritance
        * [Generics](java_generics.md)
        * [Concurrency](java_concurrency.md)
-       * Interfaces and Inheritance
    * [Java EE](java-ee.md)
    * [Object Relational Mapping (ORM)](object_relational_mapping.md)
        * [Hibernate](hibernate.md)
