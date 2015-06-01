@@ -60,7 +60,11 @@ Only 1 & 2 can be used. A final variable that is not initialized at the time of 
 `finally` block will not be executed if program exits `system.exit()` or fatal error (e.g. OutOfMemoryError).
 
 ### The `finalize` method
-`finalize` is a method can be called by the garbage collector on an object when garbage collection determines that there are no more references to the object. It performs like a destructor in C++. It can be override.
+`finalize` is a method can be called by the garbage collector on an object when garbage collection determines that there are no more references to the object. It performs like a destructor in C++.
+
+*  Can be overridden.
+*  If an uncaught exception is thrown by the finalize method, the exception is ignored and finalization of that object terminates.
+*  The finalize method is never invoked more than once by a Java virtual machine for any given object.
 
 
 ## Garbage Collection
