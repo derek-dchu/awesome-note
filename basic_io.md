@@ -68,9 +68,10 @@ Stream objects that implement formatting are instances of either `PrintWriter` (
 2. Standard Error: `System.err`
 3. Standard Output: `System.out`
 
-* All standard streams are byte streams.
-* `System.out` & `System.err` -> `PrintStream` which utilizes an internal character stream object to emulate many of the features of character streams.
-* `System.in` has no character stream feature. But we can wrap it in `InputStreamReader`.
+
+*  All standard streams are byte streams.
+*  `System.out` & `System.err` -> `PrintStream` which utilizes an internal character stream object to emulate many of the features of character streams.
+*  `System.in` has no character stream feature. But we can wrap it in `InputStreamReader`.
 
 
 ## The Console
