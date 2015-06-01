@@ -85,9 +85,6 @@ Like a weak reference but it is less likely to be GC. Soft references are cleare
 * It is the only way to determine exactly when an object was removed from memory.
 
 
-## Multi-threading
-
-
 ## Lazy-loading
 Abstract class don't have Lazy-loading feature
 
