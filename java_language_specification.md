@@ -95,7 +95,7 @@ Step 2a: Deletion with Compacting
 To further improve performance, in addition to deleting unreferenced objects, you can also compact the remaining referenced objects. By moving referenced object together, this makes new memory allocation much easier and faster.
 
 ### JVM Generations
-THe heap is broken up into smaller parts: Young, Tenured, and Permanent Generation.
+The heap is broken up into smaller parts: Young, Tenured, and Permanent Generation.
 
 Young Generation: all new objects are allocated and aged. When it fills up, this causes a *minor garbage collection*.
 
