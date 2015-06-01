@@ -70,14 +70,14 @@ Only 1 & 2 can be used. A final variable that is not initialized at the time of 
 ## Garbage Collection
 Garbage Collection is the process of looking at heap memory, identifying which objects are in use and which are not, and deleting the unused objects.
 
-* Garbage Collection is performed by a daemon thread called Garbage Collector(GC) with the lowest priority.
-* GC calls the finalize() method before object is garbage collected once and only once.
-* How to invoke garbage collection
+*  Garbage Collection is performed by a daemon thread called Garbage Collector (GC) with the lowest priority.
+*  GC calls the finalize() method before object is garbage collected once and only once.
+*  How to invoke garbage collection
   1. `System.gc();`
   2. `Runtime.getRuntime().gc();`
-* GC cannot be forced to execute.
-* A lost reference might be obtained back (object resurrection) and the object will not be GCed any more which might result memory leak.
-* GC only collects those objects that are created by `new` keyword.
+*  GC cannot be forced to execute.
+*  A lost reference might be obtained back (object resurrection) and the object will not be GCed any more which might result memory leak.
+*  GC only collects those objects that are created by `new` keyword.
 
 ### When an object becomes eligible for Garbage Collection
 1. If it is not reachable from any live thread.
