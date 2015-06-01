@@ -31,7 +31,7 @@ An I/O Stream represents an input source or an output destination.
 ## Buffered Streams
 *  Read data from buffer, then native input API is called only when the buffer is empty.
 *  Write data to buffer, then native output API is called only when the buffer is full
-* Buffered stream classes:
+*  Buffered stream classes:
   1. BufferedInputStream -> FileInputStream
   2. BufferedOutputStream -> FileOutputStream
   3. BufferedReader -> FileReader
@@ -46,12 +46,12 @@ Flushing the buffer: write out without waiting for it to fill.
 
 
 ## Scanner API
-* formatted input -> tokens -> corresponding data type
-* default delimiter white space including blanks, tabs, and line terminators. 
-* set delimiter: 'useDelimiter(regex)'.
-* `hasNext()` checks EOF
-* `next()` returns String
-* set locale: `useLocale(Locale.<location>)`.
+*  Formatted input -> tokens -> corresponding data type
+*  Default delimiter white space including blanks, tabs, and line terminators. 
+*  Set delimiter: 'useDelimiter(regex)'.
+*  `hasNext()` checks EOF
+*  `next()` returns String
+*  Set locale: `useLocale(Locale.<location>)`.
 
 
 ## Formatting
@@ -59,8 +59,8 @@ Stream objects that implement formatting are instances of either `PrintWriter` (
 
 **note:** The only `PrintStream` objects we are likely to need are `System.out` and `System.err`.
 
-* `print()` & `println()`: standard way
-* `format()`: based on a format string.
+*  `print()` & `println()`: standard way
+*  `format()`: based on a format string.
 
 
 ## Standard Streams
