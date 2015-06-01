@@ -97,16 +97,16 @@ To further improve performance, in addition to deleting unreferenced objects, yo
 ### JVM Generations
 The heap is broken up into smaller parts: Young, Tenured, and Permanent Generation.
 
-Young Generation: all new objects are allocated and aged. When it fills up, this causes a *minor garbage collection*.
+*  Young Generation: all new objects are allocated and aged. When it fills up, this causes a *minor garbage collection*.
 
-**Note:** Stop the World Event: all minor garbage collections are always "Stop the World" events, which means all application threads are stopped until the operation completes.
+    **Note:** Stop the World Event: all minor garbage collections are always "Stop the World" events, which means all application threads are stopped until the operation completes.
 
-Old Generation: when a object in Young generation meets a threshold age, it will be removed to here. However, if a object can not be allocated in Eden space even after minor garbage collection, it will be allocated in here. When it fills up, this causes a *
+*  Old Generation: when a object in Young generation meets a threshold age, it will be removed to here. However, if a object can not be allocated in Eden space even after minor garbage collection, it will be allocated in here. When it fills up, this causes a *
 major garbage collection*.
 
-**Note:** major garbage collection are also Stop the World events. Often it is much slower and should be minimized.
+    **Note:** major garbage collection are also Stop the World events. Often it is much slower and should be minimized.
 
-Permanent generation: contains metadata required by the JVM to describe the classes and methods used in the application. The permanent generation is populated by the JVM at runtime based on classes in use by the application. In addition, Java SE library classes and methods may be stored here. Classes may get collected (unloaded) if the JVM finds they are no longer needed and space may be needed for other classes. The permanent generation is included in a full garbage collection.
+*  Permanent generation: contains metadata required by the JVM to describe the classes and methods used in the application. The permanent generation is populated by the JVM at runtime based on classes in use by the application. In addition, Java SE library classes and methods may be stored here. Classes may get collected (unloaded) if the JVM finds they are no longer needed and space may be needed for other classes. The permanent generation is included in a full garbage collection.
 
 ### Questions:
 #### 1. Create an object that can not be garbage collected
