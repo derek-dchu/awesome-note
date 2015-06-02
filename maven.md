@@ -17,7 +17,7 @@ Maven Repository
 #### Project Template (Archetype)
 1. create an archetype
 ```shell
-$: archetype:generate
+$ archetype:generate
 ```
   * Group ID:
   * Artifact ID:
