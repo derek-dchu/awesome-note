@@ -281,4 +281,6 @@ list != list2
 `{NAME} unmodifiable{NAME} (NAME collection);`  
 NAME: Collection, List, Set, Map, SortedSet, SortedMap
 
+*  It is backed by original collection, there for any change on original collection can be seen in this collection.
+
 
