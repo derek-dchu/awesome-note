@@ -62,37 +62,39 @@ Collection<Type> noDups = new LinkedHashSet<Type>(c);
 ## List
 Ordered collection (sequential)
 
-`get(int index)`
-`set(int index, E element)`
+*  `get(int index)`
+*  `set(int index, E element)`
 
 ### ArrayList
 Use array as internal data structure.
-* lookup: O(1)
-* insert / delete: O(n)
+*  Lookup: O(1)
+*  Insert / Delete: O(n)
 
-* It is more suitable for stack
-* Stack *has a* ArrayList (Adepter)
 
-### LinkedList
-Use doubly-linked list as internal data structure
-* Lookup: O(n)
-* insert / delete: O(1)
+*  It is more suitable for stack
+*  Stack *has a* ArrayList (Adepter)
 
-* It is more suitable for queue
-* LinkedList implements Queue, it *is a* Queue (Facade)
-
-### Why LinkedList is still better than ArrayList in insert / delete even with a O(n) lookup time.
-Because reading is much faster writing, in other words, r/w : 1/n is worst than r/w : n/1.
-
-### ArrayList vs Vector
+#### ArrayList vs Vector
 |   | ArrayList | Vector |  
 |---|-----------|--------|  
 | Thread-safe | No | Yes |  
 | Resizing Rate | 50% | 100% |  
 
 
-* If we have unlimited memory, what the maximum number of elements we can add into ArrayList?
+#### If we have unlimited memory, what the maximum number of elements we can add into ArrayList?
 2^31, because ArrayList.get(int index), 0 ~ 2^31-1 that is the total index we have.
+
+### LinkedList
+Use doubly-linked list as internal data structure
+*  Lookup: O(n)
+*  Insert / Delete: O(1)
+
+
+*  It is more suitable for queue
+*  LinkedList implements Queue, it *is a* Queue (Facade)
+
+### Why LinkedList is still better than ArrayList in insert / delete even with a O(n) lookup time.
+Because reading is much faster writing, in other words, r/w : 1/n is worst than r/w : n/1.
 
 ### Range-View Operation
 `subList(int fromIndex, int toIndex)` returns a `List` view which is backed up by the `List`, so changes in the former are reflected in the latter.
