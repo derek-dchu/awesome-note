@@ -33,7 +33,7 @@
    * [Local Storage and Session Storage (HTML 5)](local_storage_and_session_storage.md)
 * Database
    * [SQL](sql.md)
+* Design Pattern
 * [Shell Script](shell_script.md)
 * [Summary](SUMMARY.md)
-* Design Pattern
 
