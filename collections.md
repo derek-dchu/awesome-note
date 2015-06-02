@@ -6,7 +6,7 @@ A collections framework is a unified architecture for representing and manipulat
 
 ## Core collection interfaces
 ```
-		Collection 					Map
+		Collection 				  Map
 			|						 |
    Set  List  Queue  Deque		 SortedMap
  	|
