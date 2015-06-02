@@ -244,7 +244,7 @@ if the collection is structurally modified (insert, delete, update) at any time,
 #### Fail-Safe Iterator
 Iterator first make a copy of the internal data structure and then iterates on copied one. The iterator will not reflect additions, removals, or changes to the collection since the iterator was created.
 
-**note:** Element-changing operations on iterators themselves (remove(), set(), and add()) are not supported. These methods throw `UnsupportedOperationException`.
+**Note:** Element-changing operations on iterators themselves (remove(), set(), and add()) are not supported. These methods throw `UnsupportedOperationException`.
 
 |  | Fail Fast Iterator | Fail Safe Iterator |  
 |--|--------------------|--------------------|  
@@ -275,7 +275,7 @@ List<V> list2 = Collections.synchronizedList(list);
 list != list2
 ```
 
-**note:** synchronizedList is still better than vector, because synchronized version allows multi-thread reading. Vector only allows single thread access.
+**Note:** synchronizedList is still better than vector, because synchronized version allows multi-thread reading. Vector only allows single thread access.
 
 ### How to make a collection read-only
 `{NAME} unmodifiable{NAME} (NAME collection);`  
