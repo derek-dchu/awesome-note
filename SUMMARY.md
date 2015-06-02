@@ -20,7 +20,7 @@
    * [Object Relational Mapping (ORM)](object_relational_mapping.md)
        * [Hibernate](hibernate.md)
    * [Spring](spring.md)
-   * Maven
+   * [Maven](maven.md)
 * [Algorithms](algorithms.md)
    * [Array](array.md)
    * [Bit Manipulation](bit_manipulation.md)
