@@ -213,18 +213,18 @@ public interface Iterator<E> {
 }
 ```
 
-* `remove()` is the only safe way to modify a collection during iteration. It removes the last element that was returned by next. It can be used to filer an arbitrary `Collection`.
+*  `remove()` is the only safe way to modify a collection during iteration. It removes the last element that was returned by next. It can be used to filer an arbitrary `Collection`.
 
-```java
-static void filter(Collection<?> c) {
-	for (Interator<?> it = c.iterator(); it.hasNext();)
-		if (!cond(it.next()))
-			it.remove();
-}
-```
+    ```java
+    static void filter(Collection<?> c) {
+    	for (Interator<?> it = c.iterator(); it.hasNext();)
+    		if (!cond(it.next()))
+    			it.remove();
+    }
+    ```
 
 #### ListIterator
-with additional `hasPrevious()`, `previous()`, 'set()', 'add()'.
+with extra methods `hasPrevious()`, `previous()`, 'set()', 'add()'.
 
 * backward iteration
 ```java
