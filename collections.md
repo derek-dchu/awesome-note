@@ -249,7 +249,7 @@ Iterator first make a copy of the internal data structure and then iterates on c
 |  | Fail Fast Iterator | Fail Safe Iterator |  
 |--|--------------------|--------------------|  
 | Throw<br> ConcurrentModification<br> Exception<br> | Yes | No |  
-| Clone | object | No | Yes |  
+| Clone object | No | Yes |  
 | Memory Overhead | No | Yes |  
 | Element-changing operations | Yes | No |  
 | Examples | HashMap,Vector,ArrayList,HashSet |  CopyOnWriteArrayList,ConcurrentHashMap |  
