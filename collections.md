@@ -82,7 +82,7 @@ Use array as internal data structure.
 
 
 #### If we have unlimited memory, what the maximum number of elements we can add into ArrayList?
-2^31, because ArrayList.get(int index), 0 ~ 2^31-1 that is the total index we have.
+`Integer.MAX_VALUE` - x, where x is differed based on VM limits. Because ArrayList.get(int index) uses an `int` as index. And actually, when we new an array with length `Integer.MAX_VALUE` - x, it throws an `java.lang.OutOfMemoryError` exception.
 
 ### LinkedList
 Use doubly-linked list as internal data structure
