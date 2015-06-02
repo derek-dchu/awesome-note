@@ -12,7 +12,9 @@ Ensures that only one instance of a class is allowed within a system. It is usef
     ```java
     public class Singleton() {
         private static volatile Singleton instance;
-        private Singleton() {} // private constructor, prevent from creating instance using `new`
+        // private constructor,
+        // prevent from creating instance using `new`
+        private Singleton() {}
         public static Singleton getInstance() {
             if (instance == null) {
                 synchronized (Singleton.class) {
