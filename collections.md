@@ -237,8 +237,9 @@ for (ListIterator<Type> it = list.Iterator(list.size()); it.hasPrevious(); ) {
 For a fail-fast iterator, after the creation of it, 
 if the collection is structurally modified (insert, delete, update) at any time, in any way (other methods, other threads) except through iterator's `remove()` method, it will throw a `ConcurrentModificationException`.
 
-**note:** Internally, the data structure maintains an `mods` flag.
-**note:** Fail-fast behavior of an iterator cannot be guaranteed. This behavior *should be used only to detect bugs*.
+**Note:** 
+*  Internally, the data structure maintains an `mods` flag.
+*  Fail-fast behavior of an iterator cannot be guaranteed. This behavior *should be used only to detect bugs*.
 
 #### Fail-Safe Iterator
 Iterator first make a copy of the internal data structure and then iterates on copied one. The iterator will not reflect additions, removals, or changes to the collection since the iterator was created.
