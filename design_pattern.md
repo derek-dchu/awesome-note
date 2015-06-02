@@ -53,10 +53,10 @@ Yes, use reflection api.
 ### Which classes in JDK uses singleton pattern?
 `java.lang.Runtime`. `getRuntime()` is equivalent to `getInstance()`.
 
-### How to prevent for creating anther instance using reflection?
+### How to prevent for creating another instance using reflection?
 Throws an Exception from constructor.
 
-### How to prevent for creating anther instance using serialization?
+### How to prevent for creating another instance using serialization?
 Return the same object in `readResolve()`. However, a enum singleton is taking cared by JVM by default.
 
 ## Immutable pattern
