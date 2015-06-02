@@ -178,7 +178,7 @@ public static <T extends Comparable<? super T>> sort(List<T> list, Comparator<? 
 ```
 To use the `Collections.sort()`, a class has to implement Comparable.
 
-### Collections.shuffle
+### The Collections.shuffle() method
 ```java
 public static void shuffle(List<?> list, Random rnd) {
 	for (int i = 0; i < list.size(); i++) {
