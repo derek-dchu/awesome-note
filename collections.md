@@ -38,7 +38,7 @@ Contracts of `hashCode()`:
 *  By default, if 75% space have been occupied, HashSet will resize (double the size) and rehashing all elements.
 
 #### TreeSet
-*  Red-Black tree => order of keys.
+*  Red-Black tree => order of elements.
 *  Each element has to implement Comparable.
 *  Duplicate check: CompareTo() or Comparator.
 
