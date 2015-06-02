@@ -26,7 +26,7 @@ Ensures that only one instance of a class is allowed within a system. It is usef
     }
     ```
 
-    **Note: without `volatile`, there is a platform based bug: if the object is very big, initialization will take a long time to finish. Based on different OS, the half baked object will has a reference or doesn't has one yet. If we have the reference to access this half baked object, it throws `LazyInitializationException`.
+    **Note:** without `volatile`, there is a platform based bug: if the object is very big, initialization will take a long time to finish. Based on different OS, the half baked object will has a reference or doesn't has one yet. If we have the reference to access this half baked object, it throws `LazyInitializationException`.
 
   5. Using enum (Java 5 or above): `Enum` is thread-safe and implementation of Singleton by default. However, an enum cannot extends class or implements interfaces.
 
@@ -51,7 +51,7 @@ No, serialization will create a deep copy of the object which violates the patte
 Yes, use reflection api.
 
 ### Which classes in JDK uses singleton pattern?
-`java.lang.Runtime`. `getRuntime` is equivalent to `getInstance`.
+`java.lang.Runtime`. `getRuntime()` is equivalent to `getInstance()`.
 
 ### How to prevent for creating anther instance using reflection?
 Throws an Exception from constructor.
