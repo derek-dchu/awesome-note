@@ -224,7 +224,7 @@ public interface Iterator<E> {
     ```
 
 #### ListIterator
-with extra methods `hasPrevious()`, `previous()`, 'set()', 'add()'.
+with extra methods: `hasPrevious()`, `previous()`, `set()`, `add()`.
 
 * backward iteration
 ```java
