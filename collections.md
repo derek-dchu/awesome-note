@@ -31,17 +31,16 @@ Contracts of `hashCode()`:
 *  If `hashCode()` returns a constant: HashSet reduces to a linked list.
 
 #### HashSet
-*  Elements are stored in a HashMap
-*  Best performing implementation
-*  Lookup time: O(1)
-*  Insert / Delete: O(1)
+*  Elements are stored in a HashMap.
+*  Best performing implementation.
+*  Lookup time: O(1).
+*  Insert / Delete: O(1).
 *  By default, if 75% space have been occupied, HashSet will resize (double the size) and rehashing all elements.
 
 #### TreeSet
-Red-Black tree => order of values.
-Each element has to implement Comparable.
-
-* duplicate check: CompareTo() or Comparator
+*  Red-Black tree => order of keys.
+*  Each element has to implement Comparable.
+*  Duplicate check: CompareTo() or Comparator.
 
 #### LinkedHashSet
 Addition to HashSet, it adds double link which connect the previous and next elements in the array (insertion-order).
@@ -51,7 +50,7 @@ Addition to HashSet, it adds double link which connect the previous and next ele
 Collection<Type> noDups = new HashSet<Type>(c);
 ```
 
-* Preserve order
+If we need to preserve order
 ```java
 Collection<Type> noDups = new LinkedHashSet<Type>(c);
 ```
