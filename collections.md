@@ -6,36 +6,36 @@ A collections framework is a unified architecture for representing and manipulat
 
 ## Core collection interfaces
 ```
-		Collection 				  Map
-			|						 |
-   Set  List  Queue  Deque		 SortedMap
- 	|
+		Collection 			     Map
+			|				        |
+   Set  List  Queue  Deque       SortedMap
+    |
 SortedSet
 ```
 
 ## Set
 A `Set` is a `Collection` that cannot contain duplicate elements.
 
-**note:** Set is backed by Map.
+**Note:** Set is backed by Map.
 
-* Identify duplicates
-	1. HashSet (HashMap): `a.hashCode() == b.hashCode() && (a == b || a.equals(b))`
+### Identify duplicates
+*  `a.hashCode() == b.hashCode() && (a == b || a.equals(b))`
 
-	* Why we compare hashCode() first?
-	Contracts of hashCode():
+*  Why we compare `hashCode` first?  
+Contracts of `hashCode()`:
+
 	1. hashCode() returns consistent value
 	2. a.equals(b) => a.hashCode() == b.hashCode()
 	3. a.hashCode() == b.hashCode() ≠> a.equals(b)
 
-	* What if we have a hashCode() returns a constant
-	HashSet reduces to a linked list.
+*  If `hashCode()` returns a constant: HashSet reduces to a linked list.
 
 #### HashSet
-* elements are stored in a HashMap
-* best performing implementation
-* lookup time: O(1)
-* insert / delete: O(1)
-* by default, if 75% space have been occupied, HashSet will resize (double the size) and rehashing all elements.
+*  Elements are stored in a HashMap
+*  Best performing implementation
+*  Lookup time: O(1)
+*  Insert / Delete: O(1)
+*  By default, if 75% space have been occupied, HashSet will resize (double the size) and rehashing all elements.
 
 #### TreeSet
 Red-Black tree => order of values.
