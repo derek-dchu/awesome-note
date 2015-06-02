@@ -169,13 +169,14 @@ public interface COmparator<V> {
 }
 ```
 
-***note: String is Comparable.***
+**Note:** String is Comparable.
 
-### Collections.sort
+### The `Collections.sort` method
 ```java
 public static <T extends Comparable<? super T>> sort(List<T> list)
+public static <T extends Comparable<? super T>> sort(List<T> list, Comparator<? super T> c)
 ```
-To use the Collections.sort, a class has to implement Comparable.
+To use the `Collections.sort()`, a class has to implement Comparable.
 
 ### Collections.shuffle
 ```java
