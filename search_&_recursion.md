@@ -1,5 +1,43 @@
 # Search & Recursion
 
+### Combination Sum
+Given a set of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.
+
+The same repeated number may be chosen from C unlimited number of times.
+
+Example  
+Given candidate set 2,3,6,7 and target 7, 
+A solution set is:  
+[7]  
+[2, 2, 3]  
+
+Note  
+*  All numbers (including target) will be positive integers.
+*  Elements in a combination (a1, a2, ... , ak) must be in non-descending order. (ie, a1 ≤ a2 ≤ ... ≤ ak).
+*  The solution set must not contain duplicate combinations.
+
+##### Analysis
+Keep putting new number in a group and track sum of it. Do early pruning when the sum exceed target, and then backtrack to previous prefix and append the next available number. 
+
+#### Follow Up
+Given a collection of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.
+
+Each number in C may only be used once in the combination.
+
+For example, given candidate set 10,1,6,7,2,1,5 and target 8, a solution set is: 
+
+[1,7]
+
+[1,2,5]
+
+[2,6]
+
+[1,1,6]
+
+##### Analysis
+It is very similar to original problem, we only need to move to next non-repeating available number when do the backtracking.
+
+
 ### Topological Sorting
 Given a digraph, put the vertices in order such that all its directed edges point from a vertex earlier in the order to a vertex later in the order (or report that doing so is not possible).
 
