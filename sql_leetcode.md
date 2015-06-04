@@ -131,6 +131,22 @@ For example, given the above Scores table, your query should generate the follow
 +-------+------+
 ```
 
+##### MySQL
+```sql
+SELECT b.Score Score, c.Rank Rank 
+FROM
+  ( SELECT a.Score Score, @rnk:=@rnk+1 Rank 
+    FROM
+      ( SELECT DISTINCT Score 
+        FROM Scores
+        ORDER BY Score DESC ) a, 
+      ( SELECT @rnk:=0 ) r
+   ) c
+JOIN Scores b 
+ON c.Score = b.Score 
+ORDER BY c.Rank;
+```
+
 ##### Oracle
 ```sql
 SELECT score AS "Score", DENSE_RANK() OVER (ORDER BY NVL(score, -1) DESC) as "Rank"
