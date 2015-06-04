@@ -61,4 +61,43 @@ WHERE e1.salary <> (SELECT MAX(e2.salary)
 
 **Note:** MAX() will return `null` if record is not found.
 
+### Nth Highest Salary
+Write a SQL query to get the nth highest salary from the Employee table.
+```
++----+--------+
+| Id | Salary |
++----+--------+
+| 1  | 100    |
+| 2  | 200    |
+| 3  | 300    |
++----+--------+
+```
+For example, given the above Employee table, the nth highest salary where n = 2 is 200. If there is no nth highest salary, then the query should return `null`.
 
+##### MySQL
+```sql
+DELIMITER //
+CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+BEGIN
+  SET N = N-1;
+  RETURN (
+      SELECT DISTINCT salary
+      FROM Employee
+      ORDER BY salary DESC
+      LIMIT N, 1
+  );
+END//
+DELIMITER ;
+```
+
+##### Oracle
+```sql
+SELECT *
+FROM
+    ( SELECT sal, ROWNUM rnum
+      FROM (SELECT DISTINCT NVL(salary, -1) as sal
+            FROM person)
+      ORDER BY sal DESC
+    )
+WHERE rnum = N;
+```
