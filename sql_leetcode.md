@@ -152,3 +152,39 @@ ORDER BY c.Rank;
 SELECT score AS "Score", DENSE_RANK() OVER (ORDER BY NVL(score, -1) DESC) as "Rank"
 FROM scores;
 ```
+
+
+### Consecutive Numbers
+Write a SQL query to find all numbers that appear at least three times consecutively.
+```
++----+-----+
+| Id | Num |
++----+-----+
+| 1  |  1  |
+| 2  |  1  |
+| 3  |  1  |
+| 4  |  2  |
+| 5  |  1  |
+| 6  |  2  |
+| 7  |  2  |
++----+-----+
+```
+For example, given the above Logs table, 1 is the only number that appears consecutively for at least three times.
+
+##### MySQL
+```sql
+SELECT DISTINCT cTable.Num
+FROM
+    ( SELECT
+        Num, 
+        CASE
+            WHEN @prev=Num THEN @count:=@count+1
+            WHEN (@prev:=Num) IS NOT NULL THEN @count:=1
+        END c
+    FROM 
+        Logs, 
+        (SELECT @prev:=NULL) p 
+    ) cTable
+WHERE cTable.c = 3;
+```
+
