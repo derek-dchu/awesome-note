@@ -375,6 +375,26 @@ Write a SQL query to find employees who earn the top three salaries in each of t
 +------------+----------+--------+
 ```
 
+##### MySQL
+```sql
+SELECT d.Name Department, rst.ename Employee, rst.s Salary
+FROM 
+  Department d, 
+  ( SELECT r.deptid, e.Name ename, e.Salary s, FIND_IN_SET(e.Salary, r.salaries) rank
+    FROM 
+      Employee e, 
+      ( SELECT DepartmentId deptid, GROUP_CONCAT(DISTINCT Salary ORDER BY Salary DESC SEPARATOR ',') salaries
+        FROM Employee
+        GROUP BY DepartmentId ) r
+    WHERE e.DepartmentId = r.deptid
+  ) rst
+WHERE
+  d.id = rst.deptid
+AND
+  rst.rank < 4
+ORDER BY d.id, rst.rank;
+```
+
 ##### Oracle
 ```sql
 SELECT d.name, r.ename, r.s
