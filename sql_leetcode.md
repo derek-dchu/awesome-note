@@ -528,9 +528,23 @@ For example, return the following Ids for the above Weather table:
     ```
 
 ##### Oracle
-```sql
-SELECT w1.Id Id
-FROM Weather w1 JOIN Weather w2
-ON w1.d = w2.d + 1
-WHERE w1.Temperature > w2.Temperature;
-```
+*  Self-join and look for adjunct dates.
+
+    ```sql
+    SELECT w1.Id Id
+    FROM Weather w1 JOIN Weather w2
+    ON w1.d = w2.d + 1
+    WHERE w1.Temperature > w2.Temperature;
+    ```
+
+*  Using LAG() which query previous rows at the same time.
+
+    ```sql
+    SELECT Id
+    FROM ( SELECT 
+             Id,
+             Temperature t,
+             LAG (Temperature,1) OVER (ORDER BY d) AS prev_t
+           FROM Weather )
+    WHERE t > prev_t;
+    ```
