@@ -290,7 +290,12 @@ class ThreadLocal<V> {
 ## Immutable Objects
 An object is considered *immutable* if its state caonnot change after it is constructed.
 
-Benefits: immutable object is thread-safe and commonly used in multi-threading environment.
+Benefits:
+*  Simple to construct, test, and use.
+*  Thread-safe and commonly used in multi-threading environment.
+*  Allow hashCode to use lazy initialization, and to cache its return value.
+*  Do not need to be copied defensively when used as a field.
+*  Can be used as Map keys and Set elements.
 
 ### (#1) How to define an immutable class:
 * Declare class as final OR make the constructor private and construct instances in factory methods
