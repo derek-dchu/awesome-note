@@ -332,7 +332,7 @@ Indicates whether some other object is "equal to" this one.
 * `public final void wait() throws InterruptedException`
   Causes the current thread to wait until another thread invokes the notify() method or the notifyAll() method for this object.
 
-### hashCode() and equals()
+### `hashCode` method and `equals` method
 By default, hashCode() returns an integer representation of memory address where object is stored. 
 
 Contract of hashCode:
