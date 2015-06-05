@@ -16,3 +16,6 @@
   
 * Class  
 closest upper class in the inheritance tree. If there are more than one class available, there will be a compile error.
+
+## Marker Interface
+It follows the marker interface pattern used to provide run-time type information about objects. It provides a means to associate metadata with a class where the language does not have explicit support for such metadata.
