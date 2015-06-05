@@ -61,7 +61,7 @@ try {
 ```
 * subclass exception will put on top of superclass.
 * never put `return` in finally, because it will hide all other `return`s.
-* finally block will execute after `return` in other clauses.
+* finally block *always* executes when the try block exits.
 * Java 7, a single `catch` block can handle more than on type of exception, `catch (ExceptionA | ExceptionB ex)`, and `ex` is `final`.
 
 #### try-with-resources
