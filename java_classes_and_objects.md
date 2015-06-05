@@ -336,9 +336,16 @@ Indicates whether some other object is "equal to" this one.
 By default, hashCode() returns an integer representation of memory address where object is stored. 
 
 Contract of hashCode:
-    1. consistency
-    2. a equals b => a.hashCode == b.hashCode
-    3. a.hashCode == b.hashCode ≠> a equals b
+1. consistency
+2. a equals b => a.hashCode == b.hashCode
+3. a.hashCode == b.hashCode ≠> a equals b
+
+equals relation must follows:
+1. reflexive: for any non-null reference value x, x.equals(x) should return true.
+2. symmetric: for any non-null reference values x and y, x.equals(y) should return true if and only if y.equals(x) returns true.
+3. transitive: for any non-null reference values x, y, and z, if x.equals(y) returns true and y.equals(z) returns true, then x.equals(z) should return true.
+4. consistent: for any non-null reference values x and y, multiple invocations of x.equals(y) consistently return true or consistently return false, provided no information used in equals comparisons on the objects is modified.
+For any non-null reference value x, x.equals(null) should return false.
 
 ### clone() vs Cloneable (#2)
 ```java
