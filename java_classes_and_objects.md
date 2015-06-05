@@ -312,7 +312,7 @@ Indicates whether some other object is "equal to" this one.
   Returns the runtime class of an object.
 
   > cannot be overridden.
-  > it returns <a class>.class. e.g. `String.class == "abc".getClass()`.
+  > it returns a Class object. e.g. `String.class == "abc".getClass()`.
 
 * `public int hashCode()`  
   Returns a hash code value for the object.
