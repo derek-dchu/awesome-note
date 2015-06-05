@@ -375,6 +375,20 @@ Write a SQL query to find employees who earn the top three salaries in each of t
 +------------+----------+--------+
 ```
 
+##### SQL
+```sql
+SELECT D.Name AS Department, E.Name AS Employee, E.Salary AS Salary 
+FROM Employee E, Department D
+WHERE ( SELECT COUNT(DISTINCT(Salary)) 
+        FROM Employee 
+        WHERE 
+            DepartmentId = E.DepartmentId 
+        AND 
+            Salary > E.Salary) < 3
+AND E.DepartmentId = D.Id 
+ORDER BY E.DepartmentId, E.Salary DESC;
+```
+
 ##### MySQL
 ```sql
 SELECT d.Name Department, rst.ename Employee, rst.s Salary
