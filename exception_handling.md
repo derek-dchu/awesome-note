@@ -59,7 +59,7 @@ try {
 	
 }
 ```
-* subclass exception will put on top of superclass.
+* subclass exception need to be put on top of superclass.
 * never put `return` in finally, because it will hide all other `return`s.
 * finally block *always* executes when the try block exits.
 * a try block can exit either throws an exception or exits normally.
