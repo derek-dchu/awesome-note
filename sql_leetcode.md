@@ -472,4 +472,58 @@ NOT IN ( SELECT *
 ```
 
 
+### Rising Temperature
+Given a Weather table, write a SQL query to find all dates' Ids with higher temperature compared to its previous (yesterday's) dates.
+```
++---------+------------+------------------+
+| Id(INT) | Date(DATE) | Temperature(INT) |
++---------+------------+------------------+
+|       1 | 2015-01-01 |               10 |
+|       2 | 2015-01-02 |               25 |
+|       3 | 2015-01-03 |               20 |
+|       4 | 2015-01-04 |               30 |
++---------+------------+------------------+
+```
+For example, return the following Ids for the above Weather table:
+```
++----+
+| Id |
++----+
+|  2 |
+|  4 |
++----+
+```
 
+##### MySQL
+*  Self-join and look for adjunct dates.
+
+    ```sql
+    SELECT w1.Id Id
+    FROM Weather w1 JOIN Weather w2
+    ON DATEDIFF(w1.Date,w2.Date)=1
+    WHERE 
+      w1.Temperature > w2.Temperature;
+    ```
+
+*  Sorting (faster then above)
+
+    ```sql
+    SELECT Id
+    FROM ( SELECT
+             CASE
+               WHEN
+                 Temperature > @prevtemp
+               AND
+                 DATEDIFF(Date, @prevdate) = 1 
+               THEN Id
+                 ELSE NULL
+             END AS Id,
+             @prevtemp:=Temperature,
+             @prevdate:=Date
+           FROM 
+             Weather, 
+             (SELECT @prevtemp:=NULL) AS pt, 
+             (SELECT @prevdate:=NULL) AS pd
+           ORDER BY Date ) AS rst 
+    WHERE Id IS NOT NULL;
+    ```
