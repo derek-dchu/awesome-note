@@ -332,6 +332,14 @@ Indicates whether some other object is "equal to" this one.
 * `public final void wait() throws InterruptedException`
   Causes the current thread to wait until another thread invokes the notify() method or the notifyAll() method for this object.
 
+### hashCode() and equals()
+By default, hashCode() returns an integer representation of memory address where object is stored. 
+
+Contract of hashCode:
+    1. consistency
+    2. a equals b => a.hashCode == b.hashCode
+    3. a.hashCode == b.hashCode ≠> a equals b
+
 ### clone() vs Cloneable (#2)
 ```java
 protected Object clone() throws CloneNotSuppertedException
