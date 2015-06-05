@@ -501,8 +501,7 @@ For example, return the following Ids for the above Weather table:
     SELECT w1.Id Id
     FROM Weather w1 JOIN Weather w2
     ON DATEDIFF(w1.Date,w2.Date)=1
-    WHERE 
-      w1.Temperature > w2.Temperature;
+    WHERE w1.Temperature > w2.Temperature;
     ```
 
 *  Sorting (faster then above)
@@ -527,3 +526,11 @@ For example, return the following Ids for the above Weather table:
            ORDER BY Date ) AS rst 
     WHERE Id IS NOT NULL;
     ```
+
+##### Oracle
+```sql
+SELECT w1.Id Id
+FROM Weather w1 JOIN Weather w2
+ON w1.d = w2.d + 1
+WHERE w1.Temperature > w2.Temperature;
+```
