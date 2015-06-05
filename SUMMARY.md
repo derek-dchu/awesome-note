@@ -5,7 +5,7 @@
    * [Suffix Tree and Suffix Array](suffix_tree_and_suffix_array.md)
        * [Suffix Array](suffix_array.md)
    * Trie
-* Java
+* [Java](java.md)
    * [Language Specification](java_language_specification.md)
        * [Language Basic](java_language_basic.md)
        * [Classes and Objects](java_classes_and_objects.md)
