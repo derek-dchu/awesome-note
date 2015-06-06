@@ -143,10 +143,10 @@ If deserialize an object with a different `SerialVersionUID`, Java Serialization
 **note:** If `SerialVersionUID` is not provided, normally system will use hashCode instead. 
 
 ### `transient` keyword
-Make a field non-serialiable in a serialiable class.
+It is used to indicate that a field should not be serialized.
 
-*  We can put `transient` in any class.
-*  We can put `transient` in any field.
+*  We can put `transient` before any class.
+*  We can put `transient` before any field.
 *  Static fields will not be serialized, because it is implicitly `transient`.
 
 ### Create a deep copy using serializable
