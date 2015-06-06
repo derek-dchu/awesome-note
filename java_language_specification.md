@@ -147,13 +147,19 @@ Make a field non-serialiable in a serialiable class.
 
 *  We can put `transient` in any class.
 *  We can put `transient` in any field.
-*  Static fields cannot be serialize, because it is implicitly `transient`.
+*  Static fields will not be serialized, because it is implicitly `transient`.
 
 ### Create a deep copy using serializable
 **note:** If an object implements serializable at each level, then deep copy of the object can be made via serializable.
 
-### What will happen if one of the members in the class doesn't implement Serializable interface?
-Throws `NotSerializableException` at runtime.
+### What happens if a Serializable class contains a member which is not serializable? How to fix it?
+In this case, `NotSerializableException` will be thrown at runtime.
+
+To fix this problem, if the member is not necessary to be serialized, we make the member `transient`. Otherwise we need to transfer its state into binary stream manually:
+  1. make it `transient`.
+  2. In writeObject, first call `defaultWriteObject()` to serialize other fields, then call other `writeXXX()` methods to serialize individual properties of the non-serializable object.
+  3. In readObject, 
+first call defaultReadObject to deserialize other fields, then call other `readXXX()` methods for individual properties of the non-serializable object.
 
 
 ## Externalizable
