@@ -132,6 +132,7 @@ The interrupt mechanism is implemented using an **internal flag** known as the *
 ### `wait` method
 Causes the current thread to wait until another thread invokes the notify() method or the notifyAll() method for this object. In other words, this method behaves exactly as if it simply performs the call wait(0). So `wait()` has no control.
 
+* It is invoked on an object; current thread must synchronize on the lock object.
 * If we use `wait()` without synchronized, it will throw `IllegalMonitorStateException` - the current thread is not the owner of the object's monitor.
 
 **Note:** always invoke wait inside a loop that tests for the condition being waited for. Don't assume that the interrupt was for the particular condition you were waiting for, or that the condition is still true.
