@@ -23,9 +23,7 @@ public interface Collection<E> extends Iterable<E> {
 ## Set
 A `Set` is a `Collection` that cannot contain duplicate elements.
 
-**Note:** 
-*  Set is backed by Map.
-*  One `null` element is allowed.
+**Note:** Set is backed by Map.
 
 ### Identify duplicates
 *  `a.hashCode() == b.hashCode() && (a == b || a.equals(b))`
@@ -40,16 +38,19 @@ Contracts of `hashCode()`:
 *  If `hashCode()` returns a constant: HashSet reduces to a linked list.
 
 #### HashSet
-*  Elements are stored in a HashMap.
+*  Elements are stored in a `HashMap`.
 *  Best performing implementation.
 *  Lookup time: O(1).
 *  Insert / Delete: O(1).
 *  By default, if 75% space have been occupied, HashSet will resize (double the size) and rehashing all elements.
+*  One `null` element is allowed.
 
 #### TreeSet
+*  Elements are stored in a `NavigableMap`.
 *  Red-Black tree => order of elements.
 *  Each element has to implement Comparable.
 *  Duplicate check: CompareTo() or Comparator.
+*  `null` element is not allowed.
 
 #### LinkedHashSet
 Addition to HashSet, it adds double link which connect the previous and next elements in the array (insertion-order).
