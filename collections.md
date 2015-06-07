@@ -13,6 +13,13 @@ A collections framework is a unified architecture for representing and manipulat
 SortedSet
 ```
 
+```java
+public interface Collection<E> extends Iterable<E> {
+    //method definitions
+}
+```
+
+
 ## Set
 A `Set` is a `Collection` that cannot contain duplicate elements.
 
