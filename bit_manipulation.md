@@ -26,3 +26,11 @@ Check whether its binary form is zeros leading with a single '1' bit.
 ```
 n & (n - 1) == 0
 ```
+
+
+### Swap two integers without using the third variable
+```
+a ^= b
+b ^= a
+a ^= b
+```
