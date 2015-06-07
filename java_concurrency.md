@@ -112,7 +112,9 @@ It is like a yield sign. Any thread calls `yield()` will make it back to READY s
 `static void sleep(long millis)`,
 `static void sleep(long millis, int nanos)`: millisecond + nanosecond.
 
-Thread.sleep causes the current thread to suspend execution for a specified period. We cannot assume that invoking sleep will suspend the thread for precisely the time period specified.
+Thread.sleep causes the current thread (the one invoke this method) to suspend execution for a specified period. So if thread a invokes thread b.sleep(), a is going to suspend, not b.
+
+We cannot assume that invoking sleep will suspend the thread for precisely the time period specified.
 
 **Note:** The sleep period can be terminated by interrupts, and an `InterruptedException` will be thrown.
 
