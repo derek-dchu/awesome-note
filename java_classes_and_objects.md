@@ -514,7 +514,7 @@ implements Comparable<E>, Serializable
     Outer.Direction.EAST
     ```
 
-**Note:** all enums implicitly extend `java.lang.Enum`, therefore it cannot extend anything else.
+**Note:** all enums implicitly final subclass of `java.lang.Enum`, therefore it cannot extend anything else.
 
 
 ## Number Class
