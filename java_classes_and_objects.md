@@ -539,6 +539,8 @@ Return a substring starts from index n. It potentially cause memory leak before 
 ## Constant pool
 If the value p being boxed is `true`, `false`, a `byte`, or a `char` in the range `\u0000` to `\u007f`, or an `int` or `short` number between -128 and 127 (inclusive), and let `r1` and `r2` be the results of any two boxing conversions of p, then we will have `r1 == r2`.
 
+It is implemented with an inner static class `java.lang.Integer.IntegerCache`.
+
 
 ## Autoboxing vs Unboxing
 Both occurs at compile time.
