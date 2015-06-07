@@ -545,6 +545,10 @@ There is a string pool in stack which contains non-duplicated strings. Those str
 ### The `substring` method
 Return a substring starts from index n. It potentially cause memory leak before JDK7u6, because all substrings are backed by original character array (can not be garbage collected while there exist substrings). We can solve it by coping the substring, `new String(String.substring(index))`.
 
+**Note:** this method return a substring that is allocated in heap. Therefore
+* `"abc".substring(0,2) != "ab"`
+* `"abc".substring(0,2).intern() == "ab"`
+
 ### String vs StringBuffer vs StringBuilder  
 * String is immutable.  
 * StringBuffer, StringBuilder are mutable.  
