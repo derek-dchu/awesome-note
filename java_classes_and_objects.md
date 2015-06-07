@@ -542,6 +542,8 @@ for each character c in string:
 ### String pool and intern()  
 There is a string pool in stack which contains non-duplicated strings. Those strings will be reused by references. `intern()` returns canonical copy of string from the string pool. Create a string using new keyword will firstly create a string in string pool and then copy it into heap to create an String object.
 
+* concatnate operator '+' will return String from the pool. `"ab"+"c" == "a"+"bc"`.
+
 ### The `substring` method
 Return a substring starts from index n. It potentially cause memory leak before JDK7u6, because all substrings are backed by original character array (can not be garbage collected while there exist substrings). We can solve it by coping the substring, `new String(String.substring(index))`.
 
