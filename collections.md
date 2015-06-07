@@ -23,7 +23,9 @@ public interface Collection<E> extends Iterable<E> {
 ## Set
 A `Set` is a `Collection` that cannot contain duplicate elements.
 
-**Note:** Set is backed by Map.
+**Note:** 
+*  Set is backed by Map.
+*  One `null` element is allowed.
 
 ### Identify duplicates
 *  `a.hashCode() == b.hashCode() && (a == b || a.equals(b))`
