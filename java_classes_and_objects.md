@@ -541,6 +541,8 @@ If the value p being boxed is `true`, `false`, a `byte`, or a `char` in the rang
 
 It is implemented using an inner static class `java.lang.Integer.IntegerCache`.
 
+**Note:** the upper bound of integer cache can be set via a runtime parameter: `-Djava.lang.Integer.IntegerCache.high`.
+
 
 ## Autoboxing vs Unboxing
 Both occurs at compile time.
