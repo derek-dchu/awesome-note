@@ -267,6 +267,8 @@ public interface Enumeration<V> {
 }
 ```
 
+This interface is duplicated by the `Iterator` interface. New implementations should consider using `Iterator` in preference to `Enumeration`.
+
 ### How to convert non-thread-safe Collection to thread-safe.
 `{NAME}	synchronized{NAME} (NAME collection);`  
 NAME: Collection, List, Set, Map, SortedSet, SortedMap
