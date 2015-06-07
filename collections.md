@@ -157,6 +157,11 @@ map.put(K, V)
 V value = map.getValue(Key);
 ```
 
+### How to design a key for HashMap
+We can use custom class as the key for HashMap, however we may also face the problem that after an insertion, fields in key changed which leads the hash code of key is also changed, so we can never get back the value using this key.
+
+That is reason why we use Integer, String which by default are immutable in general. In other words, a good key for HashMap has to have a consistent hash code.
+
 
 ## Comparator vs Comparable (#4)
 ```java
