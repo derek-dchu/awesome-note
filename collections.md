@@ -129,7 +129,7 @@ Two forms of methods:
 * no duplicate keys, each key can map to at most on one value.
 
 ### TreeMap
-sorted key.
+An implementation of SortedMap. Sorted key.
 
 ### HashMap vs Hashtable vs ConcurrentHashMap (Java 5)
 |   | HashMap | Hashtable | ConcurrentHashMap |  
