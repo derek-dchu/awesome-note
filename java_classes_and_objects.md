@@ -494,6 +494,26 @@ Class c = boolean.class;  // correct
 
 
 ## Enum Types
+```java
+public abstract class Enum<E extends Enum<E>>
+implements Comparable<E>, Serializable
+```
+*  By default, it is singleton.
+*  equals() is using `==`.
+*  By default, always static, both itself and its variables.
+    ```java
+    public class Outer {
+        enum Direction {
+            EAST,
+            WEST,
+            NORTH,
+            SOUTH
+        }
+    }
+    Outer.Direction
+    Outer.Direction.EAST
+    ```
+
 **Note:** all enums implicitly extend `java.lang.Enum`, therefore it cannot extend anything else.
 
 
