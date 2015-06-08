@@ -61,6 +61,12 @@ Throws an Exception from constructor.
 ### How to prevent for creating another instance using serialization?
 Return the same object in `readResolve()`. However, a enum singleton is taking cared by JVM by default.
 
+
+## Factory Pattern
+* Type: Object Creational
+* 
+
+
 ## Immutable pattern
 
 
