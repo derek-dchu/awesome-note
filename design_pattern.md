@@ -64,7 +64,9 @@ Return the same object in `readResolve()`. However, a enum singleton is taking c
 
 ## Factory Pattern
 * Type: Object Creational
-* 
+* JDK usage:
+  1. java.sql.DriverManager#getConnection()
+  2. java.lang.Class#newInstance()
 
 
 ## Immutable pattern
