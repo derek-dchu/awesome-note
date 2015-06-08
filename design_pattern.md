@@ -6,7 +6,18 @@ Ensures that only one instance of a class is allowed within a system. It is usef
 5 modes of Singleton Pattern:
   1. lazy mode: create the object in get method. This will save memory. However, it is not thread-safe (threads may create multiple objects).
   2. thread-safe lazy mode, low performance: we make get method `synchronized`, but it will reduce performance. (only one thread can get the object at a time)
-  3. greedy mode: Eager initialization - create the object when loading the class. Thread-safe, but need the memory at very beginning.
+  3. greedy mode: Eager initialization - create the object when loading the class. Thread-safe, but allocate the memory at very beginning.
+
+    ```java
+    public class EagerSingleton {
+        private static volatile EagerSingleton instance = new EagerSingleton();
+        private EagerSingleton() {}
+        public static EagerSingleton getInstance() {
+            return instance;
+        }
+    }
+    ```
+
   4. (#6) (best) Thread-safe lazy mode with high performance: *double-checked locking* mechanism - add a `synchronized` block.
 
     ```java
