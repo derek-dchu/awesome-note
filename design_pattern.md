@@ -5,7 +5,7 @@ Ensures that only one instance of a class is allowed within a system. It is usef
 
 5 modes of Singleton Pattern:
   1. lazy mode: create the object in get method. This will save memory. However, it is not thread-safe (threads may create multiple objects).
-  2. thread-safe lazy mode, low performance: we make get method `synchronized`, but it will reduce performance. (only one thread can get the object at a time)
+  2. thread-safe lazy mode, low performance: we make getInstance method `synchronized`, but it will reduce performance. (only one thread can get the object at a time)
   3. greedy mode: Eager initialization - create the object when loading the class. Thread-safe, but allocate the memory at very beginning.
 
     ```java
@@ -18,7 +18,7 @@ Ensures that only one instance of a class is allowed within a system. It is usef
     }
     ```
 
-  4. (#6) (best) Thread-safe lazy mode with high performance: *double-checked locking* mechanism - add a `synchronized` block.
+  4. (#6) (best) Thread-safe lazy mode with double check: *double-checked locking* mechanism - add a `synchronized` block.
 
     ```java
     public class Singleton() {
@@ -52,6 +52,19 @@ Ensures that only one instance of a class is allowed within a system. It is usef
 
     // Use it like this
     SingleInstance.INSTANCE.doStuff();
+    ```
+  6. Inner static class initialization. It is lazy loaded, because inner static class is lazy loaded.
+  
+    ```java
+    public class BillPughSingleton {
+        private BillPughSingleton() {}
+        private static class LazyHolder {
+            private static final BillPughSingleton INSTANCE = new BillPughSingleton();
+        }
+        public static BillPughSingleton getInstance() {
+            return LazyHolder.INSTANCE;
+        }
+}
     ```
 
 ### Why not just use all static fields to store data?
