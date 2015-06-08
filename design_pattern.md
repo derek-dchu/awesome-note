@@ -65,11 +65,10 @@ Return the same object in `readResolve()`. However, a enum singleton is taking c
 
 
 ## Decorator Pattern
-* Object structural design pattern.
 * Keyword: function enhancement.
 * Type: Object Structural pattern
 * Purpose: Allows for the dynamic wrapping of objects in order to modify their existing responsibilities and behaviors
-* Decorator pattern is applied in 
+* JDK usage:
   1. Java Input/Output API
   2. `Thread` class
 
@@ -86,9 +85,9 @@ Return the same object in `readResolve()`. However, a enum singleton is taking c
 
 
 ## Adapter Pattern
-* Structural design pattern.
+* Type: Structural design pattern.
 * It is used to make two unrelated interfaces work together.
-* Adapter pattern is applied in Stack Collection.
+* JDK usage: Stack.
 
 ### Components
 * Target: It defines the application-specific interface that Client uses directly.
@@ -109,6 +108,6 @@ Return the same object in `readResolve()`. However, a enum singleton is taking c
 
 
 ## Builder Pattern
-* Object creation design pattern
+* Type: Object creation design pattern
 * Could be used to solve the problem that construct an object with many optional parameters. (usually we need to overload constructors for all kinds of combinations). E.g. builder for immutable class.
-* JDK example: StringBuilder.
+* JDK usage: StringBuilder.
