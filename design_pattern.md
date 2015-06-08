@@ -104,3 +104,4 @@ Return the same object in `readResolve()`. However, a enum singleton is taking c
 ## Builder Pattern
 * Object creation design pattern
 * Could be used to solve the problem that construct an object with many optional parameters. (usually we need to overload constructors for all kinds of combinations). E.g. builder for immutable class.
+* JDK example: StringBuilder.
