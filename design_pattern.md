@@ -65,6 +65,7 @@ Return the same object in `readResolve()`. However, a enum singleton is taking c
 
 
 ## Decorator Pattern
+* Object structural design pattern.
 * Keyword: function enhancement.
 * Type: Object Structural pattern
 * Purpose: Allows for the dynamic wrapping of objects in order to modify their existing responsibilities and behaviors
