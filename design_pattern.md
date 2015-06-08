@@ -79,8 +79,15 @@ Return the same object in `readResolve()`. However, a enum singleton is taking c
 
 
 ## Adapter Pattern
-* Keyword: function borrowing.
+* Structural design pattern.
+* It is used to make two unrelated interfaces work together.
 * Adapter pattern is applied in Stack Collection.
+
+### Components
+* Target: It defines the application-specific interface that Client uses directly.
+* Adapter: It adapts the interface Adaptee to the Target interface. It’s middle man.
+* Adaptee: It defines an existing incompatible interface that needs adapting before using in application.
+* Client: It is your application that works with Target interface.
 
 
 ## Observer Pattern
@@ -95,4 +102,5 @@ Return the same object in `readResolve()`. However, a enum singleton is taking c
 
 
 ## Builder Pattern
-
+* Object creation design pattern
+* Could be used to solve the problem that construct an object with many optional parameters. (usually we need to overload constructors for all kinds of combinations).
