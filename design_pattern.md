@@ -71,7 +71,7 @@ Ensures that only one instance of a class is allowed within a system. It is usef
 Static fields will use stack memory.
 
 ### Can it implements `Serializable`?
-No, serialization will create a deep copy of the object which violates the pattern.
+Yes, but serialization will create a deep copy of the object which violates the pattern, so it is not recommended. If we have to implements `Serializable`, we have to override `readResolve()` so that it returns the instance.
 
 ### Is there a way to create duplicate objects?
 Yes, use reflection api.
