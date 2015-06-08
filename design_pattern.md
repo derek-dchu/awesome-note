@@ -73,6 +73,12 @@ Return the same object in `readResolve()`. However, a enum singleton is taking c
   1. Java Input/Output API
   2. `Thread` class
 
+### Components
+* Component: this is the wrapper which can have additional responsibilities associated with it at runtime.
+* Concrete component: is the original object to which the additional responsibilities are added in program.
+* Decorator: this is an abstract class which contains a reference to the component object and also implements the component interface.
+* Concrete decorator: it extends the decorator and builds additional functionality on top of the Component class.
+
 
 ## Prototype Pattern
 * Keyword: clone, shallow copy
