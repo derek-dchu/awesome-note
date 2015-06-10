@@ -73,6 +73,6 @@ Because `null` is not an instance of anything, `null instanceof anything` always
 
 ## Control Flow
 ### switch statement
-`switch` works with `byte`, `short`, `char`, `int`, `Enum`, `Character`, `Byte`, `Integer`, `String` (Java 7).
+`switch` works with `byte`, `short`, `char`, `int`, `Enum`, `Character`, `Byte`, `Short`, `Integer`, `String` (Java 7).
 
 **Note:** if expression in any switch statement is `null`, then a `NullPointerException` is thrown.
