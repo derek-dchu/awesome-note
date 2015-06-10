@@ -6,6 +6,10 @@
   4. Simplifies complex join
   5. Provides query statistics and database status
 
+* Disadvantages:
+  1. Mapping is relatively slow operation
+  2. May not compatible with new version of database. Need to refactor to newer version when updating database, which is painful.
+
 ## Structure
 ```
 				Session Factory 	Connection Provider (optional)
