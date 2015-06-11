@@ -31,7 +31,7 @@
        * [Hibernate](hibernate.md)
    * [Spring](spring.md)
    * [Maven](maven.md)
-   * Security
+   * [Security](java_security.md)
 * [Front End](front_end.md)
    * [Vector Graphics](vector_graphics.md)
    * [Local Storage and Session Storage (HTML 5)](local_storage_and_session_storage.md)
