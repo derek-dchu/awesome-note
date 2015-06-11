@@ -1,7 +1,6 @@
 # Summary
 
 * [Introduction](README.md)
-   * Test
 * Data Structures
    * [Suffix Tree and Suffix Array](suffix_tree_and_suffix_array.md)
        * [Suffix Array](suffix_array.md)
@@ -41,6 +40,7 @@
        * [LeetCode](sql_leetcode.md)
 * [Design Pattern](design_pattern.md)
    * [Dependency Injection](dependency_injection.md)
+* Test
 * [Shell Script](shell_script.md)
 * [Summary](SUMMARY.md)
 
