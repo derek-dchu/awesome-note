@@ -9,6 +9,7 @@
 * Disadvantages:
   1. Mapping is relatively slow operation
   2. May not compatible with new version of database. Need to re-factor to newer version when updating database, which is painful.
+  3. Hard for performance tuning because it doesn't have specific control of the underline SQL query.
 
 ## Structure
 ```
