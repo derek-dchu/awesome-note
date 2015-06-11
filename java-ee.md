@@ -67,6 +67,15 @@ Define a contract associated with a web service that used by other web services 
             Input Message   Output Message
 ```
 
+#### Types:
+* An abstract WSDL document describes what the web service does, but not how it does it or how to contact it. An abstract WSDL document defines:
+  1. the operations provided by the web service.
+  2. the input, output and fault messages used by each operation to communicate with the web service, and their format.
+
+* A concrete WSDL document adds the information about how the web service communicates and where you can reach it. A concrete WSDL document contains the abstract WSDL definitions, and also defines:
+  1. the communication protocols and data encodings used by the web service.
+  2. the port address that must be used to contact the web service.
+
 ### Service Endpoint Interface
 Cover Java object to SOAP massage.
 
