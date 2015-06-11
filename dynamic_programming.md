@@ -36,7 +36,7 @@ for r in 2 .. rows:
         right_parent = cache[i]
         cache[i] = min(left_parent, right_parent) + triangle[r-1][i]
         left_parent = right_parent
-    return the min number in the cache which is the smallest sum.
+    return the min number in the cache which is the minimum sum.
 ```
 
 
