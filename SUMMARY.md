@@ -39,7 +39,7 @@
    * [SQL](sql.md)
        * [LeetCode](sql_leetcode.md)
 * [Design Pattern](design_pattern.md)
-   * Dependency Injection
+   * [Dependency Injection](dependency_injection.md)
 * [Shell Script](shell_script.md)
 * [Summary](SUMMARY.md)
 
