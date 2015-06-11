@@ -11,7 +11,7 @@
 | [EJB](#ejb) | Enterprise JavaBeans |
 | XML | Extensible Markup Language |
 | SOAP | Simple Object Access Protocol |
-| WSDL | Web Service Description Language |
+| [WSDL](#web-service-description-language-wsdl) | Web Service Description Language |
 | JAR | Java Archive file |
 | WAR | Web Archive file |
 | EAR | Enterprise Archive file |
