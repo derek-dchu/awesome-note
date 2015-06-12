@@ -218,6 +218,9 @@ A thread can acquire a lock that it already owns. Allowing a thread to acquire t
 * Reads and writes are atomic for all variables declared `volatile` (including long and double variables).
 
 ### `volatile` keyword
+volatile is used to indicate that a variable's value will be modified by different threads.
+
+* The value of this variable will never be cached thread-locally: all reads and writes will go straight to "main memory". Access to the variable acts as though it is enclosed in a synchronized block, synchronized on itself.
 * If a thread modify a `volatile` object, this modification will be seen by all other threads immediately.
 * `volatile` should be used to safely publish immutable objects in a multi-threading environment. Declaring a field like `public volatile ImmutableObject foo` secures that all threads always see the currently available instance reference.
 
