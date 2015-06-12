@@ -27,12 +27,14 @@ public void testAddProductWithDummyTest() {
 ```
 
 ### Test stub
-Test stub is to return controlled values to the object being tested. These are described as indirect inputs to the test.
+Test stub is to return controlled values to the object being tested. These are described as indirect inputs to the test. Test stub have two types: Responder’s and Saboteur's.
 
 #### Example
 Test `getHighestPrice` method of the Category which return the highest price by providing a test stub of category.
 
+Responder's
 ```java
+@Test
 public void testGetHighestPrice() throws Exception {
   Price price1 = new Price(10); 
   Price price2 = new Price(15);
@@ -47,4 +49,17 @@ public void testGetHighestPrice() throws Exception {
   
   assertEquals(price3.getPrice(), highestPrice.getPrice());
 }
+```
+
+Saboteur's.
+```java
+@Test(expected=ProductNotFoundException.class)
+public void testGetProductById() throws Exception {
+    ...
+    when(category.getProductById(anyLong()))
+        .thenThrow(new ProductNotFoundException());
+    ...
+}
+```
+
 ```
