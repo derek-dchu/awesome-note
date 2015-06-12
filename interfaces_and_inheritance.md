@@ -1,5 +1,13 @@
 # Interfaces and Inheritance
 
+## Inheritance
+### Inheriting Methods with Override-Equivalent Signatures
+
+If class C implement two interfaces A, B, and they both declare a method with the same signature. We called these methods have Override-Equivalent Signatures.
+
+In this case, within C, we can only effectively override **ONE** method with that signature. Therefore, if the method from A, B have non-compatible return type, it throws a compile-time error.
+
+
 ## Upcast vs Downcast
 ### Upcast  
 * Primitive: shorter byte to longer byte.
