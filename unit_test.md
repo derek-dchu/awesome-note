@@ -62,4 +62,19 @@ public void testGetProductById() throws Exception {
 }
 ```
 
+### Mock Object
+Mock objects are used to verify object behaviour during a test.
+
+#### Example
+In our implementation, we have a function a in where Object b.doSomething(c). Then we can use Mock Object to verfiy where doSomething has been invoked.
+
+```java
+// declare Mock Object
+@Mock
+B b
+// invoke once
+a();
+// verify
+verify(b).doSomething(c)
 ```
+
