@@ -78,3 +78,8 @@ a();
 verify(b).doSomething(c)
 ```
 
+### Test Spy
+
+### Fake Object
+Fake objects are usually hand crafted or light weight objects only used for testing and not suitable for production. A good example would be an in-memory database or fake service layer.
+
