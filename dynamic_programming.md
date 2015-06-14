@@ -40,6 +40,39 @@ for r in 2 .. rows:
 ```
 
 
+### Maximum Subarray
+Finding the contiguous subarray within a one-dimensional array of numbers (containing at least one positive number) which has the largest sum.
+
+Example  
+{−2, 1, −3, 4, −1, 2, 1, −5, 4} => {4, -1, 2, 1} = 6
+
+[Kadane's Algorithm](http://www.algorithmist.com/index.php/Kadane's_Algorithm)
+
+```
+maxSum := -INFINITY
+startIndex := 0
+endIndex := 0
+
+currentSum := 0
+currentStartIndex := 1
+for currentEndIndex in 1 .. n
+    currentSum := currentSum + arr[currentEndIndex]
+    if currentSum > maxSum then
+        maxSum := currentSum
+        startIndex := currentStartIndex
+        endIndex := currentEndIndex
+    
+    if currentSum < 0 then
+        currentSum := 0
+        currentStartIndex := currentEndIndex + 1
+        
+return (maxSum, startIndex, endIndex)
+```
+
+Reference  
+[Maximum subarray problem](http://en.wikipedia.org/wiki/Maximum_subarray_problem)
+
+
 ### Longest Common Substring (LCS)
 Suppose we have a source string with length $$p$$ and a target string with length $$q$$, then we can construct a $$\mathit{LCSuffix}$$ table using following formular.
 
