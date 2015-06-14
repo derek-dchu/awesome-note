@@ -19,6 +19,7 @@
 
 ### Dynamic Programming
 *  [Longest Common Substring (LCS)](http://derek-dchu.gitbooks.io/awesome-note/content/dynamic_programming.html#longest-common-substring-lcs)
+*  [Maximum Subarray](http://derek-dchu.gitbooks.io/awesome-note/content/dynamic_programming.html#maximum-subarray)
 
 ### Math
 *  [Trailing Zeros](http://derek-dchu.gitbooks.io/awesome-note/content/math.html#trailing-zeros)
@@ -45,5 +46,3 @@
 *   [Construct Binary Tree from Preorder and Inorder Traversal](http://derek-dchu.gitbooks.io/awesome-note/content/binary_tree.html#construct-binary-tree-from-preorder-and-inorder-traversal)
 *   [Binary Search Tree](http://derek-dchu.gitbooks.io/awesome-note/content/binary_tree.html#binary-search-tree)
 
-### Dynamic Programming
-*  [Maximum Subarray](http://derek-dchu.gitbooks.io/awesome-note/content/dynamic_programming.html#maximum-subarray)
