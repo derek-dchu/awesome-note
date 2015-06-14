@@ -83,9 +83,9 @@ It is similar to the problem finding maximum sum. However, we could have negativ
 
 ##### Pseudocode
 ```
-prev_max := arr[0]
-prev_min := arr[0]
-max_prod := arr[0]
+prev_max := arr[1]
+prev_min := arr[1]
+max_prod := arr[1]
 for i in 2 .. arr.length
     temp_max := prev_max * arr[i]
     temp_min := prev_min * arr[i]
