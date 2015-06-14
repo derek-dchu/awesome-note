@@ -154,37 +154,3 @@ The solution set must not contain duplicate quadruplets.
   * Two Sum: O(1), Space: O(n)
   * 3 Sum: O($$n^2$$), Space: O(n)
   * 4 Sum: O($$n^3$$), Space: O(n)
-
-
-### Maximum Subarray
-Finding the contiguous subarray within a one-dimensional array of numbers (containing at least one positive number) which has the largest sum.
-
-Example  
-{−2, 1, −3, 4, −1, 2, 1, −5, 4} => {4, -1, 2, 1} = 6
-
-[Kadane's Algorithm](http://www.algorithmist.com/index.php/Kadane's_Algorithm)
-
-```
-maxSum := -INFINITY
-startIndex := 0
-endIndex := 0
-
-currentSum := 0
-currentStartIndex := 1
-for currentEndIndex in 1 .. n
-    currentSum := currentSum + arr[currentEndIndex]
-    if currentSum > maxSum then
-        maxSum := currentSum
-        startIndex := currentStartIndex
-        endIndex := currentEndIndex
-    
-    if currentSum < 0 then
-        currentSum := 0
-        currentStartIndex := currentEndIndex + 1
-        
-return (maxSum, startIndex, endIndex)
-```
-
-Reference  
-[Maximum subarray problem](http://en.wikipedia.org/wiki/Maximum_subarray_problem)
-
