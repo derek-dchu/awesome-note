@@ -8,7 +8,6 @@
 *  [3 Sum](http://derek-dchu.gitbooks.io/awesome-note/content/array.html#3-sum)
 *  [3 Sum closest](http://derek-dchu.gitbooks.io/awesome-note/content/array.html#3-sum-closest)
 *  [4 Sum](http://derek-dchu.gitbooks.io/awesome-note/content/array.html#4-sum)
-*  [Maximum Subarray](http://derek-dchu.gitbooks.io/awesome-note/content/array.html#maximum-subarray)
 
 ### Binary Search
 *  [Sqrt(x)](http://derek-dchu.gitbooks.io/awesome-note/content/binary_search.html#sqrt-x)
@@ -45,3 +44,6 @@
 *   [Serialization/Deserialization of a Binary Tree](http://derek-dchu.gitbooks.io/awesome-note/content/binary_tree.html#serialization-deserialization-of-a-binary-tree)
 *   [Construct Binary Tree from Preorder and Inorder Traversal](http://derek-dchu.gitbooks.io/awesome-note/content/binary_tree.html#construct-binary-tree-from-preorder-and-inorder-traversal)
 *   [Binary Search Tree](http://derek-dchu.gitbooks.io/awesome-note/content/binary_tree.html#binary-search-tree)
+
+### Dynamic Programming
+*  [Maximum Subarray](http://derek-dchu.gitbooks.io/awesome-note/content/dynamic_programming.html#maximum-subarray)
