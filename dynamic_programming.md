@@ -21,7 +21,7 @@ $$cache_{r,i} = MIN(cache_{r-1,i-1}, cache_{r-1,i}) + triangle_{r,i}$$
 
 It seems to need to require $$n^2$$ space, because it caches each node of the triangle. However, it actually only need to deal with previous row and current row, because, previous row already had the information of all rows before. And for current row, we directly update cache in place.
 
-##### Pesudocode
+##### Pseudocode
 ```
 rows := number of rows in triangle
 cache := {MAX_INTEGER} with length = rows
@@ -71,6 +71,33 @@ return (maxSum, startIndex, endIndex)
 
 Reference  
 [Maximum subarray problem](http://en.wikipedia.org/wiki/Maximum_subarray_problem)
+
+
+### Maximum Product Subarray
+Find the contiguous subarray within an array (containing at least one number) which has the largest product.
+
+For example, given the array [2,3,-2,4], the contiguous subarray [2,3] has the largest product = 6.
+
+##### Analysis
+It is similar to the problem finding maximum sum. However, we could have negative number when it meets an new negative number, the product becomes the maximum. Therefore we need to keep tracking the most negative product or just the minimum product. We also need to take care zeros. 
+
+##### Pseudocode
+```
+prev_max := arr[0]
+prev_min := arr[0]
+max_prod := arr[0]
+for i in 2 .. arr.length
+    temp_max := prev_max * arr[i]
+    temp_min := prev_min * arr[i]
+    curr_max := max_of_three(prev_max, temp_max, arr[i])
+    curr_min := min_of_three(prev_min, temp_min, arr[i])
+    max_prod := max(curr_max, max_prod)
+    prev_max := curr_max
+    prev_min := curr_min
+return max_prod
+```
+
+
 
 
 ### Longest Common Substring (LCS)
