@@ -113,6 +113,37 @@ Given word1 = "mart" and word2 = "karma", return 3.
 ##### Analysis
 Edit distance refers to [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance).
 
+##### Pseudocode
+```
+function LevenshteinDistance(word1, word2)
+    // for all i and j, d[i,j] will hold the Levenshtein distance between
+    // the first i characters of word1 and the first j characters of word2.
+    // note that d has (m+1)*(n+1) values
+    declare matrix d[0..m, 0..n]
+    set each element in d to zero
+ 
+    // source prefixes can be transformed into empty string by
+    // dropping all characters
+    for i from 1 to m
+        d[i, 0] := i
+ 
+    // target prefixes can be reached from empty source prefix
+    // by inserting every character
+    for j from 1 to n
+        d[0, j] := j
+ 
+    for j from 1 to n
+        for i from 1 to m
+            if s[i] = t[j] then
+                d[i, j] := d[i-1, j-1]  // no operation required
+            else
+                d[i, j] := minimum(
+                    d[i-1, j] + 1,      // a deletion
+                    d[i, j-1] + 1,      // an insertion
+                    d[i-1, j-1] + 1)    // a substitution
+    return d[m, n]
+```
+
 
 ### Longest Common Substring (LCS)
 Suppose we have a source string with length $$p$$ and a target string with length $$q$$, then we can construct a $$\mathit{LCSuffix}$$ table using following formular.
