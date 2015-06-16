@@ -199,7 +199,7 @@ while size of q != 0
 return arr
 ```
 
-#### Follow Up
+#### Follow Up 1
 Binary Tree Zigzag Level Order Traversal. For each even level, it traverse in reverse order.
 
 Example
@@ -223,6 +223,31 @@ return its level order traversal as:
 
 ##### Analysis
 We reverse each even level after we finish the original Level Order Traversal.
+
+#### Follow Up 2
+Binary Tree Level Reverse Order Traversal. Traverse from leaf level to root level.
+
+Example
+Given binary tree {3,9,20,#,#,15,7},
+```
+    3
+   / \
+  9  20
+    /  \
+   15   7
+```
+
+return its level order traversal as:
+```
+[
+  [15,7],
+  [9,20],
+  [3]
+]
+```
+
+##### Analysis
+We reverse the order of all levels after we finish the original Level Order Traversal.
 
 
 ### Serialization/Deserialization of a Binary Tree
