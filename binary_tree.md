@@ -87,6 +87,30 @@ Assume a BST is defined as follows:
 *  The right subtree of a node contains only nodes with keys greater than the node's key.
 *  Both the left and right subtrees must also be binary search trees.
 
+##### Analysis
+Based on the definition of BFS, we can keep shrinking the range (min, max) where child node has to be fit in, using parent node. We can because with Integer.MIN_VALUE and Integer.MAX_VALUE where root has to be fit in. Note that, a node can contains MIN_VALUE and MAX_VALUE, which cannot contain left subtree or right subtree.
+
+##### Pseudocode
+```
+define isValidBFS(root):
+    return helper(root, Integer.MIN_VALUE, Integer.MAX_VALUE)
+
+define helper(root, min, max):
+    if root is null then
+        return True
+    if root.val == Integer.MAX_VALUE:
+        right := root.right is null
+    else
+        right := helper(root.right, root.val+1, max)
+    if root.val == Integer.MIN_VALUE:
+        left := root.left is null
+    else
+        left := helper(root.left, min, root.val-1)
+    if min <= root.val <= max then
+        return left & right
+    return False
+```
+
 
 ### Validate Height-Balanced Binary Tree
 Given a binary tree, determine if it is height-balanced.
