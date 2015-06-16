@@ -78,7 +78,17 @@ Use stack instead
     return arr
     ```
 
-### Valid Height-Balanced Binary Tree
+
+### Validate Binary Search Tree
+Given a binary tree, determine if it is a valid binary search tree (BST).
+
+Assume a BST is defined as follows:
+* The left subtree of a node contains only nodes with keys less than the node's key.
+*  The right subtree of a node contains only nodes with keys greater than the node's key.
+*  Both the left and right subtrees must also be binary search trees.
+
+
+### Validate Height-Balanced Binary Tree
 Given a binary tree, determine if it is height-balanced.
 
 For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.
