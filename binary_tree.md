@@ -98,6 +98,8 @@ define isValidBFS(root):
 define helper(root, min, max):
     if root is null then
         return True
+    if root.val < min or root.val > max then
+        return False
     if root.val == Integer.MAX_VALUE:
         right := root.right is null
     else
@@ -106,9 +108,7 @@ define helper(root, min, max):
         left := root.left is null
     else
         left := helper(root.left, min, root.val-1)
-    if min <= root.val <= max then
-        return left & right
-    return False
+    return left & right
 ```
 
 
