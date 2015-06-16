@@ -147,6 +147,7 @@ if right_height == -1 or abs(left_height - right_height) > 1 then
 return max(left_height, right_height) + 1
 ```
 
+
 ### Binary Tree Level Order Traversal
 Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level). The implement should use only one queue.
 
@@ -198,6 +199,32 @@ while size of q != 0
 return arr
 ```
 
+#### Follow Up
+Binary Tree Zigzag Level Order Traversal. For each even level, it traverse in reverse order.
+
+Example
+Given binary tree {3,9,20,#,#,15,7},
+```
+    3
+   / \
+  9  20
+    /  \
+   15   7
+```
+
+return its level order traversal as:
+```
+[
+  [3],
+  [20,9],
+  [15,7]
+]
+```
+
+##### Analysis
+We reverse each even level after we finish the original Level Order Traversal.
+
+
 ### Serialization/Deserialization of a Binary Tree
 Design an algorithm and write code to serialize and deserialize a binary tree. Writing the tree to a file is called *serialization* and reading back from the file to reconstruct the exact same binary tree is *deserialization*.
 
@@ -212,6 +239,7 @@ Binary tree {3,9,20,#,#,15,7}, denote the following structure:
   /  \
  15   7
 ```
+
 
 ### Construct Binary Tree from Preorder and Inorder Traversal
 Given preorder and inorder traversal of a tree, construct the binary tree. Assume that duplicates do not exist in the tree.
@@ -258,6 +286,7 @@ define recursive_helper (preorder, inorder, p_l, p_r, i_l, i_r)
             (preorder, inorder, p_l+i+1, p_r, i_l+i+1, i_r)
     return node
 ```
+
 
 ### Binary Search Tree
 #### Delete Max / Min
