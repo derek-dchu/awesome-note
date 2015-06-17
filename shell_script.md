@@ -32,5 +32,14 @@ cat words.txt | tr -s ' ' '\n' | sort | uniq -c | sort -n -r | awk '{print $2" "
 grep -P '^(\(\d{3}\)\s|\d{3}-)\d{3}-\d{4}$' file.txt
 ```
 
+### Execute Command Without Output
+Redirect output(`stdout`) to `/dev/null`.
+
+If we also want to ignore err, we need to redirect `stderr` as well by using `2>&1`.
+
+Eventually, we have
+```
+$ <command> > /dev/null 2>&1
+```
 
 
