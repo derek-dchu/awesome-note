@@ -15,6 +15,7 @@
    * [Linked List](linked_list.md)
    * [Binary Tree](binary_tree.md)
    * [Search & Recursion](search_&_recursion.md)
+   * String
 * [Java](java.md)
    * [Language Specification](java_language_specification.md)
        * [Language Basic](java_language_basic.md)
