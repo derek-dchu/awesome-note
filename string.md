@@ -7,7 +7,17 @@ Example
 Given the string = "abcdzdcab", return "cdzdc".
 
 ##### Analysis
-1. Brute Force: $$O(n^3)$$  
-check each substring ($$O(n^2)$$) which is palindromic $$O(n)$$
+* Brute Force: $$O(n^3)$$
 
-2. Dynamic Programming: $$O(n^2)$$ with space: $$O(n^2)$$
+    Check each substring ($$O(n^2)$$) which is palindromic $$O(n)$$
+
+* Dynamic Programming: $$O(n^2)$$ with space: $$O(n^2)$$
+
+    Define `P[ i, j ] ← true` iff the substring $$S_{i ... j}$$ is a palindrome, otherwise false.
+
+    Therefore, `P[ i, j ] ← ( P[ i+1, j-1 ] and Si = Sj )`
+    
+    The base cases are:
+
+    `P[ i, i ] ← true`  
+    `P[ i, i+1 ] ← ( Si = Si+1 )`
