@@ -1,6 +1,9 @@
 # Algorithms
 
 ## LintCode
+### String
+*  [Longest Palindromic Substring](http://derek-dchu.gitbooks.io/awesome-note/content/string.html#longest-palindromic-substring)
+
 ### Array
 *  [Find the two repeating elements](http://derek-dchu.gitbooks.io/awesome-note/content/array.html#find-the-two-repeating-elements-in-a-given-array)
 *  [Find the smallest positive integer missing from an unsorted array](http://derek-dchu.gitbooks.io/awesome-note/content/array.html#find-the-smallest-positive-integer-missing-from-an-unsorted-array)
