@@ -9,7 +9,7 @@ Given the string = "abcdzdcab", return "cdzdc".
 ##### Analysis
 * Brute Force: $$O(n^3)$$
 
-    Check each substring ($$O(n^2)$$) which is palindromic $$O(n)$$
+    Check each substring ($$O(n^2)$$) whether is palindromic $$O(n)$$.
 
 * Dynamic Programming: $$O(n^2)$$ with space: $$O(n^2)$$
 
