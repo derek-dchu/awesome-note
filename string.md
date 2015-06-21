@@ -11,7 +11,7 @@ Given the string = "abcdzdcab", return "cdzdc".
 
     Check each substring ($$O(n^2)$$) whether is palindromic $$O(n)$$.
 
-* Dynamic Programming: $$O(n^2)$$ with space: $$O(n^2)$$
+* Dynamic Programming: $$O(n^2)$$ with extra space: $$O(n^2)$$
 
     Define `P[ i, j ] ← true` iff the substring $$S_{i ... j}$$ is a palindrome, otherwise false.
 
@@ -25,6 +25,8 @@ Given the string = "abcdzdcab", return "cdzdc".
 * Expand Around Center: $$O(n^2)$$ with no extra space
 
     We know that a palindromic mirrors around its center. Therefore we can check a palindromic by expanding from its center. For a string, we can have $$2N-1$$ centers (N single char, N-1 double chars). For each center, checking time is $$O(n)$$, eventually, we have $$O(n^2)$$ run-time complexity without extra space.
+
+* [Manacher’s algorithm](https://en.wikipedia.org/wiki/Longest_palindromic_substring): $$O(n)$$ with extra space: $$O(n)$$
 
 
 
