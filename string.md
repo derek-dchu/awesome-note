@@ -24,7 +24,8 @@ Given the string = "abcdzdcab", return "cdzdc".
 
 * Expand Around Center: $$O(n^2)$$ with no extra space
 
-    We know that a palindromic mirrors around its center. Therefore we can check a palindromic by expanding from its center. For a string, we can have $$2N-1$$ centers (N single char, N-1 double chars). For each center, checking time is $$O(n)$$, eventually, we have $$O(n^2)$$ runtime complexity without extra space.
-* 
+    We know that a palindromic mirrors around its center. Therefore we can check a palindromic by expanding from its center. For a string, we can have $$2N-1$$ centers (N single char, N-1 double chars). For each center, checking time is $$O(n)$$, eventually, we have $$O(n^2)$$ run-time complexity without extra space.
+
+
 
 
