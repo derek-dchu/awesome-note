@@ -1,4 +1,44 @@
 # Dynamic Programming
+### Unique Path II
+Follow up for "Unique Paths":
+
+Now consider if some obstacles are added to the grids. How many unique paths would there be?
+
+An obstacle and empty space is marked as 1 and 0 respectively in the grid.
+
+Example  
+There is one obstacle in the middle of a 3x3 grid as illustrated below.
+```
+[
+  [0,0,0],
+  [0,1,0],
+  [0,0,0]
+]
+```
+The total number of unique paths is 2.
+
+##### Analysis
+We can use the same approach as Unique Path. We just to set total path to 0 if we meet a obstacle. Note that, it can be accomplish using O(n) extra space for cache.
+
+##### Pseudocode
+```
+# assume the grid size is m x n
+cache = {0 .. 0} with length of n
+for i in 1 .. m
+    for j in 1 .. n
+        if obstacleGrid[i][j] = 1 then
+            cache[j] = 0
+        else if i = 0 then
+            if j = 0 then
+                cache[j] = 1
+            else
+                cache[j] = cache[j-1]
+        else if j != 0 then
+            cache[j] += cache[j-1]
+return the last element in cache
+```
+
+
 ### Triangle
 Given a triangle, find the minimum path sum from top to bottom using only O(n) extra space, where n is the total number of rows in the triangle. For each step, it can only move to adjacent numbers on the row below. 
 
