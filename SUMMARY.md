@@ -31,7 +31,7 @@
    * [Object Relational Mapping (ORM)](object_relational_mapping.md)
        * [Hibernate](hibernate.md)
    * [Spring](spring.md)
-       * Configuration
+       * [Configuration](spring_configuration.md)
    * [Maven](maven.md)
    * [Security](java_security.md)
 * [Front End](front_end.md)
