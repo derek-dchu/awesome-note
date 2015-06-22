@@ -49,6 +49,27 @@ $ archetype:generate
 
 * scope: in which phase the dependency is available
 
+###### Source Folder
+It is important to setup the source directory so that IDE will look for source code files.
+
+```xml
+<build>
+  <sourceDirectory>../src/main/java</sourceDirectory>
+  <plugins>
+    <plugin>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>2.0.2</version>
+      <configuration>
+        <!-- only look for 
+        <includes><include>**/core/**</include></includes>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
+```
+In this example, the sources are found in the parent directory ../src/main/java, and only Java files within a core package are included.
+
+
 #### Maven Build (compile and package)
 * Previous phases need to be run successfully in order to run current phase.
 
