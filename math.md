@@ -1,4 +1,14 @@
 # Math
+### Unique Paths
+A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
+
+The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
+
+How many possible unique paths are there?
+
+##### Analysis
+For the robot, to reach bottom-right, it has to perform m-1 of moving right and n-1 of moving down, and the order of moves don't matter. Therefore, total unique paths equals to $$C(^{(m-1)+(n-1)}_{m})$$ or $$C(^{m+n-2}_{n})$$.
+
 
 ### Trailing Zeros
 Write an algorithm which computes the number of trailing zeros in n factorial with log(n) complexity.
