@@ -289,3 +289,21 @@ D: Durability -
 
 #### Pessimistic locking vs Optimistic locking
 Optimistic locking: no lock, but we can add an indicator column (such as version), then we can use it to control reading without a lock.
+
+## Problem Solving
+### Unable to instantiate default tuplizer
+Details error message:
+
+```java
+org.hibernate.HibernateException: Unable to instantiate default tuplizer [org.hibernate.tuple.entity.PojoEntityTuplizer]
+```
+
+Hibernate needs a dependency `javassist` which is not specified in its module. Therefore, we need to add it into maven
+
+```
+<dependency>
+    <groupId>javassist</groupId>
+    <artifactId>javassist</artifactId>
+    <version>3.12.1.GA</version>
+</dependency>
+```
