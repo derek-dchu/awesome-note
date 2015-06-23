@@ -41,3 +41,15 @@ public AnnotationSessionFactoryBean sessionFactory(DataSource ds) {
     return sessionFactory;
 }
 ```
+
+#### Hibernate Transaction Manager
+```java
+@Autowired
+@Bean
+public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) throws Exception {
+    HibernateTransactionManager txManager = new HibernateTransactionManager();
+    txManager.setSessionFactory(sessionFactory);
+    return txManager;
+}
+```
+
