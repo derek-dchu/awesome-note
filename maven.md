@@ -58,7 +58,7 @@ It is important to setup the source directory so that IDE will look for source c
   <plugins>
     <plugin>
       <artifactId>maven-compiler-plugin</artifactId>
-      <version>2.0.2</version>
+      <version>3.3</version>
       <configuration>
         <!-- only look for 
         <includes><include>**/core/**</include></includes>
