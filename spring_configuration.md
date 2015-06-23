@@ -2,6 +2,14 @@
 
 ## Application Dependency
 ### Java Configuration
+#### General Bean
+```java
+@Bean
+public BeanClass beanName() {
+    return new BeanClass();
+}
+```
+
 #### JNDI Datasource
 ```java
 @Bean
