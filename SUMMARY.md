@@ -32,6 +32,7 @@
        * [Hibernate](hibernate.md)
    * [Spring](spring.md)
        * [Configuration](spring_configuration.md)
+       * Test
    * [Maven](maven.md)
    * [Security](java_security.md)
 * [Front End](front_end.md)
