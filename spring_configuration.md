@@ -73,6 +73,14 @@ servletContext.setInitParameter("contextConfigLocation", "NOTNULL");
 
 // 2. Add RequestContextListener manually
 servletContext.addListener(new RequestContextListener());
+
+// 3. Add Jersey Servlet
+ServletRegistration.Dynamic jerseyServlet = 
+    servletContext.addServlet("jersey-servlet", new ServletContainer());
+jerseyServlet.setInitParameter("javax.ws.rs.Application", 
+            "<resource config file from below>");
+jerseyServlet.setLoadOnStartup(1);
+jerseyServlet.addMapping("/rest/*");
 ```
 
     
