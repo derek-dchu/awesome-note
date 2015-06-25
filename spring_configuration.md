@@ -63,3 +63,11 @@ public HibernateTransactionManager transactionManager(SessionFactory sessionFact
 
 #### Spring MVC
 
+#### Integrate with Jersey 2
+**Note:** Do not use `@Component` for Restful resources, because we want Jersey to manage them. Otherwise, Tomcat will complain that:
+
+```
+org.glassfish.jersey.server.spring.SpringComponentProvider.bind None or multiple beans found in Spring context for type class XXX, skipping the type.
+```
+
+Jersey Servlet will not be able to mapping these classes.
