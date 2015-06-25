@@ -61,3 +61,5 @@ public HibernateTransactionManager transactionManager(SessionFactory sessionFact
 }
 ```
 
+#### Spring MVC
+
