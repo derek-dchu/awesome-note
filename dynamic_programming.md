@@ -232,3 +232,5 @@ Example
 Given S = "rabbbit", T = "rabbit", return 3.
 
 ##### Analysis
+
+##### Pseducode
