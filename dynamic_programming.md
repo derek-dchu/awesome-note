@@ -232,5 +232,26 @@ Example
 Given S = "rabbbit", T = "rabbit", return 3.
 
 ##### Analysis
+Because we only think about sequence, only the order of each character matter. The run-time complexity is O(mn), where w = S.length, n = T.length, since we check each char of S against each char of T, and we use a cache with length equals to length of T. For example:
+
+S = abab, T = ab
+We start for the first char is S, when we meet an 'a', we set cache[0] += 1 to indicate that we find an new start point. When we meet a 'b', we check for its previous char in T, which is 'a' for its occurrences. So, for the first 'b', 'a' is 1, so set cache[1] = 1. For the second 'b', we have cache[0] = 2, so set cache[1] += cache[0] => 3, because both 'a' can pair with this 'b'.
+
+But there is problem when there are duplicates in T. A char is S can only be used to match a char in T. For exmaple:
+
+S = abbab, T = abb
+When we meet the first 'b', we can only match it to the first 'b' or second 'b' in T. In other words, after we set cache[1] = 1 (match the first 'b'), we need to used its old value for the second 'b', therefore we set cache[2] = 0 (cache[1] = 0, there is no previous 'b' for the second 'b') instead of 1.
 
 ##### Pseducode
+```
+cache := {0 ... 0} with length equals to T.length
+for each character as c in S
+    prev_tmp := 1
+    for i in 1 .. T.length:
+        this_tmp := cache[i]
+        if c = T[i] then
+            cache[i] += prev_tmp
+            prev_tmp := this_tmp
+            
+return the last value of cache
+```
