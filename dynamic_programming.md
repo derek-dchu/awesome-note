@@ -266,3 +266,11 @@ Return `true`, because "lintcode" can be break as "lint code".
 ##### Analysis
 We can use DP based on following formula.
 
+```
+possible[i] = true      if  S[0,i] is in the dictionary
+
+            = true      if  possible[k] == true and
+                            S[k+1,i] in the dictionary, 0<k<i
+
+            = false     if  no such k exist.
+```
