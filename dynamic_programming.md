@@ -255,3 +255,14 @@ for each character as c in S
             
 return the last value of cache
 ```
+
+### Word Break
+Given a string s and a dictionary of words dict, determine if s can be break into a space-separated sequence of one or more dictionary words.
+
+Given s = "lintcode", dict = ["lint", "code"].
+
+Return `true`, because "lintcode" can be break as "lint code".
+
+##### Analysis
+We can use DP based on following formula.
+
