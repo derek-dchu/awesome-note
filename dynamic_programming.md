@@ -277,15 +277,17 @@ possible[i] = true      if  S[0,i] is in the dictionary
 
 ##### Pseudocode
 ```
-# Add a head to s for init state
-s := '^' + s
-p := [False ... False] * s.length
-p[0] := True
-        
-for i in 2 .. s.length:
-    for k in 1 .. i-1:
-        p[i] = cache[k] and s[k+1:i] is in dictionary
-        if p[i]:
-            break
-return the last value of p
+possible := [False] * s.length
+for i in 1 ... s.length
+    if not possible[i] and s[0:i] in dictionary then
+        possible[i] = True
+            
+    if possible[i] then
+        for k in i+1 ... s.length
+            if not possible[k] and s[i+1:k] in dictionary then
+                possible[k] := True
+                
+            if possible[-1] then
+                return True
+return possible[-1]
 ```
