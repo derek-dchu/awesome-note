@@ -294,3 +294,14 @@ return possible[-1]
 
 
 ### Backpack
+Given n items with size $$S_{i}$$, an integer m denotes the size of a backpack. What is the maximum size the backpack can be filled?
+
+Example  
+If we have 4 items with size [2, 3, 5, 7], the backpack size is 11, we can select [2, 3, 5], so that the max size we can fill this backpack is 10. If the backpack size is 12. we can select [2, 3, 7] so that we can fulfill the backpack.
+
+The function should return the max size we can fill in the given backpack.
+
+Note  
+A item can not be divided into small pieces.
+
+##### Analysis
