@@ -30,6 +30,7 @@ Alias:
 #### General Bean
 ```java
 @Bean
+@Scope("Prototype")
 public BeanClass beanName() {
     return new BeanClass();
 }
