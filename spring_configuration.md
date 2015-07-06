@@ -100,7 +100,7 @@ public class RestConfig extends ResourceConfig {
     public RestConfig() {
         register(<Restful resource>.class);
 
-        // Reg Jackson for parsing JSON
+        // Reg Jackson for marshaling and parsing JSON
         register(JacksonFeature.class);
     }
 }
