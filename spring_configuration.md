@@ -1,7 +1,23 @@
 # Configuration
 
 ## Application Dependency
-### Java Configuration
+### XML Based
+#### General Bean
+```xml
+<?xml ... ?>
+<beans xmlns=""
+	xmlns:xsi=""
+	xsi:schemaLocation="">
+
+	<bean id="..." class="...">
+		<!-- collaborators and configuration for this bean go here -->
+	</bean>
+
+	<!-- more bean definition -->
+<beans>
+```
+
+### Java Based
 #### General Bean
 ```java
 @Bean
