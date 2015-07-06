@@ -233,7 +233,32 @@ For "ABCD" and "EDCA", the LCS is "A" (or "D", "C"), return 1.
 For "ABCD" and "EACB", the LCS is "AC", return 2.
 
 ##### Analysis
+![LCS formula](https://upload.wikimedia.org/math/1/4/a/14a26455e85b2bd1a91a083a7b43e4a9.png)
 
+Two observations:
+1. If two sequences both end in the same element, to find  their LCS: shorten each sequence by removing the last element, find the LCS of the shortened sequences, and to that LCS append the removed element.
+2. If two sequences X and Y do not end in the same symbol. Then the LCS of X and Y is the longer of the two sequences $$LCS(X_{n},Y_{m-1})$$ and $$LCS(X_{n-1},Y_{m})$$.
+
+##### Pseudocode
+```
+function LCSubseq(S[1..m], T[1..n])
+    LCSuffix := matrix(m, n)
+    # Length of a LCSubseq
+    max_length := 0
+    for i := 1..m
+        for j := 1..n
+            if S[i] == T[j] then
+                if i == 1 or j == 1 then
+                    LCSuffix[i,j] := 1
+                else
+                    LCSuffix[i,j] := LCSuffix[i-1,j-1] + 1
+            else if i != 1 and j != 1 then
+                LCSuffix[i,j] := max(LCSuffix[i-1,j], LCSuffix[i,j-1])
+            else
+                LCSuffix[i,j] := 0
+            max_length := max(max_length, LCSuffix[i,j])
+    return max_length
+```
 
 
 ### Distinct Subsequences
