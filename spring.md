@@ -81,22 +81,10 @@ POJOs -------------> IoC Container -> Fully configured system
 config metadata ------^
 ```
 
-#### Configuration
+#### Read Configuration
 1. XML-based
 
-```xml
-<?xml ... ?>
-<beans xmlns=""
-	xmlns:xsi=""
-	xsi:schemaLocation="">
 
-	<bean id="..." class="...">
-		<!-- collaborators and configuration for this bean go here -->
-	</bean>
-
-	<!-- more bean definition -->
-<beans>
-```
 
 2. Annotation-based
 3. Java-based
