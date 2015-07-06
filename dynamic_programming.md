@@ -305,3 +305,6 @@ Note
 A item can not be divided into small pieces.
 
 ##### Analysis
+
+
+### Longest Common Subsequence
