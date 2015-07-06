@@ -223,6 +223,19 @@ function LCSubstr(S[1..m], T[1..n])
     return result
 ```
 
+
+### Longest Common Subsequence (LCS)
+Given two strings, find the length of longest common subsequence (LCS).
+
+Example  
+For "ABCD" and "EDCA", the LCS is "A" (or "D", "C"), return 1.
+
+For "ABCD" and "EACB", the LCS is "AC", return 2.
+
+##### Analysis
+
+
+
 ### Distinct Subsequences
 Given a string S and a string T, count the number of distinct subsequences of T in S.
 
@@ -307,4 +320,3 @@ A item can not be divided into small pieces.
 ##### Analysis
 
 
-### Longest Common Subsequence
