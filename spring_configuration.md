@@ -17,6 +17,15 @@
 <beans>
 ```
 
+##### Naming beans
+Every bean has one or more identifiers. (`id` or `name`)
+Convention: alphanumeric (myBean, fooService, etc.)
+
+Alias:
+```xml
+<alias name="fromName" alias="toName"/>
+```
+
 ### Java Based
 #### General Bean
 ```java
