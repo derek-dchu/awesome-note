@@ -81,24 +81,8 @@ POJOs -------------> IoC Container -> Fully configured system
 config metadata ------^
 ```
 
-#### Read Configuration
-1. XML-based
-
-
-
-2. Annotation-based
-3. Java-based
-
-##### Naming beans
-Every bean has one or more identifiers. (`id` or `name`)
-Convention: alphanumeric (myBean, fooService, etc.)
-
-Alias:
-```xml
-<alias name="fromName" alias="toName"/>
-```
-
 #### Instantiating a container
+1. XML-based
 ```java
 ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml"); // src is the root folder
 
@@ -112,6 +96,11 @@ File path is related to the definition file doing the importing.
 <beans>
 	<import resource="<file xml>"/>
 </beans>
+```
+
+2. Java-based
+```java
+ApplicationContext context = new AnnotationConfigApplicationContext(Configuration.class);
 ```
 
 #### Using the container
