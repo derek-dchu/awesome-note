@@ -195,6 +195,26 @@ Blow scopes are only available for a web-aware Spring `ApplicationContext` imple
 * request, session, global session, application scopes work with Spring Web MVC `DispatcherServlet` or `DispatcherPortlet` without special setup.
 * For request, session, global session scoped beans, we must inject an AOP proxy in place of them.
 
+#### Scope Contract
+* Implement `o.s.beans.factory.config.Scope`
+* Register the scope with a `o.s.beans.factory.config.CustomScopeConfigurer`
+
+```java
+public interface Scope {
+    // map-like lookup of beans in a given scope
+    Object get(String name, ObjectFactory<?> objectFactory);
+    
+    Object remove(String name);
+    void registerDestructionCallback(String name, Runnable callback);
+    
+    // well known beans like the HttpServletRequest 'request' for 'request' scope
+    Object resolveContextualObject(String key);
+    
+    // returns an ID that can be correlated to an object stored in a system backing the scope
+    String getConversationId();
+}
+```
+
 
 ## AOP: Aspect Oriented Programming
 * Purpose of AOP: Build dependency among separate classes
