@@ -108,9 +108,6 @@ ApplicationContext context = new AnnotationConfigApplicationContext(Configuratio
 Bean bean = context.getBean("bean name", bean.class);
 ```
 
-**note:** Ideally our application code should never use `ApplicationContext` to retrieve beans.
-
-
 ### Dependency Injection
 #### Setter Injection	(use setter to inject fields)
 ```xml
@@ -193,7 +190,7 @@ Blow scopes are only available for a web-aware Spring `ApplicationContext` imple
 5. global session: each global HTTP `Session` has its own instance of a bean. Typically only valid when used in a portlet context.
 6. application: each `ServletContext` has its own instance of a bean.
 
-* use the prototype for all stateful beans and the singleton for stateless beans.
+* Use the prototype for all stateful beans and the singleton for stateless beans.
 * Spring does not manage the destruction lifecycle of a prototype bean.
 * request, session, global session, application scopes work with Spring Web MVC `DispatcherServlet` or `DispatcherPortlet` without special setup.
 * For request, session, global session scoped beans, we must inject an AOP proxy in place of them.
