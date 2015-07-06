@@ -49,9 +49,6 @@ AOP	Aspects	Instrumentation Messaging
 
 **note:** Spring 2.x comes with `lib` folder contains (dependent library jarfiles), Spring 3.x ship without `lib` folder.
 
-## (#8) Configuration File
-### Header
-
 
 ## `log4j` module
 Only one singleton class: `Logger`.
@@ -76,12 +73,12 @@ Objects define their dependencies only through constructor arguments, arguments 
 ### IoC Container
 `org.springframework.beans` and `org.springframework.context` are the basis for IoC container.
 
-* `BeanFactory`: deprecated
-* `org.springframework.context.ApplicationContext` represents the IoC container and is responsible for instantiating, configuring and assembling the objects.
+* `org.springframework.beans.factory.BeanFactory`: deprecated
+* `org.springframework.context.ApplicationContext`: represents the IoC container and is responsible for instantiating, configuring and assembling the objects.
 
 ```
--- POJOs -------------> IoC Container -> Fully configured system					
--- config metadata -/
+POJOs -------------> IoC Container -> Fully configured system					
+config metadata ------^
 ```
 
 #### Configuration
