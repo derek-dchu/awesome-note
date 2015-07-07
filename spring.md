@@ -156,6 +156,11 @@ ApplicationContext (not lazy-initialized) : all beans are created after `new Fil
 * We control lazy loading feature for both of them by setting `<bean lazy-init="default|true|false"/>`.
 * Container level: `<beans default-lazy-init="true"/>`
 
+#### BeanPostProcessor
+An interface provides control of two behaviors of bean initialization.
+1. `postProcessBeforeInitialization`: before the bean is initialized.
+2. `postProcessAfterInitializtion`: after the bean is initialized.
+
 #### Autowiring
 Automatically injection other beans inside current bean implicitly (usually `ref` is better)
   1. no: must be defined via a `ref` element.
