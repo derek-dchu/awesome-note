@@ -242,6 +242,42 @@ public interface FactoryBean<T> {
 ```
 
 
+## Spring Expression
+DI with expression
+
+example:
+```java
+// 1
+@Value("#{ otherBean.getValue() }")
+private int aValue;
+
+// 2
+@Value("#{ systemProperties['user.home'] }")
+private string userHome
+```
+
+
+## Profiles
+Group beans into profiles, and load them based on a run-time argument `-Dspring.profiles.active=<profile name>`
+
+example
+```java
+@Configuration
+@Profile("config1")
+public class Config1 { ... }
+
+@Configuration
+@Profile("config2")
+public class Config2 { ... }
+
+@Configuration
+@Import("Config1.class, Config2.class")
+public class Config3 { 
+    // only one of Config1/2 will be imported based on run-time the arg.
+}
+```
+
+
 ## Cache (Spring 3.x)
 
 
