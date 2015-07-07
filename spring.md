@@ -17,7 +17,7 @@ AOP	Aspects	Instrumentation Messaging
 2. spring-beans
 3. spring-context
 4. spring-context-support
-5. spring-expression.
+5. spring-expression
 
 ### AOP and Instrumentation
 1. spring-aop
