@@ -230,6 +230,18 @@ public interface Scope {
 * Proxy Pattern
 
 
+## FactoryBeans
+An interface used to get beans outside Spring container.
+
+```java
+public interface FactoryBean<T> {
+    T getObject() throws Exception;
+    Class<?> getObjectType();
+    boolean isSingleton();
+}
+```
+
+
 ## Cache (Spring 3.x)
 
 
