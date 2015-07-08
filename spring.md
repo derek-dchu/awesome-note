@@ -360,9 +360,38 @@ Initialize a collection.
 ```
 
 
-## Quartz
-Scheduling System.
+## Scheduling System
+### Native Support
+```java
+@EnableScheduling
+public class Config {
+    @Bean
+    public TaskScheduler concurrentTaskScheduler() {
+        ConcurrentTaskScheduler concurrentTaskScheduler = new ConcurrentTaskScheduler();
+        concurrentTaskScheduler.setScheduledExecutor(Executors.newScheduledThreadPool(10));
+        return concurrentTaskScheduler;
+    }
+    
+    @Component
+    public static class ScheduledBean {
 
+        @Scheduled(cron = "*/10 * * * * *")
+        public void runMeByACronExpression() throws Throwable {
+            System.out.println("runMeByACronExpression@ " + new Date());
+        }
+
+        @Scheduled(fixedRate = 15 * 1000)
+        public void runMeByAFixedRate() throws Throwable {
+            System.out.println("runMeByAFixedRate@ " + new Date());
+        }
+
+        @Scheduled(fixedDelay = 20 * 1000)
+        public void runMeByAFixedDelay() throws Throwable {
+            System.out.println("runMeByAFixedDelay@ " + new Date());
+        }
+    }
+}
+```
 
 
 
