@@ -394,4 +394,23 @@ public class Config {
 ```
 
 
+## Relational Data Access
+### JdbcTemplate
+#### Map ResultSet to Java Object
+```java
+RowMapper<Customer> customerRowMapper = new RowMapper<Customer>() {
+    public Customer mapRow(ResultSet resultSet, int i) throws SQLException {
+        long id = resultSet.getInt("id");
+        String firstName = resultSet.getString("first_name");
+        String lastName = resultSet.getString("last_name");
+        return new Customer(id, firstName, lastName);
+    }
+};
+```
 
+#### Read Data
+```java
+Long id = 23L;
+Collection<Customer> customers = jdbcTemplate.queryForObject(
+    "select * from customers where id = ?", customerRowMapper, id);
+```
