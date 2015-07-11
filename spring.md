@@ -414,3 +414,6 @@ Long id = 23L;
 Collection<Customer> customers = jdbcTemplate.queryForObject(
     "select * from customers where id = ?", customerRowMapper, id);
 ```
+
+## NoSQL Data Access
+### Redis
