@@ -417,6 +417,6 @@ Collection<Customer> customers = jdbcTemplate.queryForObject(
 
 ## NoSQL Data Access
 ### Redis
-
+#### Connection Factory
 
 ### MongoDB
