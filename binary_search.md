@@ -38,6 +38,30 @@ def binarySearch(nums, target) {
     return -1
 ```
 
+### Binary search with duplicates
+For a given sorted array (ascending order) and a target number, find the first index of this number in O(log n) time complexity. Array may contain duplicates. If the target number does not exist in the array, return -1.
+
+##### Pseudocode
+```
+l := 0, r := arr.length - 1
+
+while l + 1 < r
+    if arr[mid] == target
+        r := mid
+    if arr[mid] < target
+        l := mid
+    else
+        r := mid
+        
+if arr[l] == target
+    return l
+
+if arr[r] == target
+    return r
+
+return -1
+```
+
 
 ### Sqrt(x)
 Implement int sqrt(int x) method which returns the first integer that is smaller than or equals to, if exists, square root of x.
@@ -70,28 +94,6 @@ The first integer of each row is greater than the last integer of the previous r
 
 ##### Analysis
 Treat matrix as an array and perform binary search. Remember that `row = index // n` and `col = index % n`.
-
-### Binary search with duplicates
-For a given sorted array (ascending order) and a target number, find the first index of this number in O(log n) time complexity. Array may contain duplicates. If the target number does not exist in the array, return -1.
-
-##### Pseudocode
-```
-l := 0, r := arr.length - 1
-while l < r
-    if arr[mid] < target
-        l := mid + 1
-    else
-        """
-        if equals, we still shrink r, but keep mid as the upper
-        bound, because it may be the first index of target 
-        """
-        r := mid
-        
-if arr[l] == target
-    return l
-else
-    return -1
-```
 
 ### Find Minimum in Rotated Sorted Array
 Suppose a sorted array is rotated at some pivot unknown to you beforehand.
