@@ -1,5 +1,44 @@
 # Binary Search
 
+## Template
+
+```python
+def binarySearch(nums, target) {
+    if nums is None or len(nums) == 0) {
+        return -1;
+    }
+    
+    start = 0
+    end = len(nums) - 1
+    while start + 1 < end:
+        mid = start + (end - start) / 2
+        if nums[mid] == target:
+            end = mid;  
+        elif nums[mid] < target:
+            start = mid
+        else:
+            end = mid
+            
+    """
+    start will stop at the largest element that is smaller than target if target is not in the list
+    """
+    if nums[start] == target:
+        return start
+    
+    """
+    end will stop at the smallest element that is larger than target if target is not in the list
+    """
+    if nums[end] == target
+        return end
+        
+    """
+    for duplicate elements, we pick the one on the most left. If we want the the one on the most right, we check for end first.
+    """    
+        
+    return -1
+```
+
+
 ### Sqrt(x)
 Implement int sqrt(int x) method which returns the first integer that is smaller than or equals to, if exists, square root of x.
 
