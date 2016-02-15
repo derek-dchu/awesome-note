@@ -174,7 +174,7 @@ return l
 ```
 
 ### Search in Rotated Sorted Array
-Suppose a sorted array is rotated at some pivot with  no duplicate.
+Suppose a sorted array is rotated at some pivot with no duplicate.
 
 (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
 
