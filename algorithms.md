@@ -1,6 +1,6 @@
 # Algorithms
 
-## LintCode
+## LeetCode
 ### String
 *  [Longest Palindromic Substring](http://derek-dchu.gitbooks.io/awesome-note/content/string.html#longest-palindromic-substring)
 
@@ -23,6 +23,7 @@
 ### Dynamic Programming
 *  [Longest Common Substring (LCS)](http://derek-dchu.gitbooks.io/awesome-note/content/dynamic_programming.html#longest-common-substring-lcs)
 *  [Maximum Subarray](http://derek-dchu.gitbooks.io/awesome-note/content/dynamic_programming.html#maximum-subarray)
+*  Longest Increasing Sub-sequence (LIS)
 
 ### Math
 *  [Trailing Zeros](http://derek-dchu.gitbooks.io/awesome-note/content/math.html#trailing-zeros)
