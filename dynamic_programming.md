@@ -345,3 +345,26 @@ A item can not be divided into small pieces.
 ##### Analysis
 
 
+### 300. Longest Increasing Subsequence
+Given an unsorted array of integers, find the length of longest increasing subsequence.
+
+For example,
+Given [10, 9, 2, 5, 3, 7, 101, 18],
+The longest increasing subsequence is [2, 3, 7, 101], therefore the length is 4. Note that there may be more than one LIS combination, it is only necessary for you to return the length.
+
+Your algorithm should run in O(n2) complexity.
+
+##### Analysis
+By storing the longest subsequence length ending at $$N_i$$ -> L[i]
+and predecessor of $$N_i$$ -> P[i], we can generate the recurrence formula as following:
+
+for $$N_i$$ in the array, L[i] = $$\max_{j=i-1}^{j=0}L[j] + 1$$ where $$N_i > N_j$$ (find the longest subsequence that end at $$N_j$$)
+
+P[i] = j
+
+##### Pseudocode
+
+
+##### Follow up
+Could you improve it to O(n log n) time complexity?
+
