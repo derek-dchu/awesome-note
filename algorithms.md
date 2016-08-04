@@ -23,7 +23,7 @@
 ### Dynamic Programming
 *  [Longest Common Substring (LCS)](http://derek-dchu.gitbooks.io/awesome-note/content/dynamic_programming.html#longest-common-substring-lcs)
 *  [Maximum Subarray](http://derek-dchu.gitbooks.io/awesome-note/content/dynamic_programming.html#maximum-subarray)
-*  Longest Increasing Sub-sequence (LIS)
+*  [300. Longest Increasing Sub-sequence (LIS)](http://derek-dchu.gitbooks.io/awesome-note/content/dynamic_programming.html#longest-increasing-subsequence)
 
 ### Math
 *  [Trailing Zeros](http://derek-dchu.gitbooks.io/awesome-note/content/math.html#trailing-zeros)
