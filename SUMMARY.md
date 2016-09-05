@@ -2,9 +2,9 @@
 
 * [Introduction](README.md)
 * [Data Structures](data_structures.md)
+   * Trie
    * [Suffix Tree and Suffix Array](suffix_tree_and_suffix_array.md)
        * [Suffix Array](suffix_array.md)
-* Trie
 * [Algorithms](algorithms.md)
    * [Array](array.md)
    * [Bit Manipulation](bit_manipulation.md)
