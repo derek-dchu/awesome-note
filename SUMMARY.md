@@ -5,6 +5,7 @@
    * [Suffix Tree and Suffix Array](suffix_tree_and_suffix_array.md)
        * [Suffix Array](suffix_array.md)
    * Trie
+   * Trie
 * [Algorithms](algorithms.md)
    * [Array](array.md)
    * [Bit Manipulation](bit_manipulation.md)
