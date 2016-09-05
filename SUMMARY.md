@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* Data Structures
+* [Data Structures](data_structures.md)
    * [Suffix Tree and Suffix Array](suffix_tree_and_suffix_array.md)
        * [Suffix Array](suffix_array.md)
 * Trie
