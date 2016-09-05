@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 * [Data Structures](data_structures.md)
-   * Trie
+   * [Trie](trie.md)
    * [Suffix Tree and Suffix Array](suffix_tree_and_suffix_array.md)
        * [Suffix Array](suffix_array.md)
 * [Algorithms](algorithms.md)
