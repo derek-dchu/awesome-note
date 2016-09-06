@@ -6,7 +6,7 @@ We define Trie as a tree structure while each node uses a dict to store edges (W
 ```python
 class TrieNode:
     def __init__(self):
-        self.chilren = {}
+        self.children = {}
         self.isWord = False
 ```
 
@@ -26,7 +26,7 @@ class Trie:
          
         ptr = self.root
         for c in word:
-            if c not ptr.children:
+            if c not in ptr.children:
                 ptr.children[c] = TrieNode()
             ptr = ptr.children[c]
         ptr.isWord = True
@@ -62,7 +62,7 @@ To support removal, we need to add another flag `hasWord` within the `TrieNode` 
 ```
 class TrieNode:
     def __init__(self):
-        self.chilren = {}
+        self.children = {}
         self.isWord = False
         self.hasWord = False
         
@@ -80,14 +80,14 @@ class Trie:
          
         ptr = self.root
         for c in word:
-            if c not ptr.children:
+            if c not in ptr.children:
                 ptr.children[c] = TrieNode()
             ptr.hasWord = True
             ptr = ptr.children[c]
         ptr.isWord = True
         ptr.hasWord = True
         
-    def find(self, word)：
+    def find(self, word):
         if word == '':
             return self.root.isWord
         
@@ -116,7 +116,8 @@ class Trie:
                 ptr = ptr.children[c]
             else:
                 return False
-        return True
+        # !!! note: check if it is still valid
+        return ptr.hasWord
         
     def remove(self, word):
         if word == '':
@@ -134,7 +135,10 @@ class Trie:
                  return
              helper(node.children[key[0]], key[1:])
              # backtrack and update parent flag with children flags
-             node.hasWord = any([child.hasWord for child in node.children.values()])            
+             node.hasWord = any([child.hasWord for child in node.children.values()])
+             
+             helper(self.root, word)
 ```
 
-[Spelling Corrector](http://www.zhihu.com/question/29592463)
+### Applications
+1. [Spelling Corrector](http://www.zhihu.com/question/29592463)
