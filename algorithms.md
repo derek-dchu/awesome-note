@@ -51,4 +51,4 @@
 *   [Binary Search Tree](http://derek-dchu.gitbooks.io/awesome-note/content/binary_tree.html#binary-search-tree)
 
 ### Two Pointers
-*   [Remove Duplicates From Sorted Array](http://derek-dchu.gitbooks.io/awesome-note/content/two_pointers.html/
+*   [Remove Duplicates From Sorted Array](http://derek-dchu.gitbooks.io/awesome-note/content/two_pointers.html#remove-duplicates-from-sorted-array)
