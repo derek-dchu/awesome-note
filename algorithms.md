@@ -50,3 +50,5 @@
 *   [Construct Binary Tree from Preorder and Inorder Traversal](http://derek-dchu.gitbooks.io/awesome-note/content/binary_tree.html#construct-binary-tree-from-preorder-and-inorder-traversal)
 *   [Binary Search Tree](http://derek-dchu.gitbooks.io/awesome-note/content/binary_tree.html#binary-search-tree)
 
+### Two Pointers
+*   [Remove Duplicates From Sorted Array](http://derek-dchu.gitbooks.io/awesome-note/content/two_pointers.html/
