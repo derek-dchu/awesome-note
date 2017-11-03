@@ -48,4 +48,6 @@
   * [Unit Test](unit_test.md)
 * [Shell Script](shell_script.md)
 * [Summary](SUMMARY.md)
+* [Machine Learning](machine-learning.md)
+  * [Project Stratefgy](machine-learning/project-stratefgy.md)
 
