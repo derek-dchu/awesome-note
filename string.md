@@ -6,7 +6,7 @@ Find the start position of substrings in Text which matches given Patterns.
 
 #### 1. Brute Force
 
- O\(\|Text\| \* \|Patterns\|\)
+O\(\|Text\| \* \|Patterns\|\)
 
 #### 2. Pattern Prefix Trie Matching
 
@@ -36,9 +36,59 @@ It takes O\(\|Text\|\) to construct a suffix tree trie.
 
 Memory footprint of a suffix tree trie is O\(\|Text\|\) by saving leaf branch as the \(start position, end position\) of the leaf branch.
 
+### 5. Burrow-Wheeler Transform
 
+BWT\(S\) is the last column of sorted cyclic rotation of S.
 
+```
+GAGA$ -> GAGA$ -> $GAGA -> AGGA$
+         $GAGA    A$GAG
+         A$GAG    AGA$G
+         GA$GA    GA$GA
+         AGA$G    GAGA$
+```
 
+Time: O\(\|Text\|\)
+
+##### First-Last Property
+
+* the k-th occurrence of symbol in FirstColumn and k-th occurrence of symbol in LastColumn correspond to appearance of symbol at the same position of Text.
+
+#### Inverting BWT
+
+Start with $ in FirstColumn, jump between FirstColumn and LastColumn using First-Last Property.
+
+Time: O\(\|Text\|\), Memory: 2\|Text\|.
+
+#### Pattern Matching
+
+```
+BWMatching(FirstOccurrence, LastColumn, Pattern, Count):
+    """
+    FirstOccurrence: a array contains first occurrences of symbol in firstColumn
+    Count: matrix of size(n_symbol, len_of_bwt + 1), count[s][i] is # occurrences of symbol in bwt[:i]
+    """
+
+    top ← 0
+    bottom ← |LastColumn| − 1
+    while top ≤ bottom:
+        if Pattern is nonempty:
+            symbol ← last letter in Pattern
+            remove last letter from Pattern
+            if positions from top to bottom in LastColumn contain an occurrence of symbol:
+                top ← FirstOccurrence(symbol) + Countsymbol(top, LastColumn)
+                bottom ← FirstOccurrence(symbol) + Countsymbol(bottom + 1, LastColumn) − 1
+            else:
+                return 0
+        else:
+            return bottom − top + 1
+```
+
+Time: O\(\|Pattern\|\)
+
+### 6. Suffix Array
+
+Suffix array holds starting position of each suffix beginning a row.
 
 ### Longest Palindromic Substring
 

@@ -1,4 +1,4 @@
-# Graphs
+# [String](/string.md)Graphs
 
 ## Definition
 
@@ -62,6 +62,4 @@ SCCs(G):
 ```
 
 DFS on both reversed-G and G =&gt; Runtime O\(\|V\| + \|E\|\)
-
-
 

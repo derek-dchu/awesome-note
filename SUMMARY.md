@@ -51,4 +51,6 @@
 * [Machine Learning](machine-learning.md)
   * [Project Strategy](machine-learning/project-stratefgy.md)
   * [Learning Strategy](machine-learning/multi-task-learning.md)
+  * [Neural Networks](machine-learning/neural-networks.md)
+    * [Convolutional Neural Networks](machine-learning/neural-networks/convolutional-neural-networks.md)
 
