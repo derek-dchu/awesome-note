@@ -5,6 +5,8 @@
   * [Trie](trie.md)
   * [Suffix Tree and Suffix Array](suffix_tree_and_suffix_array.md)
     * [Suffix Array](suffix_array.md)
+  * [Heap](heap.md)
+  * [Disjoint Sets](disjoint-sets.md)
 * [Algorithms](algorithms.md)
   * [Array](array.md)
   * [Bit Manipulation](bit_manipulation.md)
