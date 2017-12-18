@@ -12,6 +12,8 @@ AOP	Aspects	Instrumentation Messaging
 			  test
 ```
 
+Each of module has their own jarfiles
+
 ### Core Container
 1. spring-core
 2. spring-beans
@@ -41,11 +43,11 @@ AOP	Aspects	Instrumentation Messaging
 ### Test
 1. spring-test
 
-* Spring Security
-* Spring Integration (Struts2, REST, SOAP)
-* Spring Front-end
+### Spring Security
+### Spring Integration (Struts2, REST, SOAP)
+### Spring Front-end
 
-* Each of module has their own jarfiles
+Each of module has their own jarfiles
 
 **note:** Spring 2.x comes with `lib` folder contains (dependent library jarfiles), Spring 3.x ship without `lib` folder.
 
@@ -82,7 +84,8 @@ config metadata ------^
 ```
 
 #### Instantiating a container
-1. XML-based
+##### XML based
+
 ```java
 ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml"); // src is the root folder
 
@@ -98,7 +101,7 @@ File path is related to the definition file doing the importing.
 </beans>
 ```
 
-2. Java-based
+##### Java based
 ```java
 ApplicationContext context = new AnnotationConfigApplicationContext(Configuration.class);
 ```

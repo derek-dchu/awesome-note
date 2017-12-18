@@ -55,4 +55,12 @@
   * [Learning Strategy](machine-learning/multi-task-learning.md)
   * [Neural Networks](machine-learning/neural-networks.md)
     * [Convolutional Neural Networks](machine-learning/neural-networks/convolutional-neural-networks.md)
+    * [Frameworks](machine-learning/neural-networks/frameworks.md)
+  * [Object Detection](machine-learning/object-detection.md)
+  * [Object Recognition](machine-learning/object-recognition.md)
+* [Python](python.md)
+  * [Language Specification](python/language-specification.md)
+  * [Decorator](python/decorator.md)
+* [System Design](system-design.md)
+  * [Feed](system-design/feed.md)
 

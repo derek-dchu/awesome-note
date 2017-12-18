@@ -473,7 +473,7 @@ Class c = boolean.class;  // correct
 
 8. Get the immediately enclosing class of the class: `getEnclosingClass()`.
 
-### DIscovering Class Members
+### Discovering Class Members
 #### Field
 `getDeclaredField()`: Private members
 `getField()`: Inherited members
