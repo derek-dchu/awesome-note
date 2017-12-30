@@ -58,6 +58,7 @@
     * [Frameworks](machine-learning/neural-networks/frameworks.md)
   * [Object Detection](machine-learning/object-detection.md)
   * [Object Recognition](machine-learning/object-recognition.md)
+  * [Natural Language Processing](machine-learning/natural-language-processing.md)
 * [Python](python.md)
   * [Language Specification](python/language-specification.md)
   * [Decorator](python/decorator.md)
