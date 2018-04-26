@@ -24,6 +24,12 @@
 -----------------------
 ```
 
+## Event Delegation
+Event delegation is a technique involving adding event listeners to a **parent** element instead of adding them to the descendant elements. The listener will fire whenever the event is **triggered** on the **descendant** elements due to event **bubbling up** the DOM. The benefits of this technique are:
+
+1. Memory footprint goes down because only **one single handler** is needed on the parent element, rather than having to attach event handlers on each descendant.
+
+2. There is no need to unbind the handler from elements that are removed and to bind the event for new elements.
 
 ## [Application Cache](https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache)
 
@@ -38,3 +44,5 @@ For supporting the attribute before that become to a W3C recommended.
 
 ## Design
 * 216 Web Safe Color: cross-browser color palette was created to ensure that all computers would display colors correctly.
+
+
