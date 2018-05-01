@@ -61,6 +61,7 @@
   * [Natural Language Processing](machine-learning/natural-language-processing.md)
   * [Self-Driving Car](machine-learning/self-driving-car.md)
     * [Sensors Fusion](machine-learning/self-driving-car/sensors.md)
+    * [Path Planning](machine-learning/self-driving-car/path-planning.md)
 * [Python](python.md)
   * [Language Specification](python/language-specification.md)
   * [Decorator](python/decorator.md)

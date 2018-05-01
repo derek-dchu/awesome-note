@@ -1,6 +1,6 @@
 {
     "plugins": [
-        "mathjax"
+        "katex"
     ],
     "pluginsConfig": {}
 }
